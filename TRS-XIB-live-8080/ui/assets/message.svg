@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>message</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-768, -2629)">
+            <g id="message" transform="translate(768, 2629)">
+                <rect id="矩形" fill-opacity="0.01" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="32" height="32"></rect>
+                <path d="M4,6 L28,6 C28.5522847,6 29,6.44771525 29,7 L29,23 C29,24.6568542 27.6568542,26 26,26 L6,26 C4.34314575,26 3,24.6568542 3,23 L3,7 C3,6.44771525 3.44771525,6 4,6 Z" id="矩形" stroke="#909399" stroke-width="2"></path>
+                <path d="M3,6 L12.6085995,14.8694764 C14.5239079,16.6374535 17.4760921,16.6374535 19.3914005,14.8694764 L29,6 L29,6" id="路径-31" stroke="#909399" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

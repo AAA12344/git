@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>aid-kit</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-768, -3033)">
+            <g id="aid-kit" transform="translate(768, 3033)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-9" transform="translate(2, 3)">
+                    <rect id="矩形" stroke="#909399" stroke-width="2" x="9" y="1" width="10" height="4" rx="1"></rect>
+                    <rect id="矩形" stroke="#909399" stroke-width="2" x="1" y="5" width="26" height="20" rx="4"></rect>
+                    <g id="plus" transform="translate(8, 9)">
+                        <rect id="矩形" x="0" y="0" width="12" height="12"></rect>
+                        <path d="M6,1.5 L6,10.5 M1.5,6 L10.5,6" id="形状结合" stroke="#909399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

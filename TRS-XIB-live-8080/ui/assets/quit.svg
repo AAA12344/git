@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>quit</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1280, -417)">
+            <g id="quit" transform="translate(1280, 417)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-24" transform="translate(3, 3)">
+                    <polyline id="路径-55" stroke="#909399" stroke-width="2" points="23 5 23 -1.38777878e-16 9.57567359e-16 0 0 26 23 26 23 21"></polyline>
+                    <polygon id="路径-56" fill="#909399" points="27 11 12 11 12 6 6 13 12 20 12 15 27 15"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

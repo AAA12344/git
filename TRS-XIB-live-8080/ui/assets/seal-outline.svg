@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>seal-outline</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-640, -1773)">
+            <g id="seal-outline" transform="translate(640, 1773)">
+                <rect id="矩形" fill-opacity="0.01" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="32" height="32"></rect>
+                <path d="M4,26 L4.00345746,19.8394323 C4.00413246,19.4120774 4.33984389,19.0657032 4.75388449,19.0652387 C7.25432042,19.0652387 9.75479386,19.0652387 12.2552673,19.0652387 C12.9463849,19.0652387 12.94271,18.4324129 12.94271,16.9258323 C12.94271,15.4192516 9.26654904,14.150271 9.26654904,8.85378065 C9.26654904,3.55729806 13.0748586,2 16.2399,2 C19.4049413,2 22.8522797,3.55729806 22.8522797,8.85378065 C22.8522797,14.150271 19.1953935,14.9923613 19.1953935,16.9258323 C19.1953935,18.8592258 19.1953935,19.0652387 19.7808373,19.0652387 C22.2705109,19.0652387 24.7602594,19.0652387 27.250008,19.0652387 C27.6641536,19.0652387 28,19.4119226 28,19.8394323 L28,26 L4,26 Z" id="路径" stroke="#909399" stroke-width="2" stroke-linejoin="round"></path>
+                <line x1="4" y1="30" x2="28" y2="30" id="路径" stroke="#909399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

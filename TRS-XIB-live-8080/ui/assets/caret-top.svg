@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>caret-top</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-640, -2377)">
+            <g id="caret-top" transform="translate(640, 2377)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <polygon id="icon_arrow" fill="#909399" transform="translate(16, 16) scale(1, -1) translate(-16, -16)" points="5.33333333 9.33333333 16 22.6666667 26.6666667 9.33333333"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

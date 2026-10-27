@@ -1,0 +1,1347 @@
+{
+  "version": "2026-08-04",
+  "sourceWorkbook": "F:/MSTI/Internship/厦门国际/数据显示梳理.xlsx",
+  "sourceSheet": "Sheet1",
+  "description": "投诉管理一级模块的角色、页面、TAB、状态和操作权限规则；由客户权限梳理表转写，sourceRow 对应 Excel 行号。",
+  "rules": [
+    {
+      "sourceRow": 2,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单创建",
+      "page": "ticket-create",
+      "tab": "全部",
+      "statuses": [
+        "待复核",
+        "复核中",
+        "待处理",
+        "处理中",
+        "会签中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中",
+        "已办结"
+      ],
+      "actions": [
+        "查看",
+        "催办"
+      ],
+      "roles": [
+        "operator"
+      ],
+      "roleLabels": [
+        "经办员"
+      ],
+      "dataScope": "本人创建的全部工单及本人发起的导入记录",
+      "detailActions": [
+        "发起子流程"
+      ],
+      "notes": "催办限未办结工单；不展示他人创建工单"
+    },
+    {
+      "sourceRow": 3,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单创建",
+      "page": "ticket-create",
+      "tab": "全部",
+      "statuses": [
+        "待复核",
+        "待处理",
+        "待审批"
+      ],
+      "actions": [
+        "查看",
+        "撤回"
+      ],
+      "roles": [
+        "operator"
+      ],
+      "roleLabels": [
+        "经办员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "本人提交的工单在下一节点尚未处理时可撤回：待复核、待处理返回待提交；待审批保持原规则，返回处理中"
+    },
+    {
+      "sourceRow": 4,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单创建",
+      "page": "ticket-create",
+      "tab": "自动带入草稿箱",
+      "statuses": [
+        "草稿"
+      ],
+      "actions": [
+        "编辑",
+        "删除",
+        "废止"
+      ],
+      "roles": [
+        "operator"
+      ],
+      "roleLabels": [
+        "经办员"
+      ],
+      "dataScope": "客服系统自动带入且归属本人的草稿工单",
+      "detailActions": [
+        "提交",
+        "保存草稿"
+      ],
+      "notes": "提交后进入待复核"
+    },
+    {
+      "sourceRow": 5,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单创建",
+      "page": "ticket-create",
+      "tab": "录入/导入草稿箱",
+      "statuses": [
+        "草稿"
+      ],
+      "actions": [
+        "编辑",
+        "删除",
+        "废止"
+      ],
+      "roles": [
+        "operator"
+      ],
+      "roleLabels": [
+        "经办员"
+      ],
+      "dataScope": "本人手工录入或导入生成的草稿工单",
+      "detailActions": [
+        "提交",
+        "保存草稿"
+      ],
+      "notes": "只允许处理本人草稿"
+    },
+    {
+      "sourceRow": 6,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单创建",
+      "page": "ticket-create",
+      "tab": "导入记录",
+      "statuses": [
+        "导入成功",
+        "导入中"
+      ],
+      "actions": [],
+      "roles": [
+        "operator"
+      ],
+      "roleLabels": [
+        "经办员"
+      ],
+      "dataScope": "本人发起的导入批次记录",
+      "detailActions": [],
+      "notes": "导入中和导入成功只读"
+    },
+    {
+      "sourceRow": 7,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单创建",
+      "page": "ticket-create",
+      "tab": "导入记录",
+      "statuses": [
+        "导入失败"
+      ],
+      "actions": [
+        "删除"
+      ],
+      "roles": [
+        "operator"
+      ],
+      "roleLabels": [
+        "经办员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "导入失败可删除"
+    },
+    {
+      "sourceRow": 8,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "我的工作台",
+      "statuses": [
+        "处理中"
+      ],
+      "actions": [
+        "处理",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "本人已分配/本人正在处理",
+      "detailActions": [
+        "保存草稿",
+        "提交审批",
+        "发起子流程"
+      ],
+      "notes": "查看不改变状态；待处理点击处理后进入处理中；处理中可提交审批、发起会签，无法继续处理时可转派回本机构工单池"
+    },
+    {
+      "sourceRow": 9,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "我的工作台",
+      "statuses": [
+        "待初审",
+        "待审批"
+      ],
+      "actions": [
+        "查看",
+        "撤回",
+        "催办"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "本人经手的提交审批工单",
+      "detailActions": [],
+      "notes": "撤回限本人提交且审批/会签未被审批员处理"
+    },
+    {
+      "sourceRow": 10,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "我的工作台",
+      "statuses": [
+        "会签中",
+        "初审中",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "催办"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "本人经手的提交审批/发起会签的工单",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 11,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "机构工单池",
+      "statuses": [
+        "待处理"
+      ],
+      "actions": [
+        "查看",
+        "处理",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "本机构待处理及流转中工单（不包含我的工作台显示的工单）",
+      "detailActions": [],
+      "notes": "查看不改变状态；处理待处理工单后进入处理中；待处理转派原因非必填"
+    },
+    {
+      "sourceRow": 12,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "机构工单池",
+      "statuses": [
+        "处理中"
+      ],
+      "actions": [
+        "查看",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "处理中工单可转派，转派原因必填"
+    },
+    {
+      "sourceRow": 13,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "机构工单池",
+      "statuses": [
+        "会签中"
+      ],
+      "actions": [
+        "查看"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "会签中不能转派，仅提供查看"
+    },
+    {
+      "sourceRow": 14,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "机构工单池",
+      "statuses": [
+        "待初审",
+        "待审批"
+      ],
+      "actions": [
+        "查看",
+        "撤回",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "待审批工单可转派，转派原因非必填；符合紧邻节点规则时可撤回"
+    },
+    {
+      "sourceRow": 15,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "机构工单池",
+      "statuses": [
+        "初审中",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "审批中工单可转派，转派原因必填"
+    },
+    {
+      "sourceRow": 16,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "下辖工单池",
+      "statuses": [
+        "待处理"
+      ],
+      "actions": [
+        "查看",
+        "催办"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "下辖机构流转中工单，按组织数据权限展示，若没有下辖机构该TAB不显示",
+      "detailActions": [],
+      "notes": "下辖机构池仅支持催办和查看"
+    },
+    {
+      "sourceRow": 17,
+      "module": "投诉管理",
+      "menu1": "工单管理",
+      "menu2": "工单处理",
+      "page": "ticket-process",
+      "tab": "下辖工单池",
+      "statuses": [
+        "处理中",
+        "会签中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "催办"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 18,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单创建",
+      "page": "subprocess-create",
+      "tab": "全部",
+      "statuses": [
+        "待复核",
+        "待处理",
+        "待初审",
+        "待审批"
+      ],
+      "actions": [
+        "查看",
+        "撤回"
+      ],
+      "roles": [
+        "operator",
+        "handler"
+      ],
+      "roleLabels": [
+        "经办员",
+        "处理员"
+      ],
+      "dataScope": "本人创建或本人发起的子单",
+      "detailActions": [],
+      "notes": "根据主流程状态和角色权限发起子单/提交后进入对应子单处理/审批流转"
+    },
+    {
+      "sourceRow": 19,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单创建",
+      "page": "subprocess-create",
+      "tab": "全部",
+      "statuses": [
+        "复核中",
+        "处理中",
+        "初审中",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "催办"
+      ],
+      "roles": [
+        "operator",
+        "handler"
+      ],
+      "roleLabels": [
+        "经办员",
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 20,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单创建",
+      "page": "subprocess-create",
+      "tab": "全部",
+      "statuses": [
+        "草稿",
+        "待提交"
+      ],
+      "actions": [
+        "编辑",
+        "删除",
+        "废止"
+      ],
+      "roles": [
+        "operator",
+        "handler"
+      ],
+      "roleLabels": [
+        "经办员",
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [
+        "发起子流程",
+        "提交",
+        "保存草稿"
+      ],
+      "notes": ""
+    },
+    {
+      "sourceRow": 21,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单创建",
+      "page": "subprocess-create",
+      "tab": "草稿箱",
+      "statuses": [
+        "草稿"
+      ],
+      "actions": [
+        "编辑",
+        "删除",
+        "废止"
+      ],
+      "roles": [
+        "operator",
+        "handler"
+      ],
+      "roleLabels": [
+        "经办员",
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [
+        "发起子流程",
+        "提交",
+        "保存草稿"
+      ],
+      "notes": ""
+    },
+    {
+      "sourceRow": 22,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单处理",
+      "page": "subprocess-manage",
+      "tab": "我的工作台",
+      "statuses": [
+        "处理中"
+      ],
+      "actions": [
+        "处理",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "本人处理中、待补录的子单",
+      "detailActions": [
+        "保存草稿",
+        "提交审批",
+        "提交补录"
+      ],
+      "notes": "待补录仅适用于剔除申请、异常投诉、延长申请三类子单"
+    },
+    {
+      "sourceRow": 23,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单处理",
+      "page": "subprocess-manage",
+      "tab": "我的工作台",
+      "statuses": [
+        "待补录"
+      ],
+      "actions": [
+        "补录",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 24,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单处理",
+      "page": "subprocess-manage",
+      "tab": "我的工作台",
+      "statuses": [
+        "待初审",
+        "待审批"
+      ],
+      "actions": [
+        "查看",
+        "撤回"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": " 本人经手的流转到下一节点的子单",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 25,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单处理",
+      "page": "subprocess-manage",
+      "tab": "我的工作台",
+      "statuses": [
+        "初审中",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "催办"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 26,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单处理",
+      "page": "subprocess-manage",
+      "tab": "机构工单池",
+      "statuses": [
+        "待处理"
+      ],
+      "actions": [
+        "查看",
+        "处理",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "本机构待处理及流转中工单（不包含我的工作台显示的工单）",
+      "detailActions": [],
+      "notes": "查看不改变状态；处理待处理子单后进入处理中；待处理转派原因非必填"
+    },
+    {
+      "sourceRow": 27,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单处理",
+      "page": "subprocess-manage",
+      "tab": "机构工单池",
+      "statuses": [
+        "处理中",
+        "待补录"
+      ],
+      "actions": [
+        "查看",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "处理中或待补录子单可转派，转派原因必填"
+    },
+    {
+      "sourceRow": 28,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单处理",
+      "page": "subprocess-manage",
+      "tab": "机构工单池",
+      "statuses": [
+        "待初审",
+        "待审批"
+      ],
+      "actions": [
+        "查看",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "待审批子单可转派，转派原因非必填；符合紧邻节点规则时可撤回"
+    },
+    {
+      "sourceRow": 29,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单处理",
+      "page": "subprocess-manage",
+      "tab": "机构工单池",
+      "statuses": [
+        "初审中",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "转派"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "审批中子单可转派，转派原因必填"
+    },
+    {
+      "sourceRow": 30,
+      "module": "投诉管理",
+      "menu1": "子单管理",
+      "menu2": "子单处理",
+      "page": "subprocess-manage",
+      "tab": "下辖工单池",
+      "statuses": [
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "催办"
+      ],
+      "roles": [
+        "handler"
+      ],
+      "roleLabels": [
+        "处理员"
+      ],
+      "dataScope": "下辖机构流转中子单，按组织数据权限展示,若没有下辖机构该TAB不显示",
+      "detailActions": [],
+      "notes": "下辖机构池仅支持催办和查看"
+    },
+    {
+      "sourceRow": 31,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "我的工作台",
+      "statuses": [
+        "待复核",
+        "复核中",
+        "会签中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "复核",
+        "初审",
+        "会签",
+        "审批",
+        "转派",
+        "查看"
+      ],
+      "roles": [
+        "reviewer",
+        "approver"
+      ],
+      "roleLabels": [
+        "复核员",
+        "审批员"
+      ],
+      "dataScope": "流程派发给本人的会签/审批待办",
+      "detailActions": [
+        "审批通过",
+        "审批驳回"
+      ],
+      "notes": "审批/复核/会签任务直接进入审批员工作台，不需要从工单池领取；待审批的工单被点击后，状态自动变更为"
+    },
+    {
+      "sourceRow": 32,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "我的工作台",
+      "statuses": [
+        "待复核",
+        "复核中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "复核",
+        "初审",
+        "审批",
+        "转派",
+        "查看"
+      ],
+      "roles": [
+        "reviewer",
+        "approver"
+      ],
+      "roleLabels": [
+        "复核员",
+        "审批员"
+      ],
+      "dataScope": "流程派发给本人的子流程初审/审批待办",
+      "detailActions": [
+        "审批通过",
+        "审批驳回"
+      ],
+      "notes": ""
+    },
+    {
+      "sourceRow": 33,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "我的工作台",
+      "statuses": [
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "审批",
+        "转派",
+        "查看"
+      ],
+      "roles": [
+        "operator",
+        "approver",
+        "analyst"
+      ],
+      "roleLabels": [
+        "经办员",
+        "审批员",
+        "业务员"
+      ],
+      "dataScope": "流程派发给本人的短信审批待办",
+      "detailActions": [
+        "审批通过",
+        "审批驳回"
+      ],
+      "notes": ""
+    },
+    {
+      "sourceRow": 34,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "我的工作台",
+      "statuses": [
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "审批",
+        "转派",
+        "查看"
+      ],
+      "roles": [
+        "operator",
+        "approver",
+        "analyst"
+      ],
+      "roleLabels": [
+        "经办员",
+        "审批员",
+        "业务员"
+      ],
+      "dataScope": "流程派发给本人的导出申请待办",
+      "detailActions": [
+        "审批通过",
+        "审批驳回"
+      ],
+      "notes": ""
+    },
+    {
+      "sourceRow": 35,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "机构工单池",
+      "statuses": [
+        "待复核",
+        "复核中",
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "审批",
+        "催办",
+        "转派",
+        "退回"
+      ],
+      "roles": [
+        "reviewer",
+        "approver"
+      ],
+      "roleLabels": [
+        "复核员",
+        "审批员"
+      ],
+      "dataScope": "本机构处理环节和流转中工单，按组织数据权限展示",
+      "detailActions": [],
+      "notes": "监管/协调视角；处理中可转派回本机构工单池；待处理/处理中可退回"
+    },
+    {
+      "sourceRow": 36,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "机构工单池",
+      "statuses": [
+        "待复核",
+        "复核中",
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "审批",
+        "催办",
+        "转派",
+        "退回"
+      ],
+      "roles": [
+        "reviewer",
+        "approver"
+      ],
+      "roleLabels": [
+        "复核员",
+        "审批员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 37,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "下辖工单池",
+      "statuses": [
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "催办",
+        "转派"
+      ],
+      "roles": [
+        "approver"
+      ],
+      "roleLabels": [
+        "审批员"
+      ],
+      "dataScope": "下辖机构处理环节和流转中工单，按组织数据权限展示，若没有下辖机构该TAB不显示",
+      "detailActions": [],
+      "notes": "下辖工单池仅支持查看、转派或催办"
+    },
+    {
+      "sourceRow": 38,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "下辖工单池",
+      "statuses": [
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "催办",
+        "转派"
+      ],
+      "roles": [
+        "approver"
+      ],
+      "roleLabels": [
+        "审批员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": "下辖工单池仅支持查看、转派或催办"
+    },
+    {
+      "sourceRow": 39,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "工单审批",
+      "statuses": [
+        "待复核",
+        "复核中"
+      ],
+      "actions": [
+        "复核",
+        "转派"
+      ],
+      "roles": [
+        "reviewer"
+      ],
+      "roleLabels": [
+        "复核员"
+      ],
+      "dataScope": "派发给本人的客服创建工单复核任务",
+      "detailActions": [
+        "复核通过",
+        "复核驳回"
+      ],
+      "notes": "复核通过后进入待处理"
+    },
+    {
+      "sourceRow": 40,
+      "module": "投诉管理",
+      "menu1": "审批管理",
+      "menu2": "-",
+      "page": "my-approvals",
+      "tab": "子流程审批",
+      "statuses": [
+        "待复核",
+        "复核中"
+      ],
+      "actions": [
+        "复核",
+        "转派"
+      ],
+      "roles": [
+        "reviewer"
+      ],
+      "roleLabels": [
+        "复核员"
+      ],
+      "dataScope": "派发给本人的客服创建工单复核任务",
+      "detailActions": [
+        "复核通过",
+        "复核驳回"
+      ],
+      "notes": "复核通过后进入待审批/已办结"
+    },
+    {
+      "sourceRow": 41,
+      "module": "投诉管理",
+      "menu1": "查询导出",
+      "menu2": "-",
+      "page": "ledger-query",
+      "tab": "工单导出",
+      "statuses": [
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "会签中",
+        "审批中",
+        "已办结",
+        "待提交"
+      ],
+      "actions": [
+        "查看",
+        "修改当前处理人"
+      ],
+      "roles": [
+        "admin"
+      ],
+      "roleLabels": [
+        "超级管理员"
+      ],
+      "dataScope": "全行工单",
+      "detailActions": [],
+      "notes": "异常流转：直接指定新处理员或新审批员，状态保留原状态，必须审计并提醒"
+    },
+    {
+      "sourceRow": 42,
+      "module": "投诉管理",
+      "menu1": "查询导出",
+      "menu2": "-",
+      "page": "ledger-query",
+      "tab": "子流程导出",
+      "statuses": [
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中",
+        "待补录",
+        "已办结",
+        "待提交"
+      ],
+      "actions": [
+        "查看",
+        "修改当前处理人"
+      ],
+      "roles": [
+        "admin"
+      ],
+      "roleLabels": [
+        "超级管理员"
+      ],
+      "dataScope": "全行工单",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 43,
+      "module": "投诉管理",
+      "menu1": "查询导出",
+      "menu2": "-",
+      "page": "ledger-query",
+      "tab": "工单导出",
+      "statuses": [
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "会签中",
+        "审批中",
+        "已办结",
+        "待提交"
+      ],
+      "actions": [
+        "查看",
+        "导出"
+      ],
+      "roles": [
+        "handler",
+        "analyst"
+      ],
+      "roleLabels": [
+        "处理员",
+        "业务员"
+      ],
+      "dataScope": "权限下所有状态工单",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 44,
+      "module": "投诉管理",
+      "menu1": "查询导出",
+      "menu2": "-",
+      "page": "ledger-query",
+      "tab": "子流程导出",
+      "statuses": [
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中",
+        "待补录",
+        "已办结",
+        "待提交"
+      ],
+      "actions": [
+        "查看",
+        "导出"
+      ],
+      "roles": [
+        "handler",
+        "analyst"
+      ],
+      "roleLabels": [
+        "处理员",
+        "业务员"
+      ],
+      "dataScope": "权限下所有状态子单",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 45,
+      "module": "投诉管理",
+      "menu1": "查询导出",
+      "menu2": "-",
+      "page": "ledger-query",
+      "tab": "导出申请",
+      "statuses": [
+        "待提交",
+        "已驳回"
+      ],
+      "actions": [
+        "编辑",
+        "废止"
+      ],
+      "roles": [
+        "handler",
+        "analyst"
+      ],
+      "roleLabels": [
+        "处理员",
+        "业务员"
+      ],
+      "dataScope": "本人发起的导出申请",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 46,
+      "module": "投诉管理",
+      "menu1": "查询导出",
+      "menu2": "-",
+      "page": "ledger-query",
+      "tab": "导出申请",
+      "statuses": [
+        "待审批"
+      ],
+      "actions": [
+        "查看",
+        "催办",
+        "撤回"
+      ],
+      "roles": [
+        "handler",
+        "analyst"
+      ],
+      "roleLabels": [
+        "处理员",
+        "业务员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 47,
+      "module": "投诉管理",
+      "menu1": "查询导出",
+      "menu2": "-",
+      "page": "ledger-query",
+      "tab": "导出申请",
+      "statuses": [
+        "审批中"
+      ],
+      "actions": [
+        "查看",
+        "催办"
+      ],
+      "roles": [
+        "handler",
+        "analyst"
+      ],
+      "roleLabels": [
+        "处理员",
+        "业务员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": ""
+    },
+    {
+      "sourceRow": 48,
+      "module": "投诉管理",
+      "menu1": "查询导出",
+      "menu2": "-",
+      "page": "ledger-query",
+      "tab": "导出申请",
+      "statuses": [
+        "已通过"
+      ],
+      "actions": [
+        "查看",
+        "下载",
+        "编辑"
+      ],
+      "roles": [
+        "handler",
+        "analyst"
+      ],
+      "roleLabels": [
+        "处理员",
+        "业务员"
+      ],
+      "dataScope": "",
+      "detailActions": [],
+      "notes": ""
+    }
+  ]
+}

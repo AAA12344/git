@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>user-add</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-640, -1269)">
+            <g id="user-add" transform="translate(640, 1269)">
+                <rect id="矩形" fill-opacity="0.01" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="32" height="32"></rect>
+                <path d="M12.6666667,13.3333333 C15.244,13.3333333 17.3333333,11.244 17.3333333,8.66666667 C17.3333333,6.08934 15.244,4 12.6666667,4 C10.0893333,4 8,6.08934 8,8.66666667 C8,11.244 10.0893333,13.3333333 12.6666667,13.3333333 Z" id="路径" stroke="#909399" stroke-width="2" stroke-linejoin="round"></path>
+                <path d="M24,19.3333333 L24,27.3333333 M20,23.3333333 L28,23.3333333" id="形状" stroke="#909399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M18,18.6666667 L12.5333333,18.6666667 C9.5464,18.6666667 8.05293333,18.6666667 6.91206667,19.2479333 C5.90852,19.7592667 5.09262,20.5752 4.5813,21.5787333 C4,22.7196 4,24.2130667 4,27.2 L4,28 L18,28" id="路径" stroke="#909399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>microphone</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-512, -817)">
+            <g id="microphone" transform="translate(512, 817)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-2" transform="translate(7, 3)" stroke="#909399" stroke-width="2">
+                    <path d="M18,13 C18,17.9705627 13.9705627,22 9,22 C4.02943725,22 0,17.9705627 0,13" id="路径" stroke-linecap="round"></path>
+                    <rect id="矩形" x="4" y="0" width="10" height="18" rx="5"></rect>
+                    <line x1="9" y1="22" x2="9" y2="25" id="路径-2"></line>
+                    <line x1="6" y1="26" x2="12" y2="26" id="路径-3" stroke-linecap="round"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>service</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1024, -617)">
+            <g id="service" transform="translate(1024, 617)">
+                <rect id="矩形" fill="#2272DE" fill-rule="nonzero" opacity="0" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-18" transform="translate(2, 3)" stroke="#909399" stroke-width="2">
+                    <path d="M23,19 L23,20 C23,23.3137085 20.3137085,26 17,26 L13,26" id="路径"></path>
+                    <path d="M7,10 L7,20 L4,20 C3.17157288,20 2.42157288,19.6642136 1.87867966,19.1213203 C1.33578644,18.5784271 1,17.8284271 1,17 L1,13 C1,12.1715729 1.33578644,11.4215729 1.87867966,10.8786797 C2.42157288,10.3357864 3.17157288,10 4,10 L7,10 Z" id="矩形"></path>
+                    <path d="M24,10 C24.8284271,10 25.5784271,10.3357864 26.1213203,10.8786797 C26.6642136,11.4215729 27,12.1715729 27,13 L27,17 C27,17.8284271 26.6642136,18.5784271 26.1213203,19.1213203 C25.5784271,19.6642136 24.8284271,20 24,20 L21,20 L21,10 Z" id="矩形"></path>
+                    <path d="M4,11 L4,10 C4,4.4771525 8.4771525,0 14,0 C19.5228475,0 24,4.4771525 24,10 L24,11 L24,11" id="路径"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

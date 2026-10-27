@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "name": "统一状态标签配置",
+    "version": "1.4.0",
+    "description": "状态文字、颜色与渲染样式的唯一配置源；页面统一通过 statusTag() 调用。"
+  },
+  "component": {
+    "className": "tag ds-tag is-light status-tag",
+    "variant": "light"
+  },
+  "defaultPalette": "info",
+  "palettes": {
+    "draft": {
+      "textColor": "#667085",
+      "backgroundColor": "#F2F4F7"
+    },
+    "reviewPending": {
+      "textColor": "#2563EB",
+      "backgroundColor": "#EFF6FF"
+    },
+    "reviewing": {
+      "textColor": "#4F46E5",
+      "backgroundColor": "#EEF2FF"
+    },
+    "processPending": {
+      "textColor": "#0891B2",
+      "backgroundColor": "#ECFEFF"
+    },
+    "processing": {
+      "textColor": "#B45309",
+      "backgroundColor": "#FFFBEB"
+    },
+    "approvalPending": {
+      "textColor": "#7C3AED",
+      "backgroundColor": "#F5F3FF"
+    },
+    "approving": {
+      "textColor": "#BE185D",
+      "backgroundColor": "#FDF2F8"
+    },
+    "supplement": {
+      "textColor": "#EA580C",
+      "backgroundColor": "#FFF7ED"
+    },
+    "completed": {
+      "textColor": "#15803D",
+      "backgroundColor": "#F0FDF4"
+    },
+    "info": {
+      "textColor": "#2272DE",
+      "backgroundColor": "#E9F1FC"
+    },
+    "success": {
+      "textColor": "#55AA2D",
+      "backgroundColor": "#F0F9EB"
+    },
+    "warning": {
+      "textColor": "#C58D00",
+      "backgroundColor": "#FEF8E7"
+    },
+    "danger": {
+      "textColor": "#EB4545",
+      "backgroundColor": "#FFEEEE"
+    },
+    "purple": {
+      "textColor": "#8157D8",
+      "backgroundColor": "#F3EEFD"
+    },
+    "neutral": {
+      "textColor": "#606266",
+      "backgroundColor": "#F5F7FA"
+    },
+    "rectificationIssueReview": {
+      "textColor": "#0E7490",
+      "backgroundColor": "#ECFEFF"
+    },
+    "rectificationPlanSubmit": {
+      "textColor": "#1D4ED8",
+      "backgroundColor": "#EFF6FF"
+    },
+    "rectificationPlanInitial": {
+      "textColor": "#4338CA",
+      "backgroundColor": "#EEF2FF"
+    },
+    "rectificationPlanApproval": {
+      "textColor": "#7E22CE",
+      "backgroundColor": "#FAF5FF"
+    },
+    "rectificationInProgress": {
+      "textColor": "#B45309",
+      "backgroundColor": "#FFFBEB"
+    },
+    "rectificationResultInitial": {
+      "textColor": "#C2410C",
+      "backgroundColor": "#FFF7ED"
+    },
+    "rectificationResultApproval": {
+      "textColor": "#BE185D",
+      "backgroundColor": "#FDF2F8"
+    },
+    "countersigning": {
+      "textColor": "#0F766E",
+      "backgroundColor": "#F0FDFA"
+    },
+    "initialApprovalPending": {
+      "textColor": "#6D28D9",
+      "backgroundColor": "#F5F3FF"
+    },
+    "initialApproving": {
+      "textColor": "#A21CAF",
+      "backgroundColor": "#FDF4FF"
+    },
+    "rejected": {
+      "textColor": "#C2410C",
+      "backgroundColor": "#FFF7ED"
+    }
+  },
+  "statuses": {
+    "草稿": "neutral",
+    "已驳回": "rejected",
+    "待复核": "reviewPending",
+    "复核中": "reviewing",
+    "待处理": "processPending",
+    "处理中": "processing",
+    "会签中": "countersigning",
+    "待初审": "initialApprovalPending",
+    "初审中": "initialApproving",
+    "待审批": "approvalPending",
+    "审批中": "approving",
+    "待补录": "supplement",
+    "已办结": "completed",
+    "问题待审核": "rectificationIssueReview",
+    "方案待提交": "rectificationPlanSubmit",
+    "方案待初审": "rectificationPlanInitial",
+    "方案待审批": "rectificationPlanApproval",
+    "整改中": "rectificationInProgress",
+    "结果待初审": "rectificationResultInitial",
+    "结果待审批": "rectificationResultApproval",
+    "已废止": "danger",
+    "审批驳回": "danger",
+    "初审驳回": "danger",
+    "驳回": "danger",
+    "不通过": "danger",
+    "未通过": "danger",
+    "校验未通过": "danger",
+    "未送达": "danger",
+    "未接通": "danger",
+    "解析失败": "danger",
+    "已通过": "success",
+    "通过": "success",
+    "已联系": "success",
+    "已完成": "success",
+    "已反馈": "success",
+    "已关联": "success",
+    "导入成功": "success",
+    "导入中": "info",
+    "启用": "success",
+    "正常": "success",
+    "运行中": "success",
+    "成功": "success",
+    "已配置": "success",
+    "停用": "warning",
+    "已暂停": "warning",
+    "删除": "danger",
+    "失败": "danger",
+    "待提交": "rejected",
+    "问题待提交": "reviewPending"
+  },
+  "fallbackRules": [
+    {
+      "keywords": [
+        "逾期",
+        "驳回",
+        "失败",
+        "不通过",
+        "未送达",
+        "未接通",
+        "废止"
+      ],
+      "palette": "danger"
+    },
+    {
+      "keywords": [
+        "完成",
+        "成功",
+        "通过",
+        "办结",
+        "联系",
+        "反馈",
+        "关联"
+      ],
+      "palette": "success"
+    },
+    {
+      "keywords": [
+        "审批",
+        "审核"
+      ],
+      "palette": "purple"
+    },
+    {
+      "keywords": [
+        "处理中",
+        "整改中"
+      ],
+      "palette": "warning"
+    },
+    {
+      "keywords": [
+        "待",
+        "提交",
+        "导入"
+      ],
+      "palette": "info"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>edit1</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-128, -2225)">
+            <g id="edit1" transform="translate(128, 2225)">
+                <rect id="矩形" fill-opacity="0.01" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="32" height="32"></rect>
+                <g id="edit" transform="translate(3, 2)" stroke="#909399" stroke-width="2">
+                    <path d="M12.3620305,1.35108105 L20.149778,5.73252431 L8.86806085,24.7809079 L2.51486968,26.7290801 L1.06423197,20.4266169 L12.3620305,1.35108105 Z" id="形状-path" fill-rule="nonzero"></path>
+                    <line x1="12" y1="27" x2="26" y2="27" id="路径-35"></line>
+                    <line x1="10" y1="6" x2="17" y2="10" id="路径-36"></line>
+                    <line x1="2" y1="18" x2="10" y2="23" id="路径-37" transform="translate(6, 20.5) rotate(-2.0054) translate(-6, -20.5)"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

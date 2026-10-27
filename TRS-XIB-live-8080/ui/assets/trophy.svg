@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>trophy</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-256, -3033)">
+            <g id="trophy" transform="translate(256, 3033)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <path d="M9,3 L23,3 C23.5522847,3 24,3.44771525 24,4 L24,13 C24,17.418278 20.418278,21 16,21 C11.581722,21 8,17.418278 8,13 L8,4 C8,3.44771525 8.44771525,3 9,3 Z" id="矩形" stroke="#909399" stroke-width="2"></path>
+                <path d="M8,7 L4.15722655,7.00000376 C3.60494388,6.99848966 3.15600289,7.4449758 3.15448879,7.99725848 C3.15433791,8.05229255 3.15873042,8.10724517 3.16762156,8.1615565 C3.92382262,12.7205008 5.53450521,15 8,15" id="路径-8" stroke="#909399" stroke-width="2"></path>
+                <path d="M29,7 L25.1572266,7.00000376 C24.6049439,6.99848966 24.1560029,7.4449758 24.1544888,7.99725848 C24.1543379,8.05229255 24.1587304,8.10724517 24.1676216,8.1615565 C24.9238226,12.7205008 26.5345052,15 29,15" id="路径-8" stroke="#909399" stroke-width="2" transform="translate(26.5, 11) scale(-1, 1) translate(-26.5, -11)"></path>
+                <line x1="16" y1="29" x2="16" y2="21" id="路径-9" stroke="#909399" stroke-width="2"></line>
+                <line x1="10" y1="29" x2="22" y2="29" id="路径-10" stroke="#909399" stroke-width="2"></line>
+            </g>
+        </g>
+    </g>
+</svg>

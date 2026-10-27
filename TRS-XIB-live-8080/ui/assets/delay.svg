@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>delay</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-512, -517)">
+            <g id="delay" transform="translate(512, 517)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-30" transform="translate(2, 2)" fill="#909399">
+                    <path d="M19,0 L21,0 L21,3 L26,3 C26.5522847,3 27,3.44771525 27,4 L27,7 L27,7 L0,7 L0,4 C0,3.44771525 0.44771525,3 1,3 L6,3 L6,3 L6,0 L8,0 L8,3 L19,3 L19,0 Z" id="路径"></path>
+                    <path d="M27,9 L27.0006464,14.2922591 C25.4082996,12.8667953 23.3053753,12 21,12 C16.0294373,12 12,16.0294373 12,21 C12,23.3053753 12.8667953,25.4082996 14.2922591,27.0006464 L1,27 C0.44771525,27 0,26.5522847 0,26 L0,9 L27,9 Z" id="形状结合"></path>
+                    <path d="M21,14 C24.8659932,14 28,17.1340068 28,21 C28,24.8659932 24.8659932,28 21,28 C17.1340068,28 14,24.8659932 14,21 C14,17.1340068 17.1340068,14 21,14 Z M22,17 L20,17 L20,22 L25,22 L25,20 L22,20 L22,17 Z" id="形状"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

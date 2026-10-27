@@ -1,0 +1,11 @@
+.netlify/
+node_modules/
+test-results/
+playwright-report/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+
+# 统计模块离线构建的临时产物
+tools/.statistics-tailwind-build.html

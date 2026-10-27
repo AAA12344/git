@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>pie-chart</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-640, -2781)">
+            <g id="pie-chart" transform="translate(640, 2781)">
+                <rect id="矩形" fill-opacity="0.01" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="32" height="32"></rect>
+                <path d="M14.0242785,4.08601604 C7.81621231,4.81633803 3,10.0957257 3,16.5 C3,23.4035594 8.59644063,29 15.5,29 C21.8840964,29 27.1503834,24.2140886 27.9069782,18.034359" id="路径" stroke="#909399" stroke-width="2"></path>
+                <path d="M16.5,3.00049137 C17.9974005,3.01256436 19.4468089,3.27758484 20.8480933,3.79643379 C22.5354945,4.42122223 24.0265872,5.38243433 25.3223447,6.67854523 C26.6181373,7.97469104 27.5791042,9.46623586 28.2037387,11.1541412 C28.7225088,12.555977 28.9874718,14.0059587 28.9995111,15.5039542 L16.5,15.5039542 Z" id="形状-path" stroke="#909399" stroke-width="2" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

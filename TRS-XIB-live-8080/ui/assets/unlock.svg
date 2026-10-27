@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>unlock</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1024, -1117)">
+            <g id="unlock" transform="translate(1024, 1117)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-21" transform="translate(5, 3)" stroke="#909399" stroke-width="2">
+                    <rect id="矩形" x="0" y="10" width="22" height="16" rx="2"></rect>
+                    <line x1="11" y1="15" x2="11" y2="21" id="路径-29" stroke-linecap="round"></line>
+                    <path d="M4,10 L4,7 C4,3.13400675 7.13400675,0 11,0 C13.803107,0 16.2213917,1.6476202 17.3392401,4.02724657" id="路径" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

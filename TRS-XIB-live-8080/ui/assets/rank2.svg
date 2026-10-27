@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="33px" viewBox="0 0 32 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>rank2</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#B6D9F4" offset="0%"></stop>
+            <stop stop-color="#E4EFFE" offset="100%"></stop>
+        </linearGradient>
+        <ellipse id="path-2" cx="13.5" cy="12" rx="10.8" ry="10.6666667"></ellipse>
+        <filter x="-23.1%" y="-18.8%" width="146.3%" height="146.9%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.461222746   0 0 0 0 0.686890477   0 0 0 0 0.859459918  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-512, -3032)">
+            <g id="rank2" transform="translate(512, 3033)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <g id="icon2" transform="translate(3, 0)">
+                    <rect id="矩形" x="0" y="0" width="27" height="32"></rect>
+                    <path d="M21.6,18.6666667 L21.6,30.6666667 L17.55,27.9996667 L17.55,18.6666667 L21.6,18.6666667 Z M9.45,27.9996667 L5.4,30.6666667 L5.4,18.6666667 L9.45,18.6666667 L9.45,27.9996667 Z" id="形状结合" fill="#5799F0"></path>
+                    <polygon id="路径-6" fill="#5799F0" opacity="0.600000024" points="10.8 21.3333333 10.8 28 13.5 25.3333333 16.2 28 16.2 21.3333333"></polygon>
+                    <g id="椭圆形">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <text id="2" font-family="PingFangSC-Semibold, PingFang SC" font-size="16" font-weight="500" fill="#82A8C9">
+                        <tspan x="9.375" y="17">2</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>收起</title>
+    <g id="➣-2.3-数据展示" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="数据展示" transform="translate(-107, -1327)" fill="#909399">
+            <g id="编组-9" transform="translate(80, 1284)">
+                <g id="中心" transform="translate(27, 34)">
+                    <g id="收起" transform="translate(0, 9)">
+                        <path d="M13,0 C14.1045695,0 15,0.8954305 15,2 L15,13 C15,14.1045695 14.1045695,15 13,15 L2,15 C0.8954305,15 0,14.1045695 0,13 L0,2 C0,0.8954305 0.8954305,0 2,0 L13,0 Z M13,1 L2,1 C1.48716416,1 1.06449284,1.38604019 1.00672773,1.88337887 L1,2 L1,13 C1,13.5128358 1.38604019,13.9355072 1.88337887,13.9932723 L2,14 L13,14 C13.5128358,14 13.9355072,13.6139598 13.9932723,13.1166211 L14,13 L14,2 C14,1.48716416 13.6139598,1.06449284 13.1166211,1.00672773 L13,1 Z" id="矩形" fill-rule="nonzero"></path>
+                        <rect id="矩形" x="4" y="7" width="7" height="1"></rect>
+                        <rect id="矩形" transform="translate(7.5, 7.5) rotate(-270) translate(-7.5, -7.5)" x="4" y="7" width="7" height="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,127 @@
+"use strict";
+
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const vm = require("node:vm");
+
+const root = path.resolve(__dirname, "..");
+const seed = require(path.join(root, "data", "seed-data.json"));
+const workflow = require(path.join(root, "data", "workflow-schema.json"));
+const ticketMachine = workflow.documentStateMachines.ticket;
+assert.ok(!ticketMachine.statuses.includes("待补录"));
+assert.equal(ticketMachine.transitions.submitProcessing["待补录"], undefined);
+assert.equal(ticketMachine.transitions.reject["待审批"], "处理中");
+assert.equal(ticketMachine.transitions.reject["审批中"], "处理中");
+assert.equal(ticketMachine.transitions.withdrawSubmission["待复核"], "待提交");
+assert.equal(ticketMachine.transitions.withdrawSubmission["待处理"], "待提交");
+assert.equal(workflow.documentStateMachines.subprocess.transitions.withdrawSubmission["待审批"], undefined, "待审批不是提交后的可撤回紧邻节点");
+const organizationTree = require(path.join(root, "data", "organization-tree.json"));
+const sandbox = { window: { XIB_PROTOTYPE_CONFIG: { seedData: seed, organizationTree } } };
+vm.createContext(sandbox);
+vm.runInContext(fs.readFileSync(path.join(root, "src/modules/complaints/work-pool.js"), "utf8"), sandbox);
+const pool = sandbox.window.XIBComplaintWorkPool;
+
+const toRows = records => records.map(record => [record.id, record.type, record.customer || record.relatedTicketId || "", record.subject || record.customer || "", record.org, record.status]);
+const tickets = toRows(seed.lists.tickets);
+const subprocesses = toRows(seed.lists.subprocesses);
+const rectifications = toRows(seed.lists.rectifications);
+
+const ticketModel = pool.model(tickets, { task: "ticket-process", view: "workbench", tab: "todo" });
+assert.ok(ticketModel.workbenchTodo.every(row => row[5] === "处理中"));
+assert.ok(ticketModel.workbenchTodo.some(row => row[5] === "处理中"), "ticket workbench missing 处理中");
+assert.ok(ticketModel.workbenchAll.every(row => !["已办结", "已废止", "草稿", "待提交", "待复核", "复核中", "待处理"].includes(row[5])));
+assert.ok(ticketModel.organization.some(row => row[0] === "XF202607210008" && row[5] === "待处理"), "unclaimed ticket should stay in organization pool");
+assert.ok(ticketModel.organization.every(row => !["待复核", "复核中"].includes(row[5])));
+assert.ok(ticketModel.subordinate.every(row => ["待处理", "处理中", "会签中", "待初审", "初审中", "待审批", "审批中"].includes(row[5])));
+assert.equal(ticketModel.organization.some(row => ticketModel.workbenchAll.some(mine => mine[0] === row[0])), true, "机构工单池应包含本机构范围内的全部未办结工单");
+assert.ok(ticketModel.subordinate.some(row => row[0] === "JY202607240017"));
+assert.ok(ticketModel.organization.length > 0, "ticket organization pool should have samples");
+assert.ok(ticketModel.subordinate.length > 0, "ticket subordinate pool should have samples");
+const copiedTicketIds = new Set(seed.lists.tickets.filter(row => (row.copiedTo || []).includes("陈敏慧-60157")).map(row => row.id));
+assert.ok(ticketModel.workbenchAll.some(row => copiedTicketIds.has(row[0])), "copy relationship must preserve genuinely assigned workbench tasks");
+assert.ok(ticketModel.organization.some(row => copiedTicketIds.has(row[0])), "ticket organization pool missing copied sample");
+assert.ok(ticketModel.subordinate.some(row => copiedTicketIds.has(row[0])), "ticket subordinate pool missing copied sample");
+const claimedTicket = [...tickets.find(row => row[0] === "XF202607210008")];
+pool.advance("ticket", claimedTicket[0], "处理中");
+claimedTicket[5] = "处理中";
+const claimedTicketModel = pool.model([claimedTicket], { task: "ticket-process", view: "workbench", tab: "todo" });
+assert.equal(claimedTicketModel.workbenchTodo.length, 1, "processing an organization-pool ticket should claim it into workbench");
+const supervisionRows = [["DH209912310001", "督导函", "TS202607230012", "陈晓敏", "厦门分行", "待处理"]];
+const subprocessModel = pool.model(subprocesses.concat(supervisionRows), { task: "subprocess-process", view: "workbench", tab: "todo" });
+assert.ok(subprocessModel.workbenchTodo.some(row => row[0] === "YT202607300010"));
+assert.ok(subprocessModel.workbenchTodo.every(row => ["处理中", "待补录"].includes(row[5])));
+assert.ok(subprocessModel.workbenchAll.every(row => !(row[1] === "督导函" && row[5] === "待处理")), "pending supervision letter leaked into workbench");
+assert.ok(subprocessModel.organization.some(row => row[1] === "督导函" && row[5] === "待处理"), "pending supervision letter missing from organization pool");
+assert.ok(subprocessModel.subordinate.every(row => row[1] !== "督导函"), "supervision letter leaked into subordinate pool");
+assert.ok(subprocessModel.workbenchAll.every(row => !["待复核", "复核中", "待处理"].includes(row[5])));
+assert.ok(subprocessModel.organization.some(row => row[0] === "DC202607310099" && row[5] === "待处理"), "unclaimed subprocess should stay in organization pool");
+const claimedSubprocess = [...subprocesses.find(row => row[0] === "DC202607310099")];
+pool.advance("subprocess", claimedSubprocess[0], "处理中");
+claimedSubprocess[5] = "处理中";
+const claimedSubprocessModel = pool.model([claimedSubprocess], { task:"subprocess-process", view:"org", tab:"all" });
+assert.equal(claimedSubprocessModel.workbenchTodo.length, 1, "领取子单后应进入我的工作台");
+assert.equal(claimedSubprocessModel.organization.length, 0, "领取子单后不应继续留在机构工单池");
+const directlyAssignedSubprocess = [["YH209912310001", "异议核查", "TS202607230012", "直接派发子单", pool.identity("handler").organization, "处理中"]];
+pool.assign("subprocess", directlyAssignedSubprocess[0][0], pool.identity("handler").actor);
+const directlyAssignedSubprocessModel = pool.model(directlyAssignedSubprocess, { task:"subprocess-process", view:"workbench", tab:"todo" });
+assert.equal(directlyAssignedSubprocessModel.workbenchTodo.length, 1, "直接指定派发人的处理中子单应进入该处理人的我的工作台");
+assert.ok(subprocessModel.organization.every(row => !["待复核", "复核中"].includes(row[5])));
+assert.ok(subprocessModel.subordinate.every(row => ["待处理", "处理中", "待初审", "初审中", "待审批", "审批中"].includes(row[5])));
+const accountabilitySubprocess = [["WZ209912310001", "投诉问责", "TS202607230012", "自动触发的投诉问责", pool.identity("approver").organization, "待处理"]];
+const accountabilityOrganization = pool.model(accountabilitySubprocess, { task: "subprocess-process", role: "approver", view: "org", tab: "all" });
+assert.equal(accountabilityOrganization.organization.length, 1, "待处理的投诉问责单应进入消保人员所在机构工单池");
+pool.advance("subprocess", "WZ209912310001", "处理中");
+accountabilitySubprocess[0][5] = "处理中";
+const accountabilityWorkbench = pool.model(accountabilitySubprocess, { task: "subprocess-process", role: "approver", view: "workbench", tab: "todo" });
+assert.equal(accountabilityWorkbench.workbenchTodo.length, 1, "领取投诉问责单后应进入消保人员的我的工作台");
+for (const status of ["处理中", "待补录"]) assert.ok(subprocessModel.workbenchTodo.some(row => row[5] === status), "subprocess workbench missing " + status);
+assert.ok(subprocessModel.organization.length > 0, "subprocess organization pool should have samples");
+assert.ok(subprocessModel.subordinate.length > 0, "subprocess subordinate pool should have samples");
+const clearedSubprocess = [...subprocessModel.subordinate.find(row => row[5] === "待处理")];
+pool.clearTransferAssignment("subprocess", clearedSubprocess[0], "subprocess-process", "handler");
+clearedSubprocess[4] = pool.identity("handler").organization;
+const clearedSubprocessModel = pool.model([clearedSubprocess], { task: "subprocess-process", view: "org", tab: "all" });
+assert.equal(clearedSubprocessModel.organization.length, 1, "cleared subordinate subprocess assignment should return it to the organization pool");
+assert.equal(clearedSubprocessModel.workbenchAll.length, 0, "cleared subordinate subprocess assignment should not enter the personal workbench");
+const approvalRows = tickets.concat(subprocesses).filter(row => ["待复核", "复核中", "待处理", "处理中", "会签中", "待初审", "初审中", "待审批", "审批中"].includes(row[5])).map(row => [row[0], seed.runtimeDefaults.workPool.assignments.ticket[row[0]] ? "工单审批" : "子流程审批", row[1], "", row[4], "", "", "", "", "", row[5]]);
+const approvalRequest = { task: "approval", statusIndex: 10, kindForRow: row => row[1] === "工单审批" ? "ticket" : "subprocess" };
+const reviewerWorkbench = pool.model(approvalRows, { ...approvalRequest, role: "reviewer", view: "workbench", tab: "todo" });
+assert.ok(reviewerWorkbench.workbenchTodo.every(row => ["待复核", "复核中"].includes(row[10])));
+for (const status of ["待复核", "复核中"]) assert.ok(reviewerWorkbench.workbenchTodo.some(row => row[10] === status), "reviewer workbench missing " + status);
+const reviewerSubordinate = pool.model(approvalRows, { ...approvalRequest, role: "reviewer", view: "subOrg", tab: "all" });
+assert.equal(reviewerSubordinate.rows.length, 0, "reviewer subordinate approval pool must stay empty");
+const approverWorkbench = pool.model(approvalRows, { ...approvalRequest, role: "approver", view: "workbench", tab: "todo" });
+assert.ok(approverWorkbench.workbenchTodo.every(row => ["会签中", "待初审", "初审中", "待审批", "审批中"].includes(row[10])));
+for (const status of ["会签中", "待初审", "初审中", "待审批", "审批中"]) assert.ok(approverWorkbench.workbenchTodo.some(row => row[10] === status), "approver workbench missing " + status);
+const approverOrganization = pool.model(approvalRows, { ...approvalRequest, role: "approver", view: "org", tab: "all" });
+assert.ok(approverOrganization.rows.every(row => ["待处理", "处理中", "待初审", "初审中", "待审批", "审批中"].includes(row[10])));
+assert.ok(approverOrganization.rows.some(row => ["待处理", "处理中"].includes(row[10])), "approver organization pool should include processing-stage records");
+const approverSubordinate = pool.model(approvalRows, { ...approvalRequest, role: "approver", view: "subOrg", tab: "all" });
+assert.ok(approverSubordinate.rows.every(row => ["待处理", "处理中", "待初审", "初审中", "待审批", "审批中"].includes(row[10])));
+assert.ok(approverSubordinate.rows.length > 0, "approver subordinate pool should have samples");
+pool.advance("ticket", "TS202607230012", "待审批");
+const transitionedApproval = pool.model([["TS202607230012", "工单审批", "投诉单", "", "总行", "", "", "", "", "", "待审批"]], { ...approvalRequest, role:"approver", view:"workbench", tab:"todo" });
+assert.equal(transitionedApproval.workbenchTodo[0][0], "TS202607230012");
+pool.assign("rectification", "ZG202607310101", "郭颖-18307");
+assert.equal(pool.assignment("rectification", "ZG202607310101").assignee, "郭颖-18307", "手工选择的下一节点人员未写入工单池");
+assert.ok(pool.assignment("rectification", "ZG202607310101").participants.includes("郭颖-18307"), "手工选择的下一节点人员未写入参与人历史");
+pool.assign("rectification", "ZG202607310101", pool.identity("approver").actor);
+const snapshot = pool.serialize();
+pool.advance("ticket", "TS202607230012", "待处理");
+pool.hydrate(snapshot);
+assert.equal(pool.model([["TS202607230012", "工单审批", "投诉单", "", "总行", "", "", "", "", "", "待审批"]], { ...approvalRequest, role:"approver", view:"workbench", tab:"todo" }).workbenchTodo.length, 1);
+const rectificationTodoStatuses = {
+  "rectification-create": ["草稿", "问题待提交"],
+  "rectification-process": ["方案待提交", "整改中"],
+  "rectification-approve": ["问题待审核", "方案待初审", "方案待审批", "结果待初审", "结果待审批"]
+};
+for (const task of Object.keys(rectificationTodoStatuses)) {
+  const model = pool.model(rectifications, { task, view: "workbench", tab: "todo" });
+  for (const status of rectificationTodoStatuses[task]) assert.ok(model.workbenchTodo.some(row => row[5] === status), task + " workbench missing " + status);
+  assert.ok(model.workbenchAll.every(row => !["已办结", "已废止"].includes(row[5])));
+  assert.ok(model.organization.length > 0, task + " organization pool should have samples");
+  assert.ok(model.subordinate.length > 0, task + " subordinate pool should have samples");
+}
+
+console.log("Complaint work-pool checks passed.");

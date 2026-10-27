@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>download</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1024, -2477)">
+            <g id="download" transform="translate(1024, 2477)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-6" transform="translate(4, 4)" stroke="#909399" stroke-linecap="round" stroke-width="2">
+                    <line x1="12" y1="0" x2="12" y2="17" id="路径-3"></line>
+                    <path d="M0,15 L-2.22044605e-16,20.8 C-4.4408921e-16,21.4627417 0.5372583,22 1.2,22 L22.8,22 C23.4627417,22 24,21.4627417 24,20.8 L24,15 L24,15" id="路径-2"></path>
+                    <polyline id="路径-4" transform="translate(12, 13.6667) scale(1, -1) translate(-12, -13.6667)" points="4.8 17.3333333 12 10 19.2 17.3333333"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

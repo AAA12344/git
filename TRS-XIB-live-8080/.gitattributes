@@ -1,0 +1,15 @@
+* text=auto eol=lf
+
+*.png binary
+*.webp binary
+*.xlsx binary
+*.woff binary
+*.woff2 binary
+
+# 生成文件与第三方资源不参与 diff 统计
+data/prototype-data.runtime.js linguist-generated=true
+data/china-geojson.runtime.js linguist-generated=true
+statistics-module.js linguist-generated=true
+statistics-module.css linguist-generated=true
+ui/vendor/*.js linguist-vendored=true
+statistics-embedded.html linguist-vendored=true

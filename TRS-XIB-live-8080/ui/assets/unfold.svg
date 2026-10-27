@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>unfold</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1280, -2477)">
+            <g id="unfold" transform="translate(1280, 2477)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <path d="M22,11.4 L28,16.8 L22,21.12 L22,11.4 Z M4,5 L28,5 L28,9 L4,9 Z M4,23 L28,23 L28,27 L4,27 Z M4,14 L20,14 L20,18 L4,18 Z" id="形状结合" fill="#909399" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

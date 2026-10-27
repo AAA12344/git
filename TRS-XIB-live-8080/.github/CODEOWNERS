@@ -1,0 +1,29 @@
+* @sophia6703
+
+# List one or more users or visible organization teams with write access. Any one listed code-owner approval satisfies the code-owner requirement; use branch rules for multiple required approvals.
+# Put more-specific submodule rules after broad module rules, and list all co-maintainers on the same rule.
+/src/modules/home/ @sophia6703
+/src/modules/complaints/ @sophia6703
+/src/modules/consumer-review/ @sophia6703
+/src/modules/statistics/ @sophia6703
+/src/modules/report-center/ @sophia6703
+/src/modules/education/ @sophia6703
+/src/modules/notifications/ @sophia6703
+/src/modules/admin/ @sophia6703
+
+# Shared and generated boundaries remain owner-reviewed.
+/data/ @sophia6703
+# Add every field maintainer to the corresponding source rule; multiple owners may share one rule.
+/data/forms/main-work-orders.json @sophia6703
+/data/forms/subprocesses.json @sophia6703
+/data/forms/shared.json @sophia6703
+/tools/ @sophia6703
+/.github/ @sophia6703
+/AGENTS.md @sophia6703
+/package.json @sophia6703
+/package-lock.json @sophia6703
+/app.js @sophia6703
+/styles.css @sophia6703
+/statistics-module.source.jsx @sophia6703
+/statistics-module.js @sophia6703
+/statistics-module.css @sophia6703

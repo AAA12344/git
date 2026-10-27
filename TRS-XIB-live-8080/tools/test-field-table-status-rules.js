@@ -1,0 +1,120 @@
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+
+const root = path.resolve(__dirname, "..");
+const main = JSON.parse(fs.readFileSync(path.join(root, "data/forms/main-work-orders.json"), "utf8"));
+const subprocesses = JSON.parse(fs.readFileSync(path.join(root, "data/forms/subprocesses.json"), "utf8"));
+const app = fs.readFileSync(path.join(root, "app.js"), "utf8");
+const styles = fs.readFileSync(path.join(root, "styles.css"), "utf8");
+const mainFields = main.work_orders.processing_fields;
+const byName = (fields, name) => fields.find(field => field.name === name);
+const allMainFields = [];
+(function collect(value) {
+  if (Array.isArray(value)) return value.forEach(collect);
+  if (!value || typeof value !== "object") return;
+  if (value.name) allMainFields.push(value);
+  Object.values(value).forEach(collect);
+})(main.work_orders);
+const mainByName = name => allMainFields.find(field => field.name === name);
+
+const judgment = byName(mainFields, "判断依据");
+assert(judgment, "投诉单处理阶段应包含判断依据");
+assert.deepEqual(judgment.types, ["投诉单"]);
+assert.equal(judgment.required, true);
+assert.equal(judgment.type, "textarea");
+assert.equal(judgment.max, 2000);
+for (const name of ["事件还原", "处理依据", "处置意见", "黑灰产原因", "监管核查情况", "整改举措", "未采纳原因", "优化措施", "情况说明"]) {
+  assert.equal(byName(mainFields, name)?.max, 2000, `${name} 应限制 2000 字并显示计数`);
+}
+
+const correction = subprocesses.subprocesses.field_sections["投诉校正"][0].fields;
+assert.equal(subprocesses.subprocesses.field_sections["督导函"], undefined, "督导函不得回迁到子单模块");
+assert.equal(byName(correction, "客户类型")?.type, "readonly", "客户类型应继承关联主单并只读");
+assert.equal(byName(correction, "客户类型")?.prefillFrom?.field, "客户类型");
+assert.equal(byName(correction, "所属业务条线")?.type, "businessLinePicker");
+assert.equal(byName(correction, "业务办理渠道")?.cascader, "channel");
+assert.equal(byName(correction, "业务类别")?.cascader, "business");
+assert.equal(byName(correction, "投诉/信访原因")?.cascader, "reason");
+assert.equal(byName(correction, "被投诉业务类别")?.dictionary, "jinguanBusinessCategory");
+assert.equal(byName(correction, "修正投诉产品标签")?.dictionary, "rectificationProduct");
+assert.equal(byName(correction, "修正投诉诉求标签")?.dictionary, "appealTag");
+assert.equal(byName(correction, "事件还原")?.type, "textarea");
+assert.equal(byName(correction, "事件还原")?.max, 2000);
+assert.equal(byName(correction, "处置意见")?.type, "textarea");
+assert.equal(byName(correction, "处置意见")?.max, 2000);
+assert.equal(byName(correction, "最后处置意见"), undefined);
+assert.match(app, /关联子单处理结果/, "关联子单列表应展示已办结子单回显字段");
+
+assert.equal(mainByName("客户姓名")?.required, true, "四类主单客户姓名均应必填");
+assert.equal(mainByName("客户事件时间")?.type, "datetime");
+assert.equal(mainByName("客户事件时间")?.required, true);
+assert.equal(mainByName("处置期限")?.required, true);
+assert.equal(mainByName("附件")?.requiredBy?.投诉单, true);
+assert.equal(mainByName("附件")?.requiredBy?.信访单, true);
+assert.equal(mainByName("投诉对象")?.required, undefined, "投诉对象按最新字段表为非必填");
+assert.equal(mainByName("投诉/信访对象")?.requiredBy, undefined, "信访对象按最新字段表为非必填");
+assert.equal(mainByName("监管转送次数")?.type, "number");
+assert.equal(mainByName("录音编号")?.type, "readonly");
+assert.equal(mainByName("处置员反馈时间")?.required, true);
+assert.equal(mainByName("是否超期")?.required, true);
+assert.equal(mainByName("超期时长")?.type, "readonly");
+
+const investigation = subprocesses.subprocesses.field_sections["投诉调查"].flatMap(section => section.fields);
+assert.equal(byName(investigation, "附件")?.required, true);
+assert.equal(byName(investigation, "无效投诉事由/有效投诉事由")?.required, true);
+const objection = subprocesses.subprocesses.field_sections["异议核查"].flatMap(section => section.fields);
+assert.equal(byName(objection, "接收机构")?.type, "hierarchyCascader");
+assert.equal(byName(objection, "接收机构")?.dictionary, "roleInstitutionTree");
+assert.equal(byName(objection, "接收机构")?.required, true);
+assert.equal(byName(objection, "接收部门")?.type, "hierarchyCascader");
+assert.equal(byName(objection, "处置员")?.type, "personByDepartment");
+assert.deepEqual(byName(objection, "告知时间")?.requiredWhen, { key: "核查结果是否告知", equals: "是" });
+assert.equal(byName(objection, "处置员反馈时间")?.type, "readonly");
+assert.equal(byName(objection, "是否超期")?.type, "readonly");
+assert.equal(byName(objection, "超期时长")?.type, "readonly");
+const resolution = subprocesses.subprocesses.field_sections["纠纷化解"][0].fields;
+assert.equal(byName(resolution, "调处机构")?.maxLength, 100);
+assert.equal(byName(resolution, "调处编号")?.maxLength, 50);
+assert.deepEqual(byName(resolution, "调处方式")?.requiredWhen, { key: "化解方式", equals: "调解" });
+assert.equal(byName(resolution, "化解金额")?.type, "amount");
+assert.equal(byName(resolution, "化解金额")?.min, 0.01);
+assert.equal(byName(resolution, "化解金额")?.max, 99999999.99);
+assert.equal(byName(resolution, "化解金额")?.unit, "元");
+const anomaly = subprocesses.subprocesses.field_sections["异常投诉"][0].fields;
+assert.equal(byName(anomaly, "必要证据要求")?.type, "select");
+assert.equal(byName(anomaly, "必要证据要求")?.options?.length, 6);
+assert.equal(subprocesses.subprocesses.base_field_rules.type_fields["异常投诉"].find(field => field.name === "投诉机构")?.editable, false);
+const accountability = subprocesses.subprocesses.field_sections["投诉问责"];
+assert.equal(byName(accountability[0].fields, "处置期限"), undefined);
+assert.equal(byName(accountability[0].fields, "问责机构")?.dictionary, "branchInstitutionTree");
+assert.deepEqual(byName(accountability[0].fields, "问责机构")?.requiredWhen, { key: "是否问责", equals: "是" });
+assert.equal(byName(accountability[1].fields, "是否问责")?.required, true);
+assert.equal(byName(accountability[1].fields, "问责对象")?.multiple, true);
+assert.match(app, /dictionary === "roleInstitutionTree"/, "异议核查接收机构应支持按当前角色过滤机构树");
+assert.match(app, /dictionary === "branchInstitutionTree"/, "投诉问责应支持总行\/分行一级机构树");
+assert.match(app, /field\.strictOptions/, "问责对象应清除不属于所选部门的旧值");
+assert.match(app, /data-amount-input/, "纠纷化解金额应使用金额输入控件");
+assert.match(app, /field\.maxLength/, "普通文本框应支持字段表的最大长度配置");
+assert.match(app, /function formatAmountText/, "金额失焦后应按千分位格式化显示");
+assert.match(app, /最多支持上传30个文件，单个文件最大100M/, "应保留最新附件数量与单文件大小限制");
+assert.equal(byName(correction, "附件上传")?.prefillFrom?.field, "附件");
+const extensionSupplement = subprocesses.subprocesses.supplement_sections["延长申请"][0].fields;
+assert.equal(byName(extensionSupplement, "告知延期方式")?.type, "readonly");
+assert.equal(byName(subprocesses.subprocesses.field_sections["撤销投诉"][0].fields, "证明材料")?.required, undefined);
+assert.equal(byName(subprocesses.subprocesses.field_sections["投诉问责"][0].fields, "证明材料（问责信息）")?.required, undefined);
+assert.match(app, /maxlength="2000" data-approval-opinion/, "审批、初审、复核及会签意见应统一限制 2000 字");
+assert(!/<dt>关联关系<\/dt>/.test(app), "关联工单基础信息不应展示关联关系字段");
+for (const label of ["创建人所属机构", "创建人所属部门"]) {
+  assert(app.includes(`<dt>${label}</dt>`), `关联工单基础信息缺少${label}`);
+}
+assert.match(styles, /\.related-workspace\{[^}]*align-items:stretch/, "关联单据左右区域顶部与面板高度基准应统一");
+assert.match(styles, /\.related-order-list\{[^}]*top:0/, "关联单据左侧列表不应因 sticky top 偏移");
+assert.match(styles, /\.related-workspace>\.panel\{[^}]*margin-top:0/, "关联单据直属面板不应继承相邻 panel 的顶部间距");
+assert.match(styles, /\.approval-editor\{[^}]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/, "审批人和审批结论应按等宽两列对齐");
+assert.match(styles, /\.approval-editor>label \.di-input\{[^}]*width:100%/, "审批人输入框应占满所在列");
+assert.match(styles, /\.approval-editor>\.approval-opinion-field\{[^}]*grid-column:1\/-1/, "审批、复核意见均应独占整行");
+assert.match(styles, /\.countersign-opinion-table\{[^}]*table-layout:fixed/, "会签表格应使用稳定列宽避免错位");
+assert.match(styles, /\.countersign-opinion-table \.countersign-opinion-input\{[^}]*width:100%/, "会签意见输入框应占满所在单元格");
+
+console.log("field table and status rules passed");

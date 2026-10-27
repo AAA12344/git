@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>order</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1024, -1973)">
+            <g id="order" transform="translate(1024, 1973)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <path d="M10,6 L10,8 L22,8 L22,6 L27,6 L27,29 L5,29 L5,6 L10,6 Z M23,22 L9,22 L9,24 L23,24 L23,22 Z M23,14 L9,14 L9,16 L23,16 L23,14 Z M20,3 L20,6 L12,6 L12,3 L20,3 Z" id="形状结合" fill="#909399"></path>
+            </g>
+        </g>
+    </g>
+</svg>

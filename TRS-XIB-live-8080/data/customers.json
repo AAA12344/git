@@ -1,0 +1,612 @@
+{
+  "schemaVersion": "1.0.0",
+  "asOfDate": "2026-08-17",
+  "customers": [
+    {
+      "id": "C202610090002",
+      "status": "正常",
+      "name": "刘女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203199203150024"
+      },
+      "contact": {
+        "mobile": "13800001234"
+      },
+      "demographics": {
+        "birthYear": "1992",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "林海-38102",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202607000001",
+      "status": "正常",
+      "name": "陈晓敏",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180628"
+      },
+      "contact": {
+        "mobile": "13800007621"
+      },
+      "demographics": {
+        "birthYear": "1982",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "林海-38102",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202607000002",
+      "status": "正常",
+      "name": "周先生",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180629"
+      },
+      "contact": {
+        "mobile": "13800007658"
+      },
+      "demographics": {
+        "birthYear": "1983",
+        "gender": "男",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "林海-38102",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202607000003",
+      "status": "正常",
+      "name": "林女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180630"
+      },
+      "contact": {
+        "mobile": "13800007695"
+      },
+      "demographics": {
+        "birthYear": "1984",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "王琳-27519",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202607000004",
+      "status": "正常",
+      "name": "刘女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180631"
+      },
+      "contact": {
+        "mobile": "13800007732"
+      },
+      "demographics": {
+        "birthYear": "1985",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "王琳-27519",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202607000005",
+      "status": "正常",
+      "name": "王女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180632"
+      },
+      "contact": {
+        "mobile": "13800007769"
+      },
+      "demographics": {
+        "birthYear": "1986",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "赵宁-29816",
+        "organization": "总行"
+      }
+    },
+    {
+      "id": "C202607000006",
+      "status": "待核实",
+      "name": "网络用户",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180633"
+      },
+      "contact": {
+        "mobile": "13800007806"
+      },
+      "demographics": {
+        "birthYear": "1987",
+        "gender": "男",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202607000007",
+      "status": "正常",
+      "name": "张女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180634"
+      },
+      "contact": {
+        "mobile": "13800007843"
+      },
+      "demographics": {
+        "birthYear": "1988",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "林海-38102",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202607000008",
+      "status": "正常",
+      "name": "李先生",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180635"
+      },
+      "contact": {
+        "mobile": "13800007880"
+      },
+      "demographics": {
+        "birthYear": "1989",
+        "gender": "男",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "福州市",
+        "district": "鼓楼区"
+      },
+      "relationship": {
+        "manager": "郭颖-18307",
+        "organization": "福州分行"
+      }
+    },
+    {
+      "id": "C202607000009",
+      "status": "正常",
+      "name": "赵女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180636"
+      },
+      "contact": {
+        "mobile": "13800007917"
+      },
+      "demographics": {
+        "birthYear": "1990",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "王琳-27519",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202607000010",
+      "status": "正常",
+      "name": "吴先生",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180637"
+      },
+      "contact": {
+        "mobile": "13800007954"
+      },
+      "demographics": {
+        "birthYear": "1991",
+        "gender": "男",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "上海市",
+        "city": "上海市",
+        "district": "浦东新区"
+      },
+      "relationship": {
+        "manager": "李明-17306",
+        "organization": "上海分行"
+      }
+    },
+    {
+      "id": "C202607000011",
+      "status": "正常",
+      "name": "郑女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180638"
+      },
+      "contact": {
+        "mobile": "13800007991"
+      },
+      "demographics": {
+        "birthYear": "1992",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "林海-38102",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202608000013",
+      "status": "正常",
+      "name": "黄先生",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180640"
+      },
+      "contact": {
+        "mobile": "13800007677"
+      },
+      "demographics": {
+        "birthYear": "1985",
+        "gender": "男",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "泉州市",
+        "district": "丰泽区"
+      },
+      "relationship": {
+        "manager": "王琳-27519",
+        "organization": "泉州分行"
+      }
+    },
+    {
+      "id": "C202608000015",
+      "status": "正常",
+      "name": "孙女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180645"
+      },
+      "contact": {
+        "mobile": "13800007901"
+      },
+      "demographics": {
+        "birthYear": "1990",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "湖里区"
+      },
+      "relationship": {
+        "manager": "周岚-20618",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202608000016",
+      "status": "正常",
+      "name": "钱女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180650"
+      },
+      "contact": {
+        "mobile": "13800007912"
+      },
+      "demographics": {
+        "birthYear": "1987",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "林海-38102",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C201912050118",
+      "status": "已合并",
+      "mergedIntoCustomerId": "C202607000001",
+      "name": "陈晓敏",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180628"
+      },
+      "contact": {
+        "mobile": "13600004412"
+      },
+      "demographics": {
+        "birthYear": "1982",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "思明区"
+      },
+      "relationship": {
+        "manager": "王琳-27519",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202608000099",
+      "status": "资料待补全",
+      "name": "Alex Morgan",
+      "type": "自然人",
+      "identity": {
+        "type": "护照",
+        "number": "EJ9036217"
+      },
+      "contact": {
+        "mobile": ""
+      },
+      "demographics": {
+        "birthYear": "",
+        "gender": "",
+        "domestic": false,
+        "country": "新加坡"
+      },
+      "residence": null,
+      "relationship": {
+        "manager": "苏晴-39108",
+        "organization": "总行"
+      }
+    },
+    {
+      "id": "C202608000100",
+      "status": "正常",
+      "name": "厦门海蓝科技有限公司",
+      "type": "单位客户",
+      "identity": {
+        "type": "统一社会信用代码",
+        "number": "91350200MA8XIB2026"
+      },
+      "contact": {
+        "mobile": "0592-5550188"
+      },
+      "demographics": {
+        "birthYear": "",
+        "gender": "",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "湖里区"
+      },
+      "relationship": {
+        "manager": "赵宁-29816",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "ANON2026080001",
+      "status": "身份未核实",
+      "name": "匿名客户",
+      "type": "身份未核实",
+      "identity": null,
+      "contact": {
+        "mobile": ""
+      },
+      "demographics": {
+        "birthYear": "",
+        "gender": "",
+        "domestic": null,
+        "country": ""
+      },
+      "residence": null,
+      "relationship": {
+        "manager": "",
+        "organization": ""
+      }
+    },
+    {
+      "id": "C202608000017",
+      "status": "正常",
+      "name": "沈佳",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807180655"
+      },
+      "contact": {
+        "mobile": "13800007923"
+      },
+      "demographics": {
+        "birthYear": "1989",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "集美区"
+      },
+      "relationship": {
+        "manager": "林海-38102",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202610000105",
+      "status": "正常",
+      "name": "蔡女士",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807181105"
+      },
+      "contact": {
+        "mobile": "13800008105"
+      },
+      "demographics": {
+        "birthYear": "1990",
+        "gender": "女",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "厦门市",
+        "district": "湖里区"
+      },
+      "relationship": {
+        "manager": "周岚-20618",
+        "organization": "厦门分行"
+      }
+    },
+    {
+      "id": "C202610000114",
+      "status": "正常",
+      "name": "柯先生",
+      "type": "自然人",
+      "identity": {
+        "type": "居民身份证",
+        "number": "350203198807181114"
+      },
+      "contact": {
+        "mobile": "13800008114"
+      },
+      "demographics": {
+        "birthYear": "1985",
+        "gender": "男",
+        "domestic": true,
+        "country": "中华人民共和国"
+      },
+      "residence": {
+        "province": "福建省",
+        "city": "泉州市",
+        "district": "丰泽区"
+      },
+      "relationship": {
+        "manager": "王琳-27519",
+        "organization": "泉州分行"
+      }
+    }
+  ]
+}

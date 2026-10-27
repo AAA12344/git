@@ -1,0 +1,2021 @@
+{
+  "work_orders": {
+    "document_types": [
+      "投诉单",
+      "信访单",
+      "表扬单",
+      "建议单",
+      "舆情单"
+    ],
+    "statuses": [
+      "草稿",
+      "待提交",
+      "待复核",
+      "复核中",
+      "待处理",
+      "处理中",
+      "会签中",
+      "待初审",
+      "初审中",
+      "待审批",
+      "审批中",
+      "已办结",
+      "已废止"
+    ],
+    "entry_sections": [
+      {
+        "id": "basic",
+        "title": "工单信息",
+        "fields": [
+          {
+            "name": "创建人",
+            "type": "readonly",
+            "value": "陈敏慧-60157",
+            "all": true,
+            "required": true
+          },
+          {
+            "name": "创建人所属机构",
+            "type": "readonly",
+            "value": "总行",
+            "all": true,
+            "required": true
+          },
+          {
+            "name": "创建人所属部门",
+            "type": "readonly",
+            "value": "零售金融部客户服务中心",
+            "all": true,
+            "required": true
+          },
+          {
+            "name": "工单编号",
+            "type": "readonly",
+            "value": "提交后系统生成",
+            "all": true,
+            "required": true
+          },
+          {
+            "name": "建单时间",
+            "type": "readonly",
+            "value": "提交时系统生成",
+            "all": true,
+            "required": true
+          },
+          {
+            "name": "工单类型",
+            "type": "workOrderType",
+            "all": true,
+            "required": true,
+            "options": [
+              "投诉单",
+              "信访单",
+              "表扬单",
+              "建议单"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "customer",
+        "title": "客户信息",
+        "fields": [
+          {
+            "name": "客户姓名",
+            "type": "text",
+            "all": true,
+      "required": true,
+            "placeholder": "查询回填或手工录入"
+          },
+          {
+            "name": "证件类型",
+            "type": "select",
+            "all": true,
+            "options": [
+              "居民身份证",
+              "护照",
+              "军官证",
+              "港澳通行证",
+              "统一社会信用代码",
+              "其它证件"
+            ]
+          },
+          {
+            "name": "证件号码",
+            "type": "text",
+            "all": true,
+            "placeholder": "输入客户证件号码"
+          },
+          {
+            "name": "是否有客户编号",
+            "type": "select",
+            "all": true,
+            "required": true,
+            "options": [
+              "是",
+              "否"
+            ]
+          },
+          {
+            "name": "客户编号",
+            "type": "text",
+            "all": true,
+            "requiredWhen": {
+              "key": "是否有客户编号",
+              "equals": "是"
+            },
+            "disabledWhen": {
+              "key": "是否有客户编号",
+              "notEquals": "是"
+            },
+            "placeholder": "输入客户编号",
+            "action": "查询并回填",
+            "secondaryAction": "查看历史工单",
+            "secondaryActionAction": "customer-history",
+            "conditional": "查询条件：客户编号或证件号码或卡号/账号、预留手机号码"
+          },
+          {
+            "name": "投诉人数",
+            "labelBy": {
+              "信访单": "信访人数"
+            },
+            "type": "number",
+            "types": [
+              "投诉单",
+              "信访单"
+            ],
+            "required": true,
+            "defaultValue": "1",
+            "min": 1,
+            "max": 10,
+            "placeholder": "1–10 人"
+          },
+          {
+            "name": "客户类型",
+            "type": "select",
+            "all": true,
+            "required": true,
+            "options": [
+              "自然人",
+              "非自然人"
+            ]
+          },
+          {
+            "name": "卡号/账号",
+            "type": "text",
+            "all": true,
+            "placeholder": "输入卡号或账号"
+          },
+          {
+            "name": "预留手机号码",
+            "type": "text",
+            "all": true,
+            "placeholder": "查询回填或手工录入"
+          },
+          {
+            "name": "所属客户经理",
+            "type": "personSearch",
+            "all": true,
+            "placeholder": "输入姓名首字搜索或手工录入",
+            "searchMode": "prefix",
+            "options": [
+              "林海-38102",
+              "王琳-27519",
+              "赵宁-29816",
+              "郭颖-18307",
+              "李明-17306",
+              "周岚-20618",
+              "苏晴-39108",
+              "陈志强-32018"
+            ]
+          },
+          {
+            "name": "客户经理所属机构",
+            "type": "text",
+            "all": true,
+            "placeholder": "查询回填或手工录入"
+          },
+          {
+            "name": "出生年份",
+            "type": "year",
+            "all": true,
+            "placeholder": "选择出生年份"
+          },
+          {
+            "name": "客户性别",
+            "type": "select",
+            "all": true,
+            "options": [
+              "男",
+              "女",
+              "未知"
+            ]
+          },
+          {
+            "name": "是否境内",
+            "type": "select",
+            "all": true,
+            "options": [
+              "是",
+              "否"
+            ]
+          },
+          {
+            "name": "国家地区",
+            "type": "select",
+            "all": true,
+            "options": [
+              "中华人民共和国",
+              "阿尔巴尼亚",
+              "阿尔及利亚",
+              "阿富汗",
+              "阿根廷",
+              "阿拉伯联合酋长国",
+              "阿鲁巴",
+              "阿曼",
+              "阿塞拜疆",
+              "埃及",
+              "埃塞俄比亚",
+              "爱尔兰",
+              "爱沙尼亚",
+              "安道尔",
+              "安哥拉",
+              "安圭拉",
+              "安提瓜和巴布达",
+              "奥地利",
+              "奥兰群岛",
+              "澳大利亚",
+              "巴巴多斯",
+              "巴布亚新几内亚",
+              "巴哈马",
+              "巴基斯坦",
+              "巴拉圭",
+              "巴勒斯坦领土",
+              "巴林",
+              "巴拿马",
+              "巴西",
+              "白俄罗斯",
+              "百慕大",
+              "保加利亚",
+              "北马里亚纳群岛",
+              "北马其顿",
+              "贝宁",
+              "比利时",
+              "冰岛",
+              "波多黎各",
+              "波兰",
+              "波斯尼亚和黑塞哥维那",
+              "玻利维亚",
+              "伯利兹",
+              "博茨瓦纳",
+              "不丹",
+              "布基纳法索",
+              "布隆迪",
+              "布韦岛",
+              "朝鲜",
+              "赤道几内亚",
+              "丹麦",
+              "德国",
+              "东帝汶",
+              "多哥",
+              "多米尼加共和国",
+              "多米尼克",
+              "俄罗斯",
+              "厄瓜多尔",
+              "厄立特里亚",
+              "法国",
+              "法罗群岛",
+              "法属波利尼西亚",
+              "法属圭亚那",
+              "法属南部领地",
+              "法属圣马丁",
+              "梵蒂冈",
+              "菲律宾",
+              "斐济",
+              "芬兰",
+              "佛得角",
+              "福克兰群岛",
+              "冈比亚",
+              "刚果（布）",
+              "刚果（金）",
+              "哥伦比亚",
+              "哥斯达黎加",
+              "格林纳达",
+              "格陵兰",
+              "格鲁吉亚",
+              "根西岛",
+              "古巴",
+              "瓜德罗普",
+              "关岛",
+              "圭亚那",
+              "哈萨克斯坦",
+              "海地",
+              "韩国",
+              "荷兰",
+              "荷属加勒比区",
+              "荷属圣马丁",
+              "赫德岛和麦克唐纳群岛",
+              "黑山",
+              "洪都拉斯",
+              "基里巴斯",
+              "吉布提",
+              "吉尔吉斯斯坦",
+              "几内亚",
+              "几内亚比绍",
+              "加拿大",
+              "加纳",
+              "加蓬",
+              "柬埔寨",
+              "捷克",
+              "津巴布韦",
+              "喀麦隆",
+              "卡塔尔",
+              "开曼群岛",
+              "科科斯（基林）群岛",
+              "科摩罗",
+              "科特迪瓦",
+              "科威特",
+              "克罗地亚",
+              "肯尼亚",
+              "库克群岛",
+              "库拉索",
+              "拉脱维亚",
+              "莱索托",
+              "老挝",
+              "黎巴嫩",
+              "立陶宛",
+              "利比里亚",
+              "利比亚",
+              "列支敦士登",
+              "留尼汪",
+              "卢森堡",
+              "卢旺达",
+              "罗马尼亚",
+              "马达加斯加",
+              "马恩岛",
+              "马尔代夫",
+              "马耳他",
+              "马拉维",
+              "马来西亚",
+              "马里",
+              "马绍尔群岛",
+              "马提尼克",
+              "马约特",
+              "毛里求斯",
+              "毛里塔尼亚",
+              "美国",
+              "美国本土外小岛屿",
+              "美属萨摩亚",
+              "美属维尔京群岛",
+              "蒙古",
+              "蒙特塞拉特",
+              "孟加拉国",
+              "秘鲁",
+              "密克罗尼西亚",
+              "缅甸",
+              "摩尔多瓦",
+              "摩洛哥",
+              "摩纳哥",
+              "莫桑比克",
+              "墨西哥",
+              "纳米比亚",
+              "南非",
+              "南极洲",
+              "南乔治亚和南桑威奇群岛",
+              "南苏丹",
+              "瑙鲁",
+              "尼加拉瓜",
+              "尼泊尔",
+              "尼日尔",
+              "尼日利亚",
+              "纽埃",
+              "挪威",
+              "诺福克岛",
+              "帕劳",
+              "皮特凯恩群岛",
+              "葡萄牙",
+              "日本",
+              "瑞典",
+              "瑞士",
+              "萨尔瓦多",
+              "萨摩亚",
+              "塞尔维亚",
+              "塞拉利昂",
+              "塞内加尔",
+              "塞浦路斯",
+              "塞舌尔",
+              "沙特阿拉伯",
+              "圣巴泰勒米",
+              "圣诞岛",
+              "圣多美和普林西比",
+              "圣赫勒拿",
+              "圣基茨和尼维斯",
+              "圣卢西亚",
+              "圣马力诺",
+              "圣皮埃尔和密克隆群岛",
+              "圣文森特和格林纳丁斯",
+              "斯里兰卡",
+              "斯洛伐克",
+              "斯洛文尼亚",
+              "斯瓦尔巴和扬马延",
+              "斯威士兰",
+              "苏丹",
+              "苏里南",
+              "所罗门群岛",
+              "索马里",
+              "塔吉克斯坦",
+              "泰国",
+              "坦桑尼亚",
+              "汤加",
+              "特克斯和凯科斯群岛",
+              "特立尼达和多巴哥",
+              "突尼斯",
+              "图瓦卢",
+              "土耳其",
+              "土库曼斯坦",
+              "托克劳",
+              "瓦利斯和富图纳",
+              "瓦努阿图",
+              "危地马拉",
+              "委内瑞拉",
+              "文莱",
+              "乌干达",
+              "乌克兰",
+              "乌拉圭",
+              "乌兹别克斯坦",
+              "西班牙",
+              "西撒哈拉",
+              "希腊",
+              "新加坡",
+              "新喀里多尼亚",
+              "新西兰",
+              "匈牙利",
+              "叙利亚",
+              "牙买加",
+              "亚美尼亚",
+              "也门",
+              "伊拉克",
+              "伊朗",
+              "以色列",
+              "意大利",
+              "印度",
+              "印度尼西亚",
+              "英国",
+              "英属维尔京群岛",
+              "英属印度洋领地",
+              "约旦",
+              "越南",
+              "赞比亚",
+              "泽西岛",
+              "乍得",
+              "直布罗陀",
+              "智利",
+              "中非共和国"
+            ]
+          },
+          {
+            "name": "居住地 省/市/区",
+            "type": "cascader",
+            "cascader": "region",
+            "all": true
+          }
+        ]
+      },
+      {
+        "id": "accept",
+        "title": "受理信息",
+        "fields": [
+          {
+            "name": "信访类型",
+            "type": "select",
+            "required": true,
+            "types": [
+              "信访单"
+            ],
+            "singleRow": true,
+            "options": [
+              "监管局信访事项材料调阅函",
+              "民生领域信访问题集中治理",
+              "信访局（依法分类处理意见）",
+              "纪检（消保类申诉）"
+            ]
+          },
+          {
+            "name": "受理渠道",
+            "type": "channel",
+            "all": true,
+            "required": true
+          },
+          {
+            "name": "具体来源",
+            "labelBy": {
+              "投诉单": "具体投诉来源",
+              "信访单": "具体信访来源",
+              "表扬单": "具体表扬来源",
+              "建议单": "具体建议来源",
+              "舆情单": "具体舆情来源"
+            },
+            "type": "text",
+            "all": true,
+            "showWhen": {
+              "key": "受理渠道",
+              "equals": "其它"
+            },
+            "requiredWhen": {
+              "key": "受理渠道",
+              "equals": "其它"
+            },
+            "placeholder": "填写具体来源"
+          },
+          {
+            "name": "客户事件时间",
+            "labelBy": {
+              "投诉单": "客户投诉时间",
+              "信访单": "客户信访时间",
+              "表扬单": "客户表扬时间",
+              "建议单": "客户建议时间",
+              "舆情单": "客户舆情时间"
+            },
+      "type": "datetime",
+            "all": true,
+      "required": true
+          },
+          {
+            "name": "处置期限",
+            "type": "datetime",
+            "all": true,
+      "required": true,
+            "requiredBy": {
+              "信访单": true
+            },
+            "disabledBy": [
+              "投诉单",
+              "表扬单",
+              "建议单",
+              "舆情单"
+            ],
+            "valueBy": {
+              "投诉单": "接收时间 + 15 个自然日",
+              "表扬单": "接收时间 + 10 个自然日",
+              "建议单": "接收时间 + 10 个自然日",
+              "舆情单": "接收时间 + 15 个自然日"
+            }
+          },
+          {
+            "name": "转送时间",
+            "type": "datetime",
+            "all": true,
+            "requiredBy": {
+              "信访单": true
+            },
+            "requiredWhen": {
+              "key": "受理渠道",
+              "in": [
+                "厦门金管局",
+                "福建金管局",
+                "珠海金管局",
+                "北京金管局",
+                "上海金管局",
+                "宁德金管局",
+                "龙岩金管局",
+                "泉州金管局",
+                "漳州金管局",
+                "莆田金管局",
+                "三明金管局",
+                "南平金管局",
+                "金融消费者保护服务平台",
+                "市长热线"
+              ]
+            },
+            "conditional": "监管转送渠道下必填"
+          },
+          {
+            "name": "接收时间",
+            "type": "datetime",
+            "types": [
+              "信访单",
+              "投诉单",
+              "表扬单",
+              "建议单",
+              "舆情单"
+            ],
+            "required": true
+          },
+          {
+            "name": "转送函号",
+            "type": "text",
+            "all": true,
+            "requiredWhen": {
+              "key": "受理渠道",
+              "in": [
+                "厦门金管局",
+                "福建金管局",
+                "珠海金管局",
+                "北京金管局",
+                "上海金管局",
+                "宁德金管局",
+                "龙岩金管局",
+                "泉州金管局",
+                "漳州金管局",
+                "莆田金管局",
+                "三明金管局",
+                "南平金管局",
+                "金融消费者保护服务平台",
+                "市长热线"
+              ]
+            },
+            "conditional": "监管转送渠道下必填",
+            "placeholder": "输入转送函号"
+          },
+          {
+            "name": "录音编号",
+      "type": "readonly",
+            "types": [
+              "投诉单",
+              "表扬单",
+              "建议单"
+            ],
+            "showWhen": {
+              "key": "受理渠道",
+              "equals": "客服电话"
+            },
+            "action": "查看录音转文本",
+            "actionAction": "view-call-transcript"
+          },
+          {
+            "name": "事件次数",
+            "labelBy": {
+              "投诉单": "投诉次数",
+              "信访单": "信访次数",
+              "舆情单": "舆情次数"
+            },
+            "type": "readonly",
+            "types": [
+              "投诉单",
+              "信访单",
+              "舆情单"
+            ],
+            "value": "0",
+            "required": true
+          },
+          {
+            "name": "是否发送短信",
+            "type": "radio",
+            "types": [
+              "投诉单"
+            ],
+            "options": [
+              "是",
+              "否"
+            ],
+            "defaultValue": "是",
+            "required": true
+          },
+          {
+            "name": "联系人姓名",
+            "type": "text",
+            "all": true,
+            "requiredBy": {
+              "投诉单": true,
+              "表扬单": true,
+              "建议单": true,
+              "舆情单": true
+            }
+          },
+          {
+            "name": "联系人证件号码",
+            "type": "text",
+            "all": true,
+            "placeholder": "输入联系人证件号码"
+          },
+          {
+            "name": "联系人性别",
+            "type": "radio",
+            "all": true,
+            "options": [
+              "男",
+              "女",
+              "未知"
+            ]
+          },
+          {
+            "name": "联系方式",
+            "type": "text",
+            "all": true,
+            "requiredBy": {
+              "投诉单": true,
+              "表扬单": true,
+              "建议单": true,
+              "舆情单": true
+            }
+          },
+          {
+            "name": "联系方式2",
+            "type": "text",
+            "types": [
+              "投诉单"
+            ],
+            "placeholder": "输入备用联系方式"
+          }
+        ]
+      },
+      {
+        "id": "regulatory-transfer",
+        "title": "监管转办信息",
+        "fields": [
+          {
+            "name": "是否向机构进行过投诉",
+            "type": "radio",
+            "all": true,
+            "required": true,
+            "options": [
+              "是",
+              "否"
+            ],
+            "showWhen": {
+              "key": "受理渠道",
+              "in": [
+                "厦门金管局",
+                "福建金管局",
+                "珠海金管局",
+                "北京金管局",
+                "上海金管局",
+                "宁德金管局",
+                "龙岩金管局",
+                "泉州金管局",
+                "漳州金管局",
+                "莆田金管局",
+                "三明金管局",
+                "南平金管局",
+                "金融消费者保护服务平台"
+              ]
+            }
+          },
+          {
+            "name": "向机构投诉次数",
+            "type": "number",
+            "all": true,
+            "required": true,
+            "min": 0,
+            "showWhen": {
+              "key": "受理渠道",
+              "in": [
+                "厦门金管局",
+                "福建金管局",
+                "珠海金管局",
+                "北京金管局",
+                "上海金管局",
+                "宁德金管局",
+                "龙岩金管局",
+                "泉州金管局",
+                "漳州金管局",
+                "莆田金管局",
+                "三明金管局",
+                "南平金管局",
+                "金融消费者保护服务平台"
+              ]
+            }
+          },
+          {
+            "name": "监管转送次数",
+      "type": "number",
+      "min": 0,
+      "precision": 0,
+            "all": true,
+            "required": true,
+            "showWhen": {
+              "key": "受理渠道",
+              "in": [
+                "厦门金管局",
+                "福建金管局",
+                "珠海金管局",
+                "北京金管局",
+                "上海金管局",
+                "宁德金管局",
+                "龙岩金管局",
+                "泉州金管局",
+                "漳州金管局",
+                "莆田金管局",
+                "三明金管局",
+                "南平金管局",
+                "金融消费者保护服务平台"
+              ]
+            }
+          },
+          {
+            "name": "被投诉机构主体",
+            "type": "text",
+            "all": true,
+            "showWhen": {
+              "key": "受理渠道",
+              "in": [
+                "厦门金管局",
+                "福建金管局",
+                "珠海金管局",
+                "北京金管局",
+                "上海金管局",
+                "宁德金管局",
+                "龙岩金管局",
+                "泉州金管局",
+                "漳州金管局",
+                "莆田金管局",
+                "三明金管局",
+                "南平金管局",
+                "金融消费者保护服务平台"
+              ]
+            },
+            "requiredWhen": {
+              "key": "受理渠道",
+              "equals": "金融消费者保护服务平台"
+            }
+          },
+          {
+            "name": "机构法人全称",
+            "type": "text",
+            "all": true,
+            "showWhen": {
+              "key": "受理渠道",
+              "in": [
+                "厦门金管局",
+                "福建金管局",
+                "珠海金管局",
+                "北京金管局",
+                "上海金管局",
+                "宁德金管局",
+                "龙岩金管局",
+                "泉州金管局",
+                "漳州金管局",
+                "莆田金管局",
+                "三明金管局",
+                "南平金管局",
+                "金融消费者保护服务平台"
+              ]
+            },
+            "requiredWhen": {
+              "key": "受理渠道",
+              "equals": "金融消费者保护服务平台"
+            }
+          },
+          {
+            "name": "被投诉机构层级",
+            "type": "text",
+            "all": true,
+            "showWhen": {
+              "key": "受理渠道",
+              "in": [
+                "厦门金管局",
+                "福建金管局",
+                "珠海金管局",
+                "北京金管局",
+                "上海金管局",
+                "宁德金管局",
+                "龙岩金管局",
+                "泉州金管局",
+                "漳州金管局",
+                "莆田金管局",
+                "三明金管局",
+                "南平金管局",
+                "金融消费者保护服务平台"
+              ]
+            },
+            "requiredWhen": {
+              "key": "受理渠道",
+              "equals": "金融消费者保护服务平台"
+            }
+          },
+          {
+            "name": "投诉事项发生地",
+            "type": "text",
+            "all": true,
+            "showWhen": {
+              "key": "受理渠道",
+              "in": [
+                "厦门金管局",
+                "福建金管局",
+                "珠海金管局",
+                "北京金管局",
+                "上海金管局",
+                "宁德金管局",
+                "龙岩金管局",
+                "泉州金管局",
+                "漳州金管局",
+                "莆田金管局",
+                "三明金管局",
+                "南平金管局",
+                "金融消费者保护服务平台"
+              ]
+            },
+            "requiredWhen": {
+              "key": "受理渠道",
+              "equals": "金融消费者保护服务平台"
+            }
+          }
+        ]
+      },
+      {
+        "id": "content",
+        "title": "工单具体内容",
+        "fields": [
+          {
+            "name": "投诉/信访/表扬机构",
+            "labelBy": {
+              "投诉单": "投诉机构",
+              "信访单": "信访机构",
+              "表扬单": "表扬机构",
+              "舆情单": "舆情机构"
+            },
+            "type": "hierarchyCascader",
+            "dictionary": "institutionTree",
+            "levels": [
+              "总行/分行",
+              "机构/下辖支行"
+            ],
+            "leafLevel": 2,
+            "types": [
+              "投诉单",
+              "信访单",
+              "表扬单",
+              "舆情单"
+            ],
+            "requiredBy": {
+              "投诉单": true,
+              "信访单": true,
+              "舆情单": true
+            },
+            "conditional": "系统配置的机构管理范围，作为大模型标签输入",
+            "nonLeafSelectable": false
+          },
+          {
+            "name": "投诉/信访对象",
+            "labelBy": {
+              "信访单": "信访对象",
+              "舆情单": "舆情对象"
+            },
+            "type": "text",
+            "types": [
+              "信访单",
+              "舆情单"
+            ],
+      "placeholder": "请输入涉及对象",
+            "validation": {
+              "avoidance": "回避校验：投诉/信访对象不能与当前处理员相同"
+            }
+          },
+          {
+            "name": "投诉对象",
+            "type": "text",
+            "types": [
+              "投诉单"
+            ],
+            "placeholder": "请输入投诉对象"
+          },
+          {
+            "name": "投诉/信访事项",
+            "labelBy": {
+              "投诉单": "投诉事项",
+              "信访单": "信访事项",
+              "舆情单": "舆情事项"
+            },
+            "type": "select",
+            "types": [
+              "投诉单",
+              "信访单",
+              "舆情单"
+            ],
+            "options": [
+              "贷款催收",
+              "贷款协商还款",
+              "贷款业务办理",
+              "贷款提前还款",
+              "个人征信",
+              "企业征信",
+              "账户管控",
+              "账户开销户",
+              "业务办理",
+              "营销活动",
+              "服务质量与态度",
+              "额度注销",
+              "信息披露",
+              "个人信息保护",
+              "其它"
+            ]
+          },
+          {
+            "name": "所属业务条线",
+            "type": "businessLinePicker",
+            "required": true,
+            "span": true,
+            "primaryLabel": "必选条线（4选1）",
+            "optionalLabel": "可选条线（选1）",
+            "primaryOptions": [
+              "零售金融部",
+              "普惠金融部",
+              "公司金融部",
+              "消费者权益保护部"
+            ],
+            "optionalOptions": [
+              "运营管理部",
+              "风险管理部",
+              "安全保卫部/总务部",
+              "授信审批部",
+              "华侨金融部",
+              "特殊资产经营部",
+              "科技管理部",
+              "科技开发部",
+              "科技运维部"
+            ],
+            "placeholder": "必选条线 4 选 1；可选条线选择 1 项",
+            "all": true
+          },
+          {
+            "name": "反馈内容",
+            "type": "textarea",
+            "all": true,
+            "required": true,
+            "span": true,
+            "max": 2000,
+            "placeholder": "完整描述客户反馈内容，可由客服系统带入后补充",
+            "conditional": "大模型生成标签输入"
+          },
+          {
+            "name": "主体诉求",
+            "type": "textarea",
+            "types": [
+              "投诉单"
+            ],
+            "required": true,
+            "span": true,
+            "placeholder": "请输入客户的主体诉求",
+            "conditional": "投诉单大模型生成标签输入"
+          },
+          {
+            "name": "附件",
+            "type": "upload",
+            "all": true,
+      "requiredBy": {
+        "投诉单": true,
+        "信访单": true
+      },
+            "span": true
+          }
+        ]
+      },
+      {
+        "id": "pboc",
+        "title": "人行标准",
+        "fields": [
+          {
+            "name": "投诉请求",
+            "labelBy": {
+              "投诉单": "投诉请求"
+            },
+            "type": "select",
+            "types": [
+              "投诉单"
+            ],
+            "aiFill": false,
+            "required": true,
+            "span": true,
+            "options": [
+              "金钱赔偿",
+              "赔礼道歉",
+              "返还财产",
+              "恢复原状",
+              "其他"
+            ]
+          },
+          {
+            "name": "业务办理渠道",
+            "type": "cascader",
+            "cascader": "channel",
+            "types": [
+              "投诉单"
+            ],
+            "required": true,
+            "span": true
+          },
+          {
+            "name": "业务类别",
+            "type": "cascader",
+            "cascader": "business",
+            "types": [
+              "投诉单"
+            ],
+            "required": true,
+            "span": true
+          },
+          {
+            "name": "投诉/信访原因",
+            "labelBy": {
+              "投诉单": "投诉原因"
+            },
+            "type": "cascader",
+            "cascader": "reason",
+            "types": [
+              "投诉单"
+            ],
+            "required": true,
+            "span": true
+          }
+        ]
+      },
+      {
+        "id": "regulatory",
+        "title": "金管投诉分类",
+        "fields": [
+          {
+            "name": "被投诉业务办理渠道",
+            "type": "select",
+            "types": [
+              "投诉单"
+            ],
+            "required": true,
+            "dictionary": "jinguanBusinessChannel"
+          },
+          {
+            "name": "被投诉业务类别",
+            "type": "hierarchyCascader",
+            "dictionary": "jinguanBusinessCategory",
+            "levels": [
+              "一级",
+              "二级",
+              "三级"
+            ],
+            "leafLevel": 3,
+            "types": [
+              "投诉单"
+            ],
+            "required": true,
+            "span": true
+          },
+          {
+            "name": "被投诉业务原因",
+            "type": "select",
+            "types": [
+              "投诉单"
+            ],
+            "required": true,
+            "dictionary": "jinguanBusinessCause"
+          }
+        ]
+      },
+      {
+        "id": "intelligent-tags",
+        "title": "智能标签",
+        "titleBy": {
+          "建议单": "标签信息",
+          "表扬单": "标签信息"
+        },
+        "positionAfter": "content",
+        "fields": [
+          {
+            "name": "AI 智能打标",
+            "type": "aiAction",
+            "types": [
+              "投诉单",
+              "信访单"
+            ],
+            "span": true
+          },
+          {
+            "name": "业务办理渠道标签",
+            "type": "hierarchyCascader",
+            "required": true,
+            "types": [
+              "投诉单",
+              "信访单"
+            ],
+            "dictionary": "trsBusinessChannel",
+            "levels": [
+              "一级渠道",
+              "二级渠道"
+            ],
+            "leafLevel": 2,
+            "nonLeafSelectable": false,
+            "span": true
+          },
+          {
+            "name": "投诉产品标签",
+            "type": "hierarchyCascader",
+            "required": true,
+            "types": [
+              "投诉单",
+              "信访单",
+              "建议单",
+              "表扬单"
+            ],
+            "dictionary": "rectificationProduct",
+            "levels": [
+              "一级产品",
+              "二级产品",
+              "三级产品"
+            ],
+            "leafLevel": 3,
+            "nonLeafSelectable": false,
+            "span": true
+          },
+          {
+            "name": "投诉原因标签",
+            "type": "hierarchyCascader",
+            "required": true,
+            "types": [
+              "投诉单",
+              "信访单"
+            ],
+            "dictionary": "rectificationCause",
+            "levels": [
+              "一级原因标签",
+              "二级原因标签",
+              "三级原因标签"
+            ],
+            "leafLevel": 3,
+            "nonLeafSelectable": false,
+            "span": true,
+            "placeholder": "请选择三级原因标签"
+          },
+          {
+            "name": "投诉诉求标签",
+            "type": "hierarchyCascader",
+            "dictionary": "appealTag",
+            "levels": [
+              "一级诉求",
+              "二级诉求"
+            ],
+            "leafLevel": 2,
+            "required": true,
+            "types": [
+              "投诉单",
+              "信访单"
+            ],
+            "span": true,
+            "nonLeafSelectable": false
+          },
+          {
+            "name": "修正业务办理渠道标签",
+            "type": "hierarchyCascader",
+            "all": true,
+            "dictionary": "trsBusinessChannel",
+            "levels": [
+              "一级渠道",
+              "二级渠道"
+            ],
+            "leafLevel": 2,
+            "nonLeafSelectable": false,
+            "span": true
+          },
+          {
+            "name": "修正投诉产品标签",
+            "type": "hierarchyCascader",
+            "all": true,
+            "dictionary": "rectificationProduct",
+            "levels": [
+              "一级产品",
+              "二级产品",
+              "三级产品"
+            ],
+            "leafLevel": 3,
+            "nonLeafSelectable": false,
+            "span": true
+          },
+          {
+            "name": "修正投诉原因标签",
+            "type": "hierarchyCascader",
+            "all": true,
+            "dictionary": "rectificationCause",
+            "levels": [
+              "一级原因标签",
+              "二级原因标签",
+              "三级原因标签"
+            ],
+            "leafLevel": 3,
+            "nonLeafSelectable": false,
+            "span": true,
+            "placeholder": "请选择三级原因标签"
+          },
+          {
+            "name": "修正投诉诉求标签",
+            "type": "hierarchyCascader",
+            "all": true,
+            "dictionary": "appealTag",
+            "levels": [
+              "一级诉求",
+              "二级诉求"
+            ],
+            "leafLevel": 2,
+            "nonLeafSelectable": false,
+            "span": true
+          }
+        ]
+      },
+      {
+        "id": "intelligent-dispatch",
+        "title": "智能派发",
+        "titleBy": {
+          "建议单": "派发信息",
+          "表扬单": "派发信息"
+        },
+        "fields": [
+          {
+            "name": "派发机构",
+            "type": "hierarchyCascader",
+            "dictionary": "institutionTree",
+            "levels": [
+              "总行/分行",
+              "机构/下辖支行"
+            ],
+            "leafLevel": 2,
+            "all": true,
+            "required": true,
+            "placeholder": "请选择派发机构",
+            "nonLeafSelectable": false,
+            "multiple": false,
+            "includeDescendantsOption": false,
+            "searchable": true
+          },
+          {
+            "name": "派发部门",
+            "type": "select",
+            "all": true,
+            "required": true,
+            "placeholder": "请选择派发部门",
+            "optionsByInstitution": {
+              "key": "派发机构",
+              "departmentNameIncludes": ["普惠", "消费者权益保护"],
+              "emptyForSubbranch": true
+            }
+          },
+          {
+            "name": "抄送人",
+            "type": "readonly",
+            "all": true,
+            "disabled": true,
+            "autoDispatchCc": true,
+            "placeholder": "-"
+          }
+        ]
+      }
+    ],
+    "processing_fields": [
+      {
+        "name": "事件还原",
+        "type": "textarea",
+        "types": [
+          "投诉单",
+          "信访单",
+          "舆情单"
+        ],
+        "required": true,
+        "span": true,
+        "max": 2000,
+        "placeholder": "还原事件经过、核实过程及关键事实"
+      },
+      {
+        "name": "处理依据",
+        "type": "textarea",
+        "types": [
+          "投诉单",
+          "信访单",
+          "舆情单"
+        ],
+        "required": true,
+        "span": true,
+        "max": 2000,
+        "placeholder": "填写制度、合同、业务规则或监管依据"
+      },
+      {
+        "name": "处置意见",
+        "type": "textarea",
+        "all": true,
+        "required": true,
+        "span": true,
+        "max": 2000,
+        "placeholder": "填写最终处置意见"
+      },
+      {
+        "name": "是否会签",
+        "type": "radio",
+        "types": [
+          "投诉单"
+        ],
+        "required": true,
+        "options": [
+          "是",
+          "否"
+        ]
+      },
+      {
+        "name": "会签机构",
+        "type": "hierarchyCascader",
+        "dictionary": "institutionTree",
+        "types": [
+          "投诉单"
+        ],
+        "multiple": true,
+        "leafLevel": 2,
+        "levels": [
+          "总行/分行",
+          "机构/下辖支行"
+        ],
+        "placeholder": "请选择会签机构（可多选）",
+        "showWhen": {
+          "key": "是否会签",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否会签",
+          "equals": "是"
+        },
+        "span": true,
+        "nonLeafSelectable": false
+      },
+      {
+        "name": "会签部门",
+        "type": "countersignDepartmentSelect",
+        "types": [
+          "投诉单"
+        ],
+        "showWhen": {
+          "key": "是否会签",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否会签",
+          "equals": "是"
+        },
+        "span": true
+      },
+      {
+        "name": "责任机构",
+        "type": "hierarchyCascader",
+        "dictionary": "institutionTree",
+        "levels": [
+          "总行/分行",
+          "机构/下辖支行"
+        ],
+        "leafLevel": 2,
+        "types": [
+          "投诉单",
+          "信访单",
+          "建议单",
+          "舆情单"
+        ],
+        "nonLeafSelectable": false
+      },
+      {
+        "name": "责任部门",
+        "type": "select",
+        "types": [
+          "投诉单",
+          "信访单",
+          "建议单",
+          "舆情单"
+        ],
+        "optionsByInstitution": {
+          "key": "责任机构",
+          "emptyForSubbranch": true,
+          "departmentNameIncludes": []
+        }
+      },
+      {
+        "name": "责任人",
+        "type": "select",
+        "searchable": true,
+        "searchMode": "prefix",
+        "searchPlaceholder": "输入姓名首字搜索",
+        "types": [
+          "投诉单",
+          "信访单",
+          "舆情单"
+        ],
+        "options": [
+          "林海-38102",
+          "王琳-27519",
+          "许一帆-49017",
+          "-"
+        ]
+      },
+      {
+        "name": "责任人具体情况",
+        "type": "textarea",
+        "types": [
+          "投诉单",
+          "信访单",
+          "舆情单"
+        ],
+        "span": true,
+        "showWhen": {
+          "key": "责任人",
+          "equals": "-"
+        },
+        "requiredWhen": {
+          "key": "责任人",
+          "equals": "-"
+        },
+        "placeholder": "责任人无法从列表选择时说明具体情况"
+      },
+      {
+        "name": "投诉有效性",
+        "type": "radio",
+        "types": [
+          "投诉单"
+        ],
+        "required": true,
+        "options": [
+          "有效投诉",
+          "无效投诉"
+        ]
+      },
+      {
+        "name": "判断依据",
+        "type": "textarea",
+        "types": [
+          "投诉单"
+        ],
+        "required": true,
+        "span": true,
+        "max": 2000,
+        "placeholder": "填写投诉有效性的判断依据"
+      },
+      {
+        "name": "处置员反馈时间",
+        "type": "readonly",
+        "all": true,
+      "required": true,
+        "value": "最后提交时系统自动生成"
+      },
+      {
+        "name": "是否超期",
+        "type": "readonly",
+        "all": true,
+      "required": true,
+        "value": "否"
+      },
+      {
+        "name": "是否黑灰产投诉",
+        "type": "radio",
+        "types": [
+          "投诉单"
+        ],
+        "required": true,
+        "defaultValue": "否",
+        "options": [
+          "是",
+          "否"
+        ]
+      },
+      {
+        "name": "黑灰产原因",
+        "type": "textarea",
+        "types": [
+          "投诉单"
+        ],
+        "span": true,
+        "showWhen": {
+          "key": "是否黑灰产投诉",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否黑灰产投诉",
+          "equals": "是"
+        },
+        "max": 2000,
+        "placeholder": "说明识别为黑灰产投诉的原因"
+      },
+      {
+        "name": "黑灰产附件",
+        "type": "upload",
+        "types": [
+          "投诉单"
+        ],
+        "span": true,
+        "showWhen": {
+          "key": "是否黑灰产投诉",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否黑灰产投诉",
+          "equals": "是"
+        }
+      },
+      {
+        "name": "处理结果是否告知",
+        "type": "select",
+        "types": [
+          "投诉单",
+          "信访单",
+          "建议单",
+          "舆情单"
+        ],
+        "requiredBy": {
+          "投诉单": true,
+          "信访单": true
+        },
+        "options": [
+          "是",
+          "否"
+        ]
+      },
+      {
+        "name": "告知时间",
+        "type": "outboundContactTime",
+        "types": [
+          "投诉单",
+          "信访单",
+          "建议单"
+        ],
+        "placeholder": "请选择外呼联系记录时间",
+        "requiredWhen": {
+          "key": "处理结果是否告知",
+          "equals": "是"
+        }
+      },
+      {
+        "name": "救济途径是否告知",
+        "type": "radio",
+        "types": [
+          "投诉单"
+        ],
+        "required": true,
+        "options": [
+          "是",
+          "否"
+        ]
+      },
+      {
+        "name": "是否达成一致",
+        "type": "radio",
+        "types": [
+          "投诉单",
+          "信访单",
+          "舆情单"
+        ],
+        "required": true,
+        "defaultValue": "是",
+        "options": [
+          "是",
+          "否"
+        ]
+      },
+      {
+        "name": "客户满意度",
+        "type": "select",
+        "types": [
+          "投诉单",
+          "信访单",
+          "建议单",
+          "舆情单"
+        ],
+        "requiredBy": {
+          "投诉单": true,
+          "信访单": true
+        },
+        "options": [
+          "满意",
+          "不满意",
+          "无异议"
+        ]
+      },
+      {
+        "name": "抄送人",
+        "type": "select",
+        "all": true,
+        "options": [
+          "无",
+          "机构消保联系人",
+          "部门负责人",
+          "总行消保部"
+        ]
+      },
+      {
+        "name": "处理附件",
+        "type": "upload",
+        "all": true,
+        "span": true,
+        "hintBy": {
+          "sourceStage": "entry",
+          "key": "信访类型",
+          "values": {
+            "民生领域信访问题集中治理": "请上传《民生领域信访问题集中治理化解报告》及相关化解凭证。",
+            "信访局（依法分类处理意见）": "请上传《依法分类处理意见》、《消费投诉办理情况报告表》及调解协议（如调解成功）。"
+          }
+        }
+      },
+      {
+        "name": "监管核查情况",
+        "type": "textarea",
+        "types": [
+          "信访单"
+        ],
+        "required": true,
+        "span": true,
+        "max": 2000,
+        "placeholder": "填写监管核查情况"
+      },
+      {
+        "name": "是否要求整改",
+        "type": "radio",
+        "types": [
+          "信访单"
+        ],
+        "required": true,
+        "options": [
+          "是",
+          "否"
+        ]
+      },
+      {
+        "name": "整改举措",
+        "type": "textarea",
+        "types": [
+          "信访单"
+        ],
+        "span": true,
+        "showWhen": {
+          "key": "是否要求整改",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否要求整改",
+          "equals": "是"
+        },
+        "max": 2000,
+        "placeholder": "填写整改举措"
+      },
+      {
+        "name": "是否采纳",
+        "type": "radio",
+        "types": [
+          "建议单"
+        ],
+        "required": true,
+        "options": [
+          "是",
+          "否"
+        ]
+      },
+      {
+        "name": "未采纳原因",
+        "type": "textarea",
+        "types": [
+          "建议单"
+        ],
+        "span": true,
+        "showWhen": {
+          "key": "是否采纳",
+          "equals": "否"
+        },
+        "requiredWhen": {
+          "key": "是否采纳",
+          "equals": "否"
+        },
+        "max": 2000,
+        "placeholder": "填写未采纳原因"
+      },
+      {
+        "name": "优化措施",
+        "type": "textarea",
+        "types": [
+          "建议单"
+        ],
+        "span": true,
+        "showWhen": {
+          "key": "是否采纳",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否采纳",
+          "equals": "是"
+        },
+        "max": 2000,
+        "placeholder": "填写后续优化措施"
+      },
+      {
+        "name": "工单状态",
+        "required": true,
+        "value": "由流转自动生成",
+        "displaySection": "事件处理信息",
+        "type": "readonly",
+        "all": true
+      },
+      {
+        "name": "工单接收机构",
+        "required": true,
+        "value": "由派发自动生成",
+        "displaySection": "事件处理信息",
+        "type": "readonly",
+        "all": true
+      },
+      {
+        "name": "处理员",
+        "required": true,
+        "value": "由领取自动生成",
+        "displaySection": "事件处理信息",
+        "type": "readonly",
+        "all": true
+      },
+      {
+        "name": "工单接收部门",
+        "required": true,
+        "value": "由派发自动生成",
+        "displaySection": "事件处理信息",
+        "type": "readonly",
+        "all": true
+      },
+      {
+        "name": "是否再次投诉",
+        "type": "radio",
+        "types": [
+          "投诉单"
+        ],
+        "required": true,
+        "defaultValue": "否",
+        "options": [
+          "是",
+          "否"
+        ],
+        "displaySection": "再次投诉"
+      },
+      {
+        "name": "关联未归档工单主单编号",
+        "type": "select",
+        "types": [
+          "投诉单"
+        ],
+        "showWhen": {
+          "key": "是否再次投诉",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否再次投诉",
+          "equals": "是"
+        },
+        "displaySection": "再次投诉",
+        "placeholder": "查询并选择历史未归档工单"
+      },
+      {
+        "name": "情况说明",
+        "type": "textarea",
+        "types": [
+          "投诉单"
+        ],
+        "span": true,
+        "showWhen": {
+          "key": "是否再次投诉",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否再次投诉",
+          "equals": "是"
+        },
+        "displaySection": "再次投诉",
+        "max": 2000,
+        "placeholder": "说明再次投诉判定及与原主工单的关联关系"
+      },
+      {
+        "name": "超期时长",
+      "type": "readonly",
+        "all": true,
+        "showWhen": {
+          "key": "是否超期",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否超期",
+          "equals": "是"
+        },
+        "placeholder": "超期时长（天）"
+      },
+      {
+        "name": "达成一致方式",
+        "type": "select",
+        "types": [
+          "投诉单",
+          "信访单"
+        ],
+        "options": [
+          "业务办理",
+          "货币补偿",
+          "非货币补偿",
+          "解释说明"
+        ],
+        "showWhen": {
+          "key": "是否达成一致",
+          "equals": "是"
+        },
+        "requiredWhen": {
+          "key": "是否达成一致",
+          "equals": "是"
+        }
+      }
+    ],
+    "approval_rules": {
+      "review": {
+        "applies_to": [
+          "投诉单",
+          "信访单",
+          "表扬单",
+          "建议单",
+          "舆情单"
+        ],
+        "fields": [
+          "复核人",
+          "复核结论",
+          "复核意见"
+        ]
+      },
+      "initial_approval": {
+        "applies_to": [
+          "信访单"
+        ],
+        "fields": [
+          "初审人",
+          "初审结论",
+          "初审意见"
+        ]
+      },
+      "final_approval": {
+        "applies_to": [
+          "投诉单",
+          "信访单",
+          "表扬单",
+          "建议单",
+          "舆情单"
+        ],
+        "fields": [
+          "审批人",
+          "审批结论",
+          "审批意见"
+        ]
+      }
+    },
+    "acceptance_channels": {
+      "投诉单": [
+        "客服电话",
+        "在线客服",
+        "总行投诉邮箱",
+        "机构专线电话",
+        "营业网点",
+        "客户意见簿",
+        "信函",
+        "厦门金管局",
+        "福建金管局",
+        "珠海金管局",
+        "北京金管局",
+        "上海金管局",
+        "宁德金管局",
+        "龙岩金管局",
+        "泉州金管局",
+        "漳州金管局",
+        "莆田金管局",
+        "三明金管局",
+        "南平金管局",
+        "金融消费者保护服务平台",
+        "市长热线",
+        "其它"
+      ],
+      "信访单": [
+        "厦门金管局",
+        "福建金管局",
+        "珠海金管局",
+        "北京金管局",
+        "上海金管局",
+        "宁德金管局",
+        "龙岩金管局",
+        "泉州金管局",
+        "漳州金管局",
+        "莆田金管局",
+        "三明金管局",
+        "南平金管局",
+        "纪检",
+        "其它"
+      ],
+      "表扬单": [
+        "客服电话",
+        "在线客服",
+        "总行投诉邮箱",
+        "机构专线电话",
+        "营业网点",
+        "客户意见簿",
+        "信函",
+        "其它"
+      ],
+      "建议单": [
+        "客服电话",
+        "在线客服",
+        "总行投诉邮箱",
+        "机构专线电话",
+        "营业网点",
+        "客户意见簿",
+        "信函",
+        "其它"
+      ],
+      "舆情单": [
+        "黑猫投诉",
+        "抖音",
+        "小红书",
+        "微信公众号",
+        "其它"
+      ]
+    }
+  }
+}

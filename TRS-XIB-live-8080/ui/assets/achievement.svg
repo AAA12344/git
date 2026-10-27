@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>achievement</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1152, -1017)">
+            <g id="achievement" transform="translate(1152, 1017)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <rect id="矩形" stroke="#909399" stroke-width="2" x="3" y="5" width="26" height="22" rx="2"></rect>
+                <line x1="7" y1="23" x2="25" y2="23" id="路径-70" stroke="#909399" stroke-width="2" stroke-linecap="round" fill-rule="nonzero"></line>
+                <polyline id="路径-71" stroke="#909399" stroke-width="2" stroke-linejoin="round" points="7 19 12 14 17 19 25 10"></polyline>
+                <polyline id="路径-72" stroke="#909399" stroke-width="2" stroke-linecap="round" points="19 10 25 10 25 16"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

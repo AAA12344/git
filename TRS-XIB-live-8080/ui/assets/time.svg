@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>time</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-256, -517)">
+            <g id="time" transform="translate(256, 517)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <path d="M16,28 C22.627417,28 28,22.627417 28,16 C28,9.372583 22.627417,4 16,4 C9.372583,4 4,9.372583 4,16 C4,22.627417 9.372583,28 16,28 Z M16,8 L16,16 L22,18" id="Group" stroke="#909399" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

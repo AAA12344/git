@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>paperclip</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-512, -1017)">
+            <g id="paperclip" transform="translate(512, 1017)">
+                <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="32" height="32"></rect>
+                <path d="M25.9786945,15.3191296 C25.9786945,15.3191296 22.9786954,18.3191299 16.9786949,24.3191299 C10.9786944,30.3191299 1.97869441,21.3191299 7.97869443,15.3191299 C13.9786944,9.31912994 12.9786945,10.3191297 16.9786945,6.31912965 C20.9786945,2.31912962 26.9786945,8.31912951 22.9786945,12.3191296 C18.9786945,16.3191297 15.9786949,19.3191303 13.9786944,21.3191299 C11.978694,23.3191296 8.97869449,20.3191296 10.9786944,18.3191299 C12.3120277,16.9857969 15.3120278,13.9857967 19.9786945,9.31912957" id="Path" stroke="#909399" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

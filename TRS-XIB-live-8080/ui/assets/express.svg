@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>express</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-128, -1117)">
+            <g id="express" transform="translate(128, 1117)">
+                <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-35" transform="translate(4, 4)" stroke="#909399" stroke-width="2">
+                    <path d="M2.74025113,0.606080701 L0.08085497,6.8113384 C0.0275077492,6.93581525 -7.77156117e-16,7.06983093 -8.8817842e-16,7.2052577 L0,23 C1.11022302e-16,23.5522847 0.44771525,24 1,24 L23,24 C23.5522847,24 24,23.5522847 24,23 L24,7.2052577 C24,7.06983093 23.9724923,6.93581525 23.919145,6.8113384 L21.2597489,0.606080701 C21.1021701,0.238396854 20.740632,-1.77635684e-15 20.3406038,-1.66533454e-15 L3.65939616,6.66133815e-16 C3.25936805,7.77156117e-16 2.89782992,0.238396854 2.74025113,0.606080701 Z" id="路径-81"></path>
+                    <line x1="12" y1="0" x2="12" y2="7" id="路径-82"></line>
+                    <line x1="0" y1="7" x2="24" y2="7" id="路径-83"></line>
+                    <line x1="12" y1="15" x2="20" y2="15" id="路径-84" stroke-linecap="round"></line>
+                    <line x1="6" y1="19" x2="20" y2="19" id="路径-85" stroke-linecap="round"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

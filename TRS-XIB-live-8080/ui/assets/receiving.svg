@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>receiving</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-512, -1973)">
+            <g id="receiving" transform="translate(512, 1973)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <path d="M9.5936331,5 L22.4338096,5 C22.7850725,5 23.1105793,5.18429883 23.2913025,5.48550424 L29,15 L29,15 L29,26 C29,26.5522847 28.5522847,27 28,27 L4,27 C3.44771525,27 3,26.5522847 3,26 L3,16 L3,16 L8.71573753,5.52114787 C8.8909707,5.19988706 9.22768888,5 9.5936331,5 Z" id="矩形" stroke="#909399" stroke-width="2"></path>
+                <polyline id="路径-30" stroke="#909399" stroke-width="2" points="3 17 11 17 11 21 21 21 21 17 29 17"></polyline>
+                <line x1="10" y1="13" x2="22" y2="13" id="路径-31" stroke="#909399" stroke-width="2" stroke-linecap="round"></line>
+                <line x1="12" y1="9" x2="20" y2="9" id="路径-32" stroke="#909399" stroke-width="2" stroke-linecap="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

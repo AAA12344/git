@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>delete-solid</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-128, -917)">
+            <g id="delete-solid" transform="translate(128, 917)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <rect id="矩形" fill="#909399" x="2" y="6" width="28" height="2" rx="1"></rect>
+                <path d="M26,6 C26.5522847,6 27,6.44771525 27,7 L27,29 C27,29.5522847 26.5522847,30 26,30 L6,30 C5.44771525,30 5,29.5522847 5,29 L5,7 C5,6.44771525 5.44771525,6 6,6 L26,6 Z M13,12 C12.4477153,12 12,12.4477153 12,13 L12,23 C12,23.5522847 12.4477153,24 13,24 C13.5522847,24 14,23.5522847 14,23 L14,13 C14,12.4477153 13.5522847,12 13,12 Z M19,12 C18.4477153,12 18,12.4477153 18,13 L18,23 C18,23.5522847 18.4477153,24 19,24 C19.5522847,24 20,23.5522847 20,23 L20,13 C20,12.4477153 19.5522847,12 19,12 Z" id="形状结合" fill="#909399"></path>
+                <path d="M12,7 L12,4 C12,3.44771525 12.4477153,3 13,3 L19,3 C19.5522847,3 20,3.44771525 20,4 L20,7 L20,7" id="路径-19" stroke="#909399" stroke-width="2" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

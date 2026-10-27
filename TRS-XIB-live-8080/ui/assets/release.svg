@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>release</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1152, -1973)">
+            <g id="release" transform="translate(1152, 1973)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <rect id="矩形" fill="#909399" x="12" y="3" width="8" height="3"></rect>
+                <polygon id="路径-14" fill="#909399" points="5 6 5 29 27 29 27 6 22 6 22 8 10 8 10 6"></polygon>
+                <path d="M11.5,13.5 L20.5,22.5 M20.5,13.5 L11.5,22.5" id="形状结合" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

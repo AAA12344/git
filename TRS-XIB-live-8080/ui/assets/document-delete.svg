@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>document-delete</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1152, -1873)">
+            <g id="document-delete" transform="translate(1152, 1873)">
+                <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-6" transform="translate(5, 3)">
+                    <path d="M0,1 L0,25 C1.11022302e-16,25.5522847 0.44771525,26 1,26 L21,26 C21.5522847,26 22,25.5522847 22,25 L22,7 L22,7 L15,0 L1,0 C0.44771525,1.11022302e-16 0,0.44771525 0,1 Z" id="路径-2" stroke="#909399" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M14,0 L14,7 C14,7.55228475 14.4477153,8 15,8 L22,8 L22,8" id="路径-3" stroke="#909399" stroke-width="2" stroke-linecap="round"></path>
+                    <g id="close" transform="translate(6, 12)">
+                        <rect id="矩形" x="0" y="0" width="10" height="10"></rect>
+                        <path d="M2.1875,2.1875 L7.8125,7.8125 M7.8125,2.1875 L2.1875,7.8125" id="形状结合" stroke="#909399" stroke-width="2" stroke-linecap="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
