@@ -1,0 +1,38 @@
+.xib-module-complaints-reports{--report-blue:#2272de;--report-statistics-icon:#529cff;--report-detail-icon:#7168ff;display:grid;gap:18px}
+.xib-module-complaints-reports .analysis-report-section{min-width:0}
+.xib-module-complaints-reports .analysis-section-title{display:flex;min-height:34px;margin-bottom:12px;align-items:center}
+.xib-module-complaints-reports .analysis-section-title>span{padding:2px 8px;border-radius:10px;background:#eef3f9;color:var(--muted);font-size:12px}
+.report-catalog-tabs{width:auto;margin-left:14px}
+.report-catalog-tabs>button{min-width:56px;justify-content:center}
+.xib-module-complaints-reports .analysis-report-grid{grid-template-columns:repeat(4,minmax(220px,1fr));gap:12px}
+.xib-module-complaints-reports .analysis-report-card{height:72px;padding:12px 16px;flex-direction:row;justify-content:flex-start;gap:12px;border:1px solid var(--divider);border-radius:4px;box-shadow:none;text-align:left}
+.xib-module-complaints-reports .analysis-report-card:hover,.xib-module-complaints-reports .analysis-report-card:focus-visible{border-color:#a7c7f2;background:#f7faff;box-shadow:0 3px 10px rgba(31,78,143,.08)}
+.xib-module-complaints-reports .analysis-report-icon{width:34px;height:34px;flex-basis:34px}
+.xib-module-complaints-reports .analysis-report-icon.is-statistics{background:var(--report-statistics-icon)}
+.xib-module-complaints-reports .analysis-report-icon.is-detail{background:var(--report-detail-icon)}
+.analysis-report-card-copy{display:grid;min-width:0}
+.xib-module-complaints-reports .analysis-report-card strong{color:var(--title);font-size:13px;line-height:20px;text-align:left}
+.report-type{display:inline-flex;width:max-content;height:20px;padding:0 7px;align-items:center;border-radius:2px;font-size:11px;line-height:20px}
+.report-type.is-statistics{background:#eaf3ff;color:#2272de}
+.report-type.is-detail{background:#f0f9eb;color:#529b2e}
+.report-detail-page{gap:12px}
+.report-detail-page .page-header{margin-bottom:0}
+.report-detail-meta{display:flex;align-items:center;gap:10px;margin-top:-8px;color:var(--muted);font-size:12px}
+.report-filter-panel{margin-bottom:0}
+.report-filter-panel .ticket-filter-grid{align-items:center}
+.report-filter-panel .ticket-filter-item{grid-template-columns:84px minmax(0,1fr)}
+.report-filter-panel .query-complaint-exclusion-rules{grid-template-columns:84px minmax(0,1fr)}
+.report-filter-panel .tag-hierarchy-filter{position:relative}
+.filter-number-controls{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);align-items:center;gap:6px}
+.filter-number-controls>i{color:var(--muted);font-style:normal;text-align:center}
+.report-result-panel{min-width:0;overflow:hidden}
+.report-result-toolbar{display:flex;height:44px;padding:0 14px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--divider);color:var(--muted);font-size:12px}
+.report-result-toolbar b{color:var(--report-blue);font-weight:600}
+.report-detail-table{min-width:1180px}
+.report-detail-table thead tr+tr th{border-top:1px solid var(--divider)}
+.report-detail-table th{text-align:center;border-right:1px solid var(--divider)}
+.report-detail-table td{height:46px;white-space:nowrap}
+.report-detail-table .selection-cell{width:42px;text-align:center}
+.report-ticket-link{white-space:nowrap}
+@media(max-width:1350px){.xib-module-complaints-reports .analysis-report-grid{grid-template-columns:repeat(3,minmax(210px,1fr))}.report-filter-panel .ticket-filter-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1050px){.xib-module-complaints-reports .analysis-report-grid{grid-template-columns:repeat(2,minmax(210px,1fr))}.report-filter-panel .ticket-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

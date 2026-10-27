@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>application</title>
+    <g id="➣-2.1-导航" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="导航" transform="translate(-939, -282)">
+            <g id="编组-10" transform="translate(939, 278)">
+                <g id="application" transform="translate(0, 4)">
+                    <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                    <g id="编组-37" transform="translate(1.5, 1)" stroke="#909399" stroke-width="1.2">
+                        <rect id="矩形" x="0" y="1" width="5" height="5" rx="1"></rect>
+                        <rect id="矩形备份-56" x="0" y="8.5" width="5" height="5" rx="1"></rect>
+                        <rect id="矩形备份-207" x="7.5" y="8.5" width="5" height="5" rx="1"></rect>
+                        <path d="M9.29289322,0.707106781 L7.20710678,2.79289322 C6.81658249,3.18341751 6.81658249,3.81658249 7.20710678,4.20710678 L9.29289322,6.29289322 C9.68341751,6.68341751 10.3165825,6.68341751 10.7071068,6.29289322 L12.7928932,4.20710678 C13.1834175,3.81658249 13.1834175,3.18341751 12.7928932,2.79289322 L10.7071068,0.707106781 C10.3165825,0.316582489 9.68341751,0.316582489 9.29289322,0.707106781 Z" id="路径-88"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

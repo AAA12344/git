@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>medal</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-128, -3033)">
+            <g id="medal" transform="translate(128, 3033)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <path d="M9,14 L7.21434281,4.17888544 C7.11554711,3.63550909 7.47595093,3.11492579 8.01932728,3.01613009 C8.07835121,3.00539847 8.13822112,3 8.19821272,3 L23.8017873,3 C24.354072,3 24.8017873,3.44771525 24.8017873,4 C24.8017873,4.0599916 24.7963888,4.11986151 24.7856572,4.17888544 L23,14 L23,14" id="路径" stroke="#909399" stroke-width="2"></path>
+                <circle id="椭圆形" stroke="#909399" stroke-width="2" cx="16" cy="20" r="9"></circle>
+                <line x1="13" y1="3" x2="13" y2="11" id="路径-2" stroke="#909399" stroke-width="2"></line>
+                <line x1="19" y1="4" x2="19" y2="12" id="路径-2备份" stroke="#909399" stroke-width="2"></line>
+                <polyline id="路径-3" stroke="#909399" stroke-width="2" points="13 16 16 16 16 23"></polyline>
+                <line x1="13" y1="24" x2="19" y2="24" id="路径-7" stroke="#909399" stroke-width="2"></line>
+            </g>
+        </g>
+    </g>
+</svg>

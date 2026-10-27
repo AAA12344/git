@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>collection</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-640, -1973)">
+            <g id="collection" transform="translate(640, 1973)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <path d="M8,3 L26,3 C26.5522847,3 27,3.44771525 27,4 L27,28 C27,28.5522847 26.5522847,29 26,29 L8,29 C6.34314575,29 5,27.6568542 5,26 L5,6 C5,4.34314575 6.34314575,3 8,3 Z" id="矩形" stroke="#909399" stroke-width="2"></path>
+                <polyline id="路径-30" stroke="#909399" stroke-width="2" points="11 3 11 14 15 11 19 14 19 3"></polyline>
+                <line x1="5" y1="24" x2="27" y2="24" id="路径-31" stroke="#909399" stroke-width="2"></line>
+            </g>
+        </g>
+    </g>
+</svg>

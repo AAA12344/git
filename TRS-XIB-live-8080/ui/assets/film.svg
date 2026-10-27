@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>film</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1024, -1673)">
+            <g id="film" transform="translate(1024, 1673)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-3" transform="translate(3, 3)" stroke="#909399" stroke-width="2">
+                    <rect id="矩形" x="1" y="1" width="24" height="24" rx="1"></rect>
+                    <line x1="8" y1="1" x2="8" y2="25" id="路径-15"></line>
+                    <line x1="18" y1="1" x2="18" y2="25" id="路径-15备份"></line>
+                    <line x1="1" y1="13" x2="25" y2="13" id="路径-16"></line>
+                    <line x1="18" y1="7" x2="25" y2="7" id="路径-17"></line>
+                    <line x1="18" y1="19" x2="25" y2="19" id="路径-17备份"></line>
+                    <line x1="1" y1="19" x2="8" y2="19" id="路径-17备份-2"></line>
+                    <line x1="1" y1="7" x2="8" y2="7" id="路径-17备份-3"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

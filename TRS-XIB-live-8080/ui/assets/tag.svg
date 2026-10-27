@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>tag</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1280, -1673)">
+            <g id="tag" transform="translate(1280, 1673)">
+                <rect id="矩形" fill-opacity="0.01" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="32" height="32"></rect>
+                <path d="M27.1127333,18.4967333 L18.5087333,27.1007333 C18.0586,27.5514 17.4477333,27.8046 16.8107333,27.8046 C16.1737333,27.8046 15.5629333,27.5514 15.1127333,27.1007333 L4.33333333,16.3333333 L4.33333333,4.33333333 L16.3333333,4.33333333 L27.1127333,15.1127333 C28.0432667,16.0488 28.0432667,17.5606667 27.1127333,18.4967333 Z" id="路径" stroke="#909399" stroke-width="2" stroke-linejoin="round"></path>
+                <path d="M11.5,13 C12.32842,13 13,12.32842 13,11.5 C13,10.67158 12.32842,10 11.5,10 C10.67158,10 10,10.67158 10,11.5 C10,12.32842 10.67158,13 11.5,13 Z" id="路径" fill="#909399"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>process</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1024, -917)">
+            <g id="process" transform="translate(1024, 917)">
+                <rect id="矩形" fill="#0075E6" fill-rule="nonzero" opacity="0" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-34" transform="translate(6, 3)" stroke="#909399" stroke-width="2">
+                    <circle id="椭圆形" cx="17" cy="3" r="3"></circle>
+                    <circle id="椭圆形备份-6" cx="17" cy="13" r="3"></circle>
+                    <circle id="椭圆形备份-7" cx="17" cy="23" r="3"></circle>
+                    <line x1="17" y1="6" x2="17" y2="10" id="路径-73"></line>
+                    <line x1="17" y1="16" x2="17" y2="20" id="路径-74"></line>
+                    <rect id="矩形" x="0" y="10" width="6" height="6" rx="2"></rect>
+                    <polyline id="路径-75" points="3 16 3 23 14 23"></polyline>
+                    <line x1="6" y1="13" x2="14" y2="13" id="路径-76"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

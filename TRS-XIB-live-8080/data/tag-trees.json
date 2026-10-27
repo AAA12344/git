@@ -1,0 +1,668 @@
+{
+  "meta": {
+    "description": "标签树统一存储（来源 Excel，见 sources）。表单/筛选/详情共用；改标签先改本文件再重新生成 runtime。",
+    "sources": {
+      "jinguanBusinessChannel": "标签体系/金管标签.xlsx（被投诉业务办理渠道）",
+      "jinguanBusinessCategory": "标签体系/金管标签.xlsx（被投诉业务类别1/2/3）",
+      "jinguanBusinessCause": "标签体系/金管标签.xlsx（被投诉业务原因）",
+      "appealTag": "标签体系/诉求标签体系.xlsx（诉求标签：一级→二级）",
+      "trsBusinessChannel": "标签体系/厦门国际银行-0721-渠道标签体系.xlsx（一级渠道→二级渠道）"
+    }
+  },
+  "jinguanBusinessChannel": {
+    "label": "被投诉业务办理渠道",
+    "levels": [
+      "渠道"
+    ],
+    "kind": "flat",
+    "tree": [
+      {
+        "label": "营业现场"
+      },
+      {
+        "label": "自助机具"
+      },
+      {
+        "label": "自有电子渠道"
+      },
+      {
+        "label": "第三方渠道"
+      },
+      {
+        "label": "中后台业务渠道"
+      }
+    ]
+  },
+  "jinguanBusinessCategory": {
+    "label": "被投诉业务类别",
+    "levels": [
+      "一级",
+      "二级",
+      "三级"
+    ],
+    "kind": "cascader",
+    "tree": [
+      {
+        "label": "个人业务",
+        "children": [
+          {
+            "label": "人民币储蓄",
+            "children": []
+          },
+          {
+            "label": "个人住房贷款",
+            "children": [
+              {
+                "label": "办理问题"
+              },
+              {
+                "label": "息费及定价争议"
+              },
+              {
+                "label": "催收及征信纠纷"
+              }
+            ]
+          },
+          {
+            "label": "个人汽车消费贷款",
+            "children": [
+              {
+                "label": "办理问题"
+              },
+              {
+                "label": "息费及定价争议"
+              },
+              {
+                "label": "催收及征信纠纷"
+              }
+            ]
+          },
+          {
+            "label": "个人教育助学贷款",
+            "children": [
+              {
+                "label": "办理问题"
+              },
+              {
+                "label": "息费及定价争议"
+              },
+              {
+                "label": "催收及征信纠纷"
+              }
+            ]
+          },
+          {
+            "label": "其他消费贷款",
+            "children": [
+              {
+                "label": "办理问题"
+              },
+              {
+                "label": "息费及定价争议"
+              },
+              {
+                "label": "催收及征信纠纷"
+              }
+            ]
+          },
+          {
+            "label": "个人生产经营性贷款",
+            "children": [
+              {
+                "label": "办理问题"
+              },
+              {
+                "label": "息费及定价争议"
+              },
+              {
+                "label": "催收及征信纠纷"
+              }
+            ]
+          },
+          {
+            "label": "其他贷款",
+            "children": [
+              {
+                "label": "办理问题"
+              },
+              {
+                "label": "息费及定价争议"
+              },
+              {
+                "label": "催收及征信纠纷"
+              }
+            ]
+          },
+          {
+            "label": "借记卡账号管理",
+            "children": []
+          },
+          {
+            "label": "借记卡收费及挂失",
+            "children": []
+          },
+          {
+            "label": "借记卡使用",
+            "children": []
+          },
+          {
+            "label": "借记卡市场活动及增值服务",
+            "children": []
+          },
+          {
+            "label": "借记卡盗刷",
+            "children": []
+          },
+          {
+            "label": "借记卡其他",
+            "children": []
+          },
+          {
+            "label": "信用卡分期",
+            "children": [
+              {
+                "label": "办理问题"
+              },
+              {
+                "label": "息费及定价争议"
+              },
+              {
+                "label": "催收及征信纠纷"
+              }
+            ]
+          },
+          {
+            "label": "信用卡消费贷款",
+            "children": [
+              {
+                "label": "办理问题"
+              },
+              {
+                "label": "息费及定价争议"
+              },
+              {
+                "label": "催收及征信纠纷"
+              }
+            ]
+          },
+          {
+            "label": "信用卡申请、开卡及换卡",
+            "children": []
+          },
+          {
+            "label": "信用卡使用和还款",
+            "children": []
+          },
+          {
+            "label": "信用卡账单服务",
+            "children": []
+          },
+          {
+            "label": "信用卡市场活动、积分及增值服务",
+            "children": []
+          },
+          {
+            "label": "信用卡挂失及注销",
+            "children": []
+          },
+          {
+            "label": "信用卡盗刷",
+            "children": []
+          },
+          {
+            "label": "信用卡其他",
+            "children": []
+          },
+          {
+            "label": "自营理财",
+            "children": []
+          },
+          {
+            "label": "支付结算",
+            "children": []
+          },
+          {
+            "label": "人民币管理",
+            "children": []
+          },
+          {
+            "label": "外汇",
+            "children": []
+          },
+          {
+            "label": "贵金属",
+            "children": []
+          },
+          {
+            "label": "个人金融信息",
+            "children": []
+          },
+          {
+            "label": "代理保险业务",
+            "children": []
+          },
+          {
+            "label": "代理证券业务",
+            "children": []
+          },
+          {
+            "label": "代理期货业务",
+            "children": []
+          },
+          {
+            "label": "代理信托业务",
+            "children": []
+          },
+          {
+            "label": "代理基金业务",
+            "children": []
+          },
+          {
+            "label": "代理其他业务",
+            "children": []
+          },
+          {
+            "label": "其他中间业务",
+            "children": []
+          },
+          {
+            "label": "国库",
+            "children": []
+          },
+          {
+            "label": "其他",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "对公业务",
+        "children": [
+          {
+            "label": "企业账户管理及使用",
+            "children": []
+          },
+          {
+            "label": "企业存款及理财",
+            "children": []
+          },
+          {
+            "label": "企业贷款",
+            "children": []
+          },
+          {
+            "label": "本/外币支付结算及结售汇",
+            "children": []
+          },
+          {
+            "label": "企业代理/担保业务",
+            "children": []
+          },
+          {
+            "label": "企业收费",
+            "children": []
+          },
+          {
+            "label": "企业电子渠道使用",
+            "children": []
+          },
+          {
+            "label": "其他",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "jinguanBusinessCause": {
+    "label": "被投诉业务原因",
+    "levels": [
+      "原因"
+    ],
+    "kind": "flat",
+    "tree": [
+      {
+        "label": "因服务态度及服务质量引起的投诉"
+      },
+      {
+        "label": "因金融机构服务设施、设备、业务系统引起的投诉"
+      },
+      {
+        "label": "因金融机构管理制度、业务规则与流程引起的投诉"
+      },
+      {
+        "label": "因营销方式和手段引起的投诉"
+      },
+      {
+        "label": "因信息披露引起的投诉"
+      },
+      {
+        "label": "因自主选择权引起的投诉"
+      },
+      {
+        "label": "因定价收费引起的投诉"
+      },
+      {
+        "label": "因产品收益引起的投诉"
+      },
+      {
+        "label": "因合同条款引起的投诉"
+      },
+      {
+        "label": "因消费者资金安全引起的投诉"
+      },
+      {
+        "label": "因消费者信息安全引起的投诉"
+      },
+      {
+        "label": "因债务催收方式和手段引起的投诉"
+      }
+    ]
+  },
+  "appealTag": {
+    "label": "投诉诉求标签",
+    "levels": [
+      "一级",
+      "二级"
+    ],
+    "kind": "cascader",
+    "tree": [
+      {
+        "label": "催收还款类",
+        "children": [
+          {
+            "label": "停止催收本人"
+          },
+          {
+            "label": "停止骚扰第三方"
+          },
+          {
+            "label": "降低催收频率"
+          },
+          {
+            "label": "协商还款/个性化分期"
+          },
+          {
+            "label": "减免利息/罚息/费用"
+          },
+          {
+            "label": "申请延期还款"
+          },
+          {
+            "label": "提前还款/结清"
+          }
+        ]
+      },
+      {
+        "label": "账户额度类",
+        "children": [
+          {
+            "label": "注销账户/销户"
+          },
+          {
+            "label": "注销额度"
+          },
+          {
+            "label": "解除账户管控"
+          },
+          {
+            "label": "解除限额"
+          },
+          {
+            "label": "恢复账户正常"
+          },
+          {
+            "label": "恢复/调整额度"
+          },
+          {
+            "label": "撤销不良标记"
+          }
+        ]
+      },
+      {
+        "label": "征信信息类",
+        "children": [
+          {
+            "label": "删除逾期不良记录"
+          },
+          {
+            "label": "征信异议/纠错"
+          },
+          {
+            "label": "要求解释征信记录"
+          }
+        ]
+      },
+      {
+        "label": "查证解释类",
+        "children": [
+          {
+            "label": "查明扣款/费用原因"
+          },
+          {
+            "label": "查明账户异常原因"
+          },
+          {
+            "label": "解释业务规则"
+          },
+          {
+            "label": "核实交易真实性"
+          }
+        ]
+      },
+      {
+        "label": "经济补偿类",
+        "children": [
+          {
+            "label": "赔偿经济损失"
+          },
+          {
+            "label": "返还被扣/多收费用"
+          },
+          {
+            "label": "退还理财/投资本金"
+          },
+          {
+            "label": "补偿利息/收益损失"
+          }
+        ]
+      },
+      {
+        "label": "追责道歉类",
+        "children": [
+          {
+            "label": "赔礼道歉"
+          },
+          {
+            "label": "投诉员工服务质量"
+          },
+          {
+            "label": "投诉合作方行为"
+          },
+          {
+            "label": "追究相关人员责任"
+          }
+        ]
+      },
+      {
+        "label": "业务办理类",
+        "children": [
+          {
+            "label": "完成业务办理"
+          },
+          {
+            "label": "加快处理进度"
+          },
+          {
+            "label": "撤销错误操作"
+          },
+          {
+            "label": "恢复业务办理资格"
+          },
+          {
+            "label": "线上办理业务"
+          },
+          {
+            "label": "恢复正常登录"
+          },
+          {
+            "label": "查询申请进度"
+          },
+          {
+            "label": "开具相关证明"
+          }
+        ]
+      },
+      {
+        "label": "信息安全类",
+        "children": [
+          {
+            "label": "要求停止泄露个人信息"
+          },
+          {
+            "label": "要求删除/注销个人信息"
+          },
+          {
+            "label": "要求查明信息泄露渠道"
+          },
+          {
+            "label": "要求更正个人信息"
+          }
+        ]
+      },
+      {
+        "label": "其他",
+        "children": [
+          {
+            "label": "无明确诉求"
+          },
+          {
+            "label": "咨询/建议类"
+          },
+          {
+            "label": "其他诉求"
+          }
+        ]
+      }
+    ]
+  },
+  "trsBusinessChannel": {
+    "label": "业务办理渠道标签",
+    "levels": [
+      "一级渠道",
+      "二级渠道"
+    ],
+    "kind": "cascader",
+    "tree": [
+      {
+        "label": "大堂渠道",
+        "children": [
+          {
+            "label": "柜面业务"
+          },
+          {
+            "label": "厅堂服务"
+          },
+          {
+            "label": "厅堂自助"
+          }
+        ]
+      },
+      {
+        "label": "线上自有渠道",
+        "children": [
+          {
+            "label": "手机银行"
+          },
+          {
+            "label": "网上银行"
+          },
+          {
+            "label": "客服电话"
+          },
+          {
+            "label": "在线客服"
+          },
+          {
+            "label": "短信渠道"
+          },
+          {
+            "label": "微信/公众平台"
+          }
+        ]
+      },
+      {
+        "label": "第三方合作渠道",
+        "children": [
+          {
+            "label": "度小满"
+          },
+          {
+            "label": "乐信"
+          },
+          {
+            "label": "京东"
+          },
+          {
+            "label": "美团"
+          },
+          {
+            "label": "数禾"
+          },
+          {
+            "label": "字节跳动"
+          },
+          {
+            "label": "拍拍贷"
+          },
+          {
+            "label": "维信金科"
+          },
+          {
+            "label": "马上消金"
+          },
+          {
+            "label": "小米"
+          },
+          {
+            "label": "360"
+          },
+          {
+            "label": "网商银行"
+          },
+          {
+            "label": "新网银行"
+          },
+          {
+            "label": "其他合作平台"
+          }
+        ]
+      },
+      {
+        "label": "其他",
+        "children": [
+          {
+            "label": "其他"
+          }
+        ]
+      },
+      {
+        "label": "内部管理渠道",
+        "children": [
+          {
+            "label": "信贷审批/管理"
+          },
+          {
+            "label": "账户管理/风控"
+          },
+          {
+            "label": "信用卡管理"
+          },
+          {
+            "label": "其他后台操作"
+          }
+        ]
+      }
+    ]
+  }
+}

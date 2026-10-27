@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>phone-outline</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-256, -617)">
+            <g id="phone-outline" transform="translate(256, 617)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <path d="M6.25932438,4.8787346 L10.8925362,9.30674972 L10.1671788,12.208179 C9.99679133,12.8897291 10.1964896,13.6107031 10.6932503,14.1074638 L18.7132043,22.1274179 C19.0502687,22.4644823 19.4828609,22.6591615 19.9303426,22.703471 C20.3778244,22.7477804 20.8401957,22.64172 21.2368183,22.3773049 L22.8725821,21.2867957 L27.2205382,25.6347518 L19.2600515,28.8189465 L3.18429302,11.7975552 L6.25932438,4.8787346 Z" id="路径-2" stroke="#909399" stroke-width="2"></path>
+                <path d="M15,9 C19,9.66666667 21.6666667,12 23,16" id="路径-3" stroke="#909399" stroke-width="2"></path>
+                <path d="M15,3 C23,3 27.6666667,7.33333333 29,16" id="路径-4" stroke="#909399" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

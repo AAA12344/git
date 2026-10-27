@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "name": "厦门国际银行消费者权益保护系统表单字段结构",
+    "version": "2.0.0",
+    "source_of_truth_note": "表单字段源按维护边界拆分在 data/forms/；修改源文件后运行 npm run build:data 生成本兼容文件和浏览器运行时文件。",
+    "rectificationSources": {
+      "fieldTable": "溯源整改.xlsx / 溯源整改字段表 / 字段中文名",
+      "productDictionary": "产品标签体系_v4_0722.xlsx / 阶梯型体系",
+      "causeDictionary": "厦门国际银行-0721-原因标签体系.xlsx / 原因标签体系 (修改)"
+    },
+    "storageVersion": 15
+  },
+  "runtime_storage": {
+    "schema_definition": "字段结构以 data/forms/ 下的分域 JSON 为唯一配置源；data/form-schema.json 与 prototype-data.runtime.js 均为自动生成文件。",
+    "form_values": {
+      "container": "state.formValues（当前编辑缓冲）与 state.documentData（完整单据字段）",
+      "shape": "编辑时使用带作用域的扁平键值；提交后按 entry、processing、review、initialApproval、countersign、approval 分阶段保存。",
+      "examples": {
+        "entry": "投诉请求",
+        "customer": "customer.1.客户姓名",
+        "processing": "processing.TS202607230012.处置意见",
+        "subprocess": "subprocess.延长申请.延长原因",
+        "approval": "审批意见",
+        "countersign": "会签意见"
+      }
+    },
+    "workflow_documents": "初始记录来自 seed-data.json；访问者操作后的列表、完整字段和流转历史保存在当前浏览器 localStorage 的 xib-prototype-state-v14。",
+    "recommended_target": "继续以本 JSON 管理字段，以 seed-data.json 管理完整模拟记录；CSV 仅作为人工核对视图。"
+  },
+  "control_labels": {
+    "readonly": "只读文本框",
+    "workOrderType": "工单类型选择器",
+    "text": "文本框",
+    "number": "数字输入框",
+    "select": "下拉选择器",
+    "channel": "渠道选择器",
+    "radio": "单选按钮",
+    "textarea": "文本域",
+    "date": "日期选择器",
+    "datetime": "日期时间选择器",
+    "year": "年份选择器",
+    "cascader": "级联选择器",
+    "multiCascader": "多选级联选择器",
+    "checkboxGroup": "复选框组",
+    "upload": "上传控件",
+    "trendChart": "趋势图"
+  },
+  "control_type_labels": {
+    "hierarchyCascader": "层级级联选择器",
+    "relatedEventPicker": "关联事件单搜索选择器",
+    "rectificationStatsProductFilter": "整改统计产品筛选器",
+    "rectificationStatsOrgFilter": "整改统计机构选择器",
+    "rectificationBarChart": "整改日均投诉量对比图",
+    "rectificationTrendChart": "整改投诉量趋势图"
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>printer</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-256, -1973)">
+            <g id="printer" transform="translate(256, 1973)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-16" transform="translate(3, 3)" stroke="#909399">
+                    <rect id="矩形" stroke-width="2" x="6" y="14" width="14" height="12"></rect>
+                    <rect id="矩形" stroke-width="2" x="6" y="0" width="14" height="6"></rect>
+                    <path d="M6,20 L0,20 L0,8 C0,6.8954305 0.8954305,6 2,6 L24,6 C25.1045695,6 26,6.8954305 26,8 L26,20 L26,20 L20,20" id="路径" stroke-width="2"></path>
+                    <path d="M6.5,9.5 L6.5,10.5 L5.5,10.5 L5.5,9.5 L6.5,9.5 Z M10.5,9.5 L10.5,10.5 L9.5,10.5 L9.5,9.5 L10.5,9.5 Z" id="形状结合" fill="#D8D8D8"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

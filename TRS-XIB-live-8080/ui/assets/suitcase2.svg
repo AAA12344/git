@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>suitcase2</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-384, -1773)">
+            <g id="suitcase2" transform="translate(384, 1773)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-33" transform="translate(4, 4)">
+                    <path d="M4.66666667,4.5 C4.66666667,2.014725 6.45753333,0 8.66666667,0 L14.6666667,0 C16.8758,0 18.6666667,2.014725 18.6666667,4.5 L18.6666667,6 L4.66666667,6 L4.66666667,4.5 Z" id="路径" stroke="#909399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M0,12.75 L11.70894,16.409025 C11.90004,16.4688 12.09996,16.4688 12.29106,16.409025 L24,12.75 L24,22.5 C24,23.32845 23.46276,24 22.8,24 L1.2,24 C0.537258,24 0,23.32845 0,22.5 L0,12.75 Z" id="路径" stroke="#909399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M24,14.25 L24,7.5 C24,6.67155 23.46276,6 22.8,6 L1.2,6 C0.537258,6 0,6.67155 0,7.5 L0,14.25" id="路径" stroke="#909399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M14,11 C14,12.10456 13.10456,13 12,13 C10.89544,13 10,12.10456 10,11 C10,9.89544 10.89544,9 12,9 C13.10456,9 14,9.89544 14,11 Z" id="路径" fill="#909399" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

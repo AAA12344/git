@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "name": "单据状态机与审批规则",
+    "version": "1.4.0",
+    "description": "状态、事件、目标状态、流转场景、流转记录和子流程类型适用节点的唯一配置源。"
+  },
+  "workflowRecordSchema": {
+    "fields": [
+      { "label": "操作人", "code": "operatorName", "type": "string" },
+      { "label": "角色", "code": "operatorRoleName", "type": "string" },
+      { "label": "机构", "code": "operatorOrgName", "type": "string" },
+      { "label": "流转场景", "code": "flowSceneName", "type": "dictionary" },
+      { "label": "流转意见", "code": "flowOpinion", "type": "longText" },
+      { "label": "接收对象", "code": "receiverName", "type": "string" },
+      { "label": "状态流转", "code": "statusTransition", "type": "string" },
+      { "label": "操作时间", "code": "operationTime", "type": "datetime" }
+    ],
+    "emptyValue": "-",
+    "operationTimeFormat": "YYYY-MM-DD HH:mm:ss"
+  },
+  "documentStateMachines": {
+    "ticket": {
+      "statuses": [
+        "草稿",
+        "待提交",
+        "待复核",
+        "复核中",
+        "待处理",
+        "处理中",
+        "会签中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中",
+        "已办结",
+        "已废止"
+      ],
+      "transitions": {
+        "submit": {
+          "草稿": "待复核",
+          "待提交": "待复核"
+        },
+        "startReview": {
+          "待复核": "复核中"
+        },
+        "review": {
+          "复核中": "待处理"
+        },
+        "rejectReview": {
+          "待复核": "待提交",
+          "复核中": "待提交"
+        },
+        "withdrawSubmission": {
+          "待复核": "待提交",
+          "待处理": "待提交"
+        },
+        "withdrawApproval": {
+          "待审批": "处理中"
+        },
+        "claim": {
+          "待处理": "处理中"
+        },
+        "transfer": {
+          "待处理": "待处理",
+          "处理中": "待处理"
+        },
+        "transferApproval": {
+          "待初审": "待初审",
+          "初审中": "待初审",
+          "待审批": "待审批",
+          "审批中": "待审批"
+        },
+        "submitProcessingToInitial": {
+          "待处理": "待初审",
+          "处理中": "待初审"
+        },
+        "submitProcessing": {
+          "待处理": "待审批",
+          "处理中": "待审批"
+        },
+        "startApproval": {
+          "待审批": "审批中"
+        },
+        "startInitial": {
+          "待初审": "初审中"
+        },
+        "passInitial": {
+          "待初审": "待审批",
+          "初审中": "待审批"
+        },
+        "rejectInitial": {
+          "待初审": "处理中",
+          "初审中": "处理中"
+        },
+        "approve": {
+          "待审批": "已办结",
+          "审批中": "已办结"
+        },
+        "reject": {
+          "待审批": "处理中",
+          "审批中": "处理中"
+        },
+        "submitWithoutReview": {
+          "草稿": "待处理",
+          "待提交": "待处理"
+        },
+        "submitProcessingToCountersign": {
+          "待处理": "会签中",
+          "处理中": "会签中"
+        },
+        "startCountersign": {
+          "会签中": "会签中"
+        },
+        "passCountersign": {
+          "会签中": "待审批"
+        },
+        "rejectCountersign": {
+          "会签中": "处理中"
+        },
+        "transferReview": {
+          "待复核": "待复核",
+          "复核中": "待复核"
+        }
+      },
+      "flowScenes": {
+        "submit": "提交复核",
+        "startReview": "领取复核",
+        "review": "复核通过",
+        "rejectReview": "复核驳回",
+        "withdrawSubmission": "撤回提交",
+        "withdrawApproval": "撤回审批",
+        "claim": "领取处理",
+        "transfer": "处理转派",
+        "transferApproval": "审核转派",
+        "submitProcessingToInitial": "提交初审",
+        "submitProcessing": "提交审批",
+        "startInitial": "领取初审",
+        "passInitial": "初审通过",
+        "rejectInitial": "初审驳回",
+        "startApproval": "领取审批",
+        "approve": "审批通过",
+        "reject": "审批驳回",
+        "submitWithoutReview": "提交处理",
+        "submitProcessingToCountersign": "提交会签",
+        "startCountersign": "领取会签",
+        "passCountersign": "会签通过",
+        "rejectCountersign": "会签驳回",
+        "transferReview": "复核转派"
+      },
+      "complaintDisplayFlowSteps": [
+        ["草稿", "待复核", "复核工单"],
+        ["草稿", "待处理", "派发工单"],
+        ["待复核", "复核中", "复核工单"],
+        ["复核中", "待处理", "派发工单"],
+        ["待处理", "处理中", "处理工单"],
+        ["处理中", "会签中", "发起会签"],
+        ["会签中", "待审批", "会签通过"],
+        ["处理中", "待审批", "提交审批"],
+        ["待审批", "审批中", "处理审批"],
+        ["审批中", "已办结", "办结归档"]
+      ],
+      "typeStatusMatrix": {
+        "投诉单": {
+          "草稿": "all", "待提交": "all", "待复核": "customerService", "复核中": "customerService",
+          "待处理": "all", "处理中": "all", "会签中": "all", "待审批": "all", "审批中": "all",
+          "已办结": "all", "已废止": "all"
+        },
+        "信访单": {
+          "草稿": "all", "待提交": "all", "待处理": "all", "处理中": "all",
+          "待初审": "all", "初审中": "all",
+          "待审批": "all", "审批中": "all", "已办结": "all", "已废止": "all"
+        },
+        "建议单": {
+          "草稿": "all", "待提交": "all", "待复核": "customerService", "复核中": "customerService",
+          "待处理": "all", "处理中": "all", "待审批": "all", "审批中": "all",
+          "已办结": "all", "已废止": "all"
+        },
+        "表扬单": {
+          "草稿": "all", "待提交": "all", "待复核": "customerService", "复核中": "customerService",
+          "待处理": "all", "处理中": "all", "待审批": "all", "审批中": "all",
+          "已办结": "all", "已废止": "all"
+        }
+      }
+    },
+    "subprocess": {
+      "statuses": [
+        "草稿",
+        "待提交",
+        "待复核",
+        "复核中",
+        "待处理",
+        "处理中",
+        "待初审",
+        "初审中",
+        "待审批",
+        "审批中",
+        "待补录",
+        "已办结",
+        "已废止"
+      ],
+      "transitions": {
+        "submitToReview": {
+          "草稿": "待复核",
+          "待提交": "待复核"
+        },
+        "startReview": {
+          "待复核": "复核中"
+        },
+        "reviewToApproval": {
+          "待复核": "待审批",
+          "复核中": "待审批"
+        },
+        "reviewToInitial": {
+          "待复核": "待初审",
+          "复核中": "待初审"
+        },
+        "reviewToComplete": {
+          "待复核": "已办结",
+          "复核中": "已办结"
+        },
+        "rejectReview": {
+          "待复核": "待提交",
+          "复核中": "待提交"
+        },
+        "withdrawSubmission": {
+          "待复核": "待提交",
+          "待处理": "待提交"
+        },
+        "submitToProcessing": {
+          "草稿": "待处理",
+          "待提交": "待处理"
+        },
+        "submitToProcessingDirect": {
+          "草稿": "处理中",
+          "待提交": "处理中"
+        },
+        "submitToApproval": {
+          "草稿": "待审批",
+          "待提交": "待审批"
+        },
+        "submitToInitial": {
+          "草稿": "待初审",
+          "待提交": "待初审"
+        },
+        "submitToComplete": {
+          "草稿": "已办结",
+          "待提交": "已办结"
+        },
+        "submit": {
+          "草稿": "待处理",
+          "待提交": "待处理"
+        },
+        "startApproval": {
+          "待审批": "审批中"
+        },
+        "startInitial": {
+          "待初审": "初审中"
+        },
+        "passInitial": {
+          "待初审": "待审批",
+          "初审中": "待审批"
+        },
+        "approve": {
+          "待审批": "已办结",
+          "审批中": "已办结"
+        },
+        "approveToSupplement": {
+          "待审批": "待补录",
+          "审批中": "待补录"
+        },
+        "approveToComplete": {
+          "待审批": "已办结",
+          "审批中": "已办结"
+        },
+        "reject": {
+          "待审批": "待处理",
+          "审批中": "待处理"
+        },
+        "rejectInitial": {
+          "待初审": "待处理",
+          "初审中": "待处理"
+        },
+        "rejectInitialToDraft": {
+          "待初审": "待提交",
+          "初审中": "待提交"
+        },
+        "claim": {
+          "待处理": "处理中"
+        },
+        "transfer": {
+          "待处理": "待处理",
+          "处理中": "待处理",
+          "待补录": "待补录"
+        },
+        "transferApproval": {
+          "待初审": "待初审",
+          "初审中": "待初审",
+          "待审批": "待审批",
+          "审批中": "待审批"
+        },
+        "submitProcessingToInitial": {
+          "待处理": "待初审",
+          "处理中": "待初审"
+        },
+        "submitProcessing": {
+          "待处理": "待审批",
+          "处理中": "待审批"
+        },
+        "rejectProcessingToDraft": {
+          "待处理": "待提交",
+          "处理中": "待提交"
+        },
+        "completeSupplement": {
+          "待补录": "已办结"
+        },
+        "completeProcessing": {
+          "待处理": "已办结",
+          "处理中": "已办结"
+        },
+        "rejectToDraft": {
+          "待审批": "待提交",
+          "审批中": "待提交"
+        }
+      },
+      "flowScenes": {
+        "submitToReview": "提交复核",
+        "startReview": "领取复核",
+        "reviewToInitial": "复核通过",
+        "reviewToApproval": "复核通过",
+        "reviewToComplete": "复核通过并办结",
+        "rejectReview": "复核驳回",
+        "withdrawSubmission": "撤回提交",
+        "submitToProcessing": "提交处理",
+        "submitToProcessingDirect": "提交处理并领取",
+        "submitToInitial": "提交初审",
+        "submitToApproval": "提交审批",
+        "submitToComplete": "提交并办结",
+        "submit": "提交处理",
+        "claim": "领取处理",
+        "transfer": "处理转派",
+        "submitProcessingToInitial": "提交初审",
+        "submitProcessing": "提交审批",
+        "rejectProcessingToDraft": "处理人驳回",
+        "startInitial": "领取初审",
+        "passInitial": "初审通过",
+        "rejectInitial": "初审驳回",
+        "rejectInitialToDraft": "初审驳回",
+        "startApproval": "领取审批",
+        "transferApproval": "审核转派",
+        "approve": "审批通过",
+        "approveToSupplement": "审批通过",
+        "approveToComplete": "审批通过",
+        "reject": "审批驳回",
+        "rejectToDraft": "审批驳回",
+        "completeSupplement": "子单办结回填主单",
+        "completeProcessing": "提交处理结果"
+      },
+      "typeStatusMatrix": {
+        "撤销投诉": {
+          "草稿": "all",
+          "待提交": "customerService",
+          "待复核": "customerService",
+          "复核中": "customerService",
+          "已办结": "all",
+          "已废止": "all"
+        },
+        "废止申请": {
+          "草稿": "all",
+          "待提交": "all",
+          "待复核": "customerService",
+          "复核中": "customerService",
+          "待初审": "all",
+          "初审中": "all",
+          "待审批": "all",
+          "审批中": "all",
+          "已办结": "all",
+          "已废止": "all"
+        },
+        "投诉校正": {
+          "草稿": "all",
+          "待提交": "all",
+          "待复核": "customerService",
+          "复核中": "customerService",
+          "待审批": "all",
+          "审批中": "all",
+          "已办结": "all",
+          "已废止": "all"
+        },
+        "异常投诉": {
+          "草稿": "all",
+          "待提交": "all",
+          "待处理": "all",
+          "处理中": "all",
+          "待初审": "all",
+          "初审中": "all",
+          "待审批": "all",
+          "审批中": "all",
+          "待补录": "all",
+          "已办结": "all",
+          "已废止": "all"
+        },
+        "剔除申请": {
+          "草稿": "all",
+          "待提交": "all",
+          "待处理": "all",
+          "处理中": "all",
+          "待初审": "all",
+          "初审中": "all",
+          "待审批": "all",
+          "审批中": "all",
+          "待补录": "all",
+          "已办结": "all",
+          "已废止": "all"
+        },
+        "延长申请": {
+          "草稿": "all",
+          "待提交": "all",
+          "待初审": "all",
+          "初审中": "all",
+          "待审批": "all",
+          "审批中": "all",
+          "待补录": "all",
+          "已办结": "all",
+          "已废止": "all"
+        },
+        "纠纷化解": {
+          "草稿": "all",
+          "待提交": "all",
+          "待审批": "all",
+          "审批中": "all",
+          "已办结": "all",
+          "已废止": "all"
+        },
+        "投诉调查": {
+          "草稿": "all",
+          "待提交": "all",
+          "待处理": "all",
+          "处理中": "all",
+          "待初审": "all",
+          "初审中": "all",
+          "待审批": "all",
+          "审批中": "all",
+          "已办结": "all",
+          "已废止": "all"
+        },
+        "投诉问责": {
+          "草稿": "all",
+          "待提交": "all",
+          "待处理": "all",
+          "处理中": "all",
+          "待审批": "all",
+          "审批中": "all",
+          "已办结": "all",
+          "已废止": "all"
+        },
+        "异议核查": {
+          "草稿": "all",
+          "待提交": "all",
+          "待处理": "all",
+          "处理中": "all",
+          "待初审": "all",
+          "初审中": "all",
+          "待审批": "all",
+          "审批中": "all",
+          "已办结": "all",
+          "已废止": "all"
+        }
+      }
+    },
+    "rectification": {
+      "statuses": [
+        "草稿",
+        "问题待提交",
+        "问题待审核",
+        "方案待提交",
+        "方案待初审",
+        "方案待审批",
+        "整改中",
+        "结果待初审",
+        "结果待审批",
+        "已办结",
+        "已废止"
+      ],
+      "transitions": {
+        "submitProblemDraft": {
+          "草稿": "问题待审核"
+        },
+        "submitProblem": {
+          "问题待提交": "问题待审核"
+        },
+        "approve": {
+          "问题待审核": "方案待提交",
+          "方案待初审": "方案待审批",
+          "方案待审批": "整改中",
+          "结果待初审": "结果待审批",
+          "结果待审批": "已办结"
+        },
+        "reject": {
+          "问题待审核": "问题待提交",
+          "方案待初审": "方案待提交",
+          "方案待审批": "方案待提交",
+          "结果待初审": "整改中",
+          "结果待审批": "整改中"
+        },
+        "rejectPlan": {
+          "方案待提交": "问题待提交"
+        },
+        "submitPlan": {
+          "方案待提交": "方案待初审"
+        },
+        "submitResult": {
+          "整改中": "结果待初审"
+        },
+        "void": {
+          "草稿": "已废止",
+          "问题待提交": "已废止",
+          "问题待审核": "已废止",
+          "方案待提交": "已废止",
+          "方案待初审": "已废止",
+          "方案待审批": "已废止",
+          "整改中": "已废止",
+          "结果待初审": "已废止",
+          "结果待审批": "已废止"
+        }
+      }
+    },
+    "exportRequest": {
+      "statuses": [
+        "待提交",
+        "待审批",
+        "审批中",
+        "已通过",
+        "已驳回"
+      ],
+      "transitions": {
+        "submit": {
+          "待提交": "待审批",
+          "已驳回": "待审批"
+        },
+        "startApproval": {
+          "待审批": "审批中"
+        },
+        "approve": {
+          "待审批": "已通过",
+          "审批中": "已通过"
+        },
+        "reject": {
+          "待审批": "已驳回",
+          "审批中": "已驳回"
+        },
+        "withdraw": {
+          "待审批": "待提交"
+        }
+      }
+    },
+    "smsApproval": {
+      "statuses": [
+        "待审批",
+        "审批中",
+        "已通过",
+        "已驳回"
+      ],
+      "transitions": {
+        "startApproval": {
+          "待审批": "审批中"
+        },
+        "approve": {
+          "待审批": "已通过",
+          "审批中": "已通过"
+        },
+        "reject": {
+          "待审批": "已驳回",
+          "审批中": "已驳回"
+        }
+      }
+    }
+  },
+  "approvalRules": {
+    "ticketReviewChannels": ["客服电话"],
+    "ticketInitialApprovalTypes": [
+      "信访单"
+    ],
+    "subprocessInitialApprovalTypes": [
+      "投诉调查",
+      "剔除申请",
+      "异常投诉",
+      "异议核查",
+      "废止申请"
+    ],
+    "subprocessNoApprovalTypes": [
+      "撤销投诉"
+    ],
+    "subprocessNoFinalApprovalTypes": [],
+    "subprocessSupplementTypes": [
+      "延长申请",
+      "剔除申请",
+      "异常投诉"
+    ],
+    "ticketCountersignTypes": [
+      "投诉单"
+    ]
+  }
+}

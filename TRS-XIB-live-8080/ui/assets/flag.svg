@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>flag</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1151, -2933)">
+            <g id="flag" transform="translate(1151, 2933)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <polygon id="路径" fill="#909399" fill-rule="nonzero" points="9 3.96166088 26 3.96166088 21.4545455 12 26 20.0309606 9 20.0309606 9 30 6 30 6 2 9 2"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

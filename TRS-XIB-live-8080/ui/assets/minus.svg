@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>minus</title>
+    <g id="➣-2.2-数据输入" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="数据输入" transform="translate(-1126, -764)">
+            <g id="minus" transform="translate(1126, 764)">
+                <rect id="矩形-81" x="0" y="0" width="16" height="16"></rect>
+                <path d="M14,8.5 L2,8.5 C1.72385763,8.5 1.5,8.27614237 1.5,8 C1.5,7.72385763 1.72385763,7.5 2,7.5 L14,7.5 C14.2761424,7.5 14.5,7.72385763 14.5,8 C14.5,8.27614237 14.2761424,8.5 14,8.5 Z" id="路径" fill="#909399" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

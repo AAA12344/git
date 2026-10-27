@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>picture-outline-round</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-384, -1673)">
+            <g id="picture-outline-round" transform="translate(384, 1673)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <circle id="椭圆形" stroke="#909399" stroke-width="2" cx="16" cy="16" r="13"></circle>
+                <path d="M7,24 L12.7085195,18.2914805 C13.4399553,17.5600447 14.6084488,17.5070407 15.4031018,18.1692515 L18.6775383,20.8979486 C19.4377655,21.5314712 20.547003,21.5137752 21.2866348,20.8563247 L29,14 L29,14" id="路径-13" stroke="#909399" stroke-width="2"></path>
+                <circle id="椭圆形" fill="#909399" cx="20" cy="11" r="2"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

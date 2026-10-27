@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>notification</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-256, -817)">
+            <g id="notification" transform="translate(256, 817)">
+                <rect id="矩形备份-18" x="0" y="0" width="32" height="32"></rect>
+                <g id="icon／bell" transform="translate(3, 2.0291)">
+                    <path d="M11,26 L15,26 C14.9791667,26.5631285 14.78125,27.0324022 14.4062499,27.4078212 C14.03125,27.7832402 13.5625,27.9709497 13,27.9709497 C12.4374999,27.9709497 11.96875,27.7832402 11.59375,27.4078212 C11.21875,27.0324022 11.0208333,26.5631285 11,26 Z" id="形状结合-path" fill="#909399" fill-rule="nonzero"></path>
+                    <path d="M11,-2.27373675e-13 L15,-2.27373675e-13 C14.9791667,0.563128533 15,2 14.4062499,2.40782122 C13.8124999,2.81564243 13.5625,2.97094975 13,2.97094975 C12.4374999,2.97094975 12.1875001,2.81564243 11.59375,2.40782122 C11,2 11.0208333,0.563128533 11,-2.27373675e-13 Z" id="形状结合-path" fill="#909399" fill-rule="nonzero" transform="translate(13, 1.4855) scale(1, -1) translate(-13, -1.4855)"></path>
+                    <line x1="-4.50262255e-14" y1="22.9709497" x2="26" y2="22.9709497" id="路径-34" stroke="#909399" stroke-width="2" stroke-linecap="round"></line>
+                    <path d="M4,23.9709497 L4,11.9709497 C4,7.000387 8.02943725,2.97094975 13,2.97094975 C17.9705627,2.97094975 22,7.000387 22,11.9709497 L22,23.9709497" id="路径" stroke="#909399" stroke-width="2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

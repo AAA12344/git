@@ -1,0 +1,4 @@
+.xib-module-notifications .notification-row.is-unread .notification-unread-dot{background:#f56c6c}
+
+.xib-module-notifications .notification-empty strong{color:var(--muted)}
+.xib-module-notifications .notification-pagination{display:flex;height:52px;align-items:center;justify-content:space-between;padding:0 18px;border-top:1px solid var(--divider);color:var(--muted);font-size:12px}.xib-module-notifications .notification-pagination>div{display:flex;align-items:center;gap:10px}.xib-module-notifications .notification-pagination .page-btn{min-width:28px;height:28px}

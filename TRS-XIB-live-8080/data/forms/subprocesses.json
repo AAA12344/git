@@ -1,0 +1,2122 @@
+{
+  "subprocesses": {
+    "statuses": [
+      "草稿",
+      "待提交",
+      "待复核",
+      "复核中",
+      "待处理",
+      "处理中",
+      "待初审",
+      "初审中",
+      "待审批",
+      "审批中",
+      "待补录",
+      "已办结",
+      "已废止"
+    ],
+    "definitions": [
+      {
+        "type": "延长申请",
+        "document": "延长申请单",
+        "prefix": "YC"
+      },
+      {
+        "type": "撤销投诉",
+        "document": "撤销投诉单",
+        "prefix": "CX"
+      },
+      {
+        "type": "异常投诉",
+        "document": "异常投诉申请单",
+        "prefix": "YT"
+      },
+      {
+        "type": "剔除申请",
+        "document": "剔除申请单",
+        "prefix": "TC"
+      },
+      {
+        "type": "废止申请",
+        "document": "废止申请单",
+        "prefix": "FZ"
+      },
+      {
+        "type": "投诉校正",
+        "document": "投诉校正单",
+        "prefix": "JZ"
+      },
+      {
+        "type": "投诉调查",
+        "document": "投诉调查单",
+        "prefix": "DC"
+      },
+      {
+        "type": "投诉问责",
+        "document": "投诉问责单",
+        "prefix": "WZ"
+      },
+      {
+        "type": "纠纷化解",
+        "document": "纠纷化解单",
+        "prefix": "JF"
+      },
+      {
+        "type": "异议核查",
+        "document": "异议核查单",
+        "prefix": "HC"
+      },
+      {
+        "type": "溯源整改",
+        "document": "溯源整改单",
+        "prefix": "ZG"
+      }
+    ],
+    "field_sections": {
+      "投诉校正": [
+        {
+          "title": "投诉校正",
+          "fields": [
+            {
+              "name": "客户类型",
+              "type": "readonly",
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "客户类型"
+              }
+            },
+            {
+              "name": "抄送人",
+              "type": "readonly",
+              "prefillFrom": {
+                "phase": "processing",
+                "field": "抄送人"
+              }
+            },
+            {
+              "name": "投诉/信访事项",
+              "type": "select",
+              "required": true,
+              "writebackField": "投诉/信访事项",
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "投诉/信访事项"
+              },
+              "options": [
+                "贷款催收",
+                "贷款协商还款",
+                "贷款业务办理",
+                "贷款提前还款",
+                "个人征信",
+                "企业征信",
+                "账户管控",
+                "账户开销户",
+                "业务办理",
+                "营销活动",
+                "服务质量与态度",
+                "额度注销",
+                "信息披露",
+                "个人信息保护",
+                "其它"
+              ]
+            },
+            {
+              "name": "所属业务条线",
+              "type": "businessLinePicker",
+              "required": true,
+              "span": true,
+              "primaryLabel": "必选条线（4选1）",
+              "optionalLabel": "可选条线（选1）",
+              "primaryOptions": ["零售金融部", "普惠金融部", "公司金融部", "消费者权益保护部"],
+              "optionalOptions": ["运营管理部", "风险管理部", "安全保卫部/总务部", "授信审批部", "华侨金融部", "特殊资产经营部", "科技管理部", "科技开发部", "科技运维部"],
+              "prefillFrom": { "phase": "entry", "field": "所属业务条线" }
+            },
+            {
+              "name": "业务办理渠道",
+              "type": "cascader",
+              "cascader": "channel",
+              "span": true,
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "业务办理渠道"
+              }
+            },
+            {
+              "name": "业务类别",
+              "type": "cascader",
+              "cascader": "business",
+              "span": true,
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "业务类别"
+              }
+            },
+            {
+              "name": "投诉/信访原因",
+              "type": "cascader",
+              "cascader": "reason",
+              "span": true,
+              "required": true,
+              "writebackField": "投诉/信访原因",
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "投诉/信访原因"
+              }
+            },
+            {
+              "name": "被投诉业务办理渠道",
+              "type": "select",
+              "dictionary": "jinguanBusinessChannel",
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "被投诉业务办理渠道"
+              }
+            },
+            {
+              "name": "被投诉业务类别",
+              "type": "hierarchyCascader",
+              "dictionary": "jinguanBusinessCategory",
+              "levels": ["一级", "二级", "三级"],
+              "leafLevel": 3,
+              "span": true,
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "被投诉业务类别"
+              }
+            },
+            {
+              "name": "被投诉业务原因",
+              "type": "select",
+              "dictionary": "jinguanBusinessCause",
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "被投诉业务原因"
+              }
+            },
+            {
+              "name": "投诉请求",
+              "type": "select",
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "投诉请求"
+              },
+              "options": ["协商处理", "费用减免", "赔礼道歉", "信息更正", "其它"]
+            },
+            {
+              "name": "修正业务办理渠道标签",
+              "type": "hierarchyCascader",
+              "dictionary": "trsBusinessChannel",
+              "levels": ["一级渠道", "二级渠道"],
+              "leafLevel": 2,
+              "nonLeafSelectable": false,
+              "span": true,
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "业务办理渠道标签"
+              }
+            },
+            {
+              "name": "修正投诉产品标签",
+              "type": "hierarchyCascader",
+              "dictionary": "rectificationProduct",
+              "levels": ["一级产品", "二级产品", "三级产品"],
+              "leafLevel": 3,
+              "nonLeafSelectable": false,
+              "span": true,
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "投诉产品标签",
+                "arrayValue": "last"
+              }
+            },
+            {
+              "name": "修正投诉原因标签",
+              "type": "hierarchyCascader",
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "投诉原因标签"
+              },
+              "dictionary": "rectificationCause",
+              "levels": [
+                "一级原因标签",
+                "二级原因标签",
+                "三级原因标签"
+              ],
+              "leafLevel": 3,
+              "nonLeafSelectable": false,
+              "span": true,
+              "placeholder": "请选择三级原因标签"
+            },
+            {
+              "name": "修正投诉诉求标签",
+              "type": "hierarchyCascader",
+              "dictionary": "appealTag",
+              "levels": ["一级诉求", "二级诉求"],
+              "leafLevel": 2,
+              "nonLeafSelectable": false,
+              "span": true,
+              "required": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "投诉诉求标签"
+              }
+            },
+            {
+              "name": "事件还原",
+              "type": "textarea",
+              "required": true,
+              "prefillFrom": {
+                "phase": "processing",
+                "field": "事件还原"
+              },
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "处置意见",
+              "type": "textarea",
+              "required": true,
+              "prefillFrom": {
+                "phase": "processing",
+                "field": "处置意见"
+              },
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "附件上传",
+              "type": "upload",
+              "span": true,
+              "prefillFrom": {
+                "phase": "entry",
+                "field": "附件"
+              }
+            }
+          ]
+        }
+      ],
+      "投诉调查": [
+        {
+          "title": "投诉调查",
+          "fields": [
+            {
+              "name": "投诉调查原因",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "处理机构",
+              "type": "readonly",
+              "required": true,
+              "value": "由流转规则自动生成"
+            },
+            {
+              "name": "处理角色",
+              "type": "readonly",
+              "required": true,
+              "value": "处理角色"
+            },
+            {
+              "name": "是否有效投诉",
+              "type": "readonly",
+              "required": true,
+              "value": "由关联工单自动带入"
+            },
+            {
+              "name": "附件",
+              "type": "upload",
+              "required": true,
+              "span": true
+            }
+          ]
+        },
+        {
+          "title": "投诉调查结果",
+          "fields": [
+            {
+              "name": "投诉调查结果",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "修改投诉有效性认定结论",
+              "type": "radio",
+              "required": true,
+              "options": [
+                "有效投诉",
+                "无效投诉"
+              ]
+            },
+            {
+              "name": "无效投诉事由/有效投诉事由",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "证明材料",
+              "type": "upload",
+              "required": true,
+              "span": true
+            }
+          ]
+        }
+      ],
+      "撤销投诉": [
+        {
+          "title": "撤销投诉",
+          "fields": [
+            {
+              "name": "撤销申请渠道",
+              "type": "select",
+              "required": true,
+              "options": [
+                "邮件",
+                "面访",
+                "微信",
+                "电话",
+                "短信",
+                "其他"
+              ]
+            },
+            {
+              "name": "撤销申请时间",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "撤销原因",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "证明材料",
+              "type": "upload",
+              "span": true
+            }
+          ]
+        }
+      ],
+      "延长申请": [
+        {
+          "title": "延长申请",
+          "fields": [
+            {
+              "name": "当前处置期限",
+              "type": "readonly",
+              "required": true,
+              "value": "2026-08-07 09:32"
+            },
+            {
+              "name": "延长时间",
+              "type": "readonly",
+              "required": true,
+              "value": "延长至30日"
+            },
+            {
+              "name": "预计新处置期限至",
+              "type": "readonly",
+              "required": true,
+              "value": "2026-08-15 09:20"
+            },
+            {
+              "name": "延长原因",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "placeholder": "填写延长原因，最多2000字",
+              "max": 2000
+            }
+          ]
+        }
+      ],
+      "投诉问责": [
+        {
+          "title": "投诉问责信息",
+          "fields": [
+            {
+              "name": "是否问责",
+              "type": "radio",
+              "required": true,
+              "options": [
+                "是",
+                "否"
+              ]
+            },
+            {
+              "name": "问责机构",
+              "type": "hierarchyCascader",
+              "requiredWhen": {
+                "key": "是否问责",
+                "equals": "是"
+              },
+              "dictionary": "branchInstitutionTree",
+              "levels": [
+                "机构"
+              ],
+              "leafLevel": 1,
+              "nonLeafSelectable": false,
+              "searchable": true,
+              "defaultFrom": {
+                "stage": "processing",
+                "field": "责任机构"
+              }
+            },
+            {
+              "name": "问责部门",
+              "type": "select",
+              "requiredWhen": {
+                "key": "是否问责",
+                "equals": "是"
+              },
+              "optionsByInstitution": {
+                "key": "问责机构"
+              },
+              "defaultFrom": {
+                "stage": "processing",
+                "field": "责任部门"
+              }
+            },
+            {
+              "name": "问责对象",
+              "type": "personByDepartment",
+              "requiredWhen": {
+                "key": "是否问责",
+                "equals": "是"
+              },
+              "multiple": true,
+              "dependsOnInstitution": "问责机构",
+              "dependsOn": "问责部门",
+              "searchPlaceholder": "按姓名或工号搜索",
+              "defaultFrom": {
+                "stage": "processing",
+                "field": "责任人"
+              }
+            },
+            {
+              "name": "责任描述",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "判断依据",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "问责措施",
+              "type": "select",
+              "required": true,
+              "options": [
+                "1 纪律处分（警告）",
+                "2 纪律处分（记过）",
+                "3 纪律处分（记大过）",
+                "4 纪律处分（降级/降职）",
+                "5 纪律处分（撤职）",
+                "6 纪律处分（留行察看）",
+                "7 纪律处分（开除）",
+                "8 经济处理（收回违规所得）",
+                "9 经济处理（经济处罚）",
+                "10 经济处理（经济赔偿）",
+                "11 经济处理（追索扣回绩效薪酬）",
+                "12 批评教育（违规积分）",
+                "13 批评教育（书面批评）",
+                "14 批评教育（通报批评）",
+                "15 其他处理（调整岗位）",
+                "16 其他处理（免职）",
+                "17 其他处理（解聘职务）",
+                "18 其他处理（责令辞职）",
+                "19 其他处理（解除劳务合同）",
+                "20 其他处理（辞退）",
+                "21 其他处理（退回劳务派遣公司）",
+                "22 轻微工作差错积分",
+                "23 其他"
+              ]
+            },
+            {
+              "name": "问责措施说明",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "证明材料（问责信息）",
+              "type": "upload",
+              "span": true
+            }
+          ]
+        },
+        {
+          "title": "投诉问责处理",
+          "phase": "process",
+          "fields": [
+            {
+              "name": "是否问责",
+              "type": "radio",
+              "required": true,
+              "options": ["是", "否"]
+            },
+            {
+              "name": "问责机构",
+              "type": "hierarchyCascader",
+              "requiredWhen": { "key": "是否问责", "equals": "是" },
+              "dictionary": "branchInstitutionTree",
+              "levels": ["机构"],
+              "leafLevel": 1,
+              "nonLeafSelectable": false,
+              "searchable": true
+            },
+            {
+              "name": "问责部门",
+              "type": "select",
+              "requiredWhen": { "key": "是否问责", "equals": "是" },
+              "optionsByInstitution": { "key": "问责机构" }
+            },
+            {
+              "name": "问责对象",
+              "type": "personByDepartment",
+              "requiredWhen": { "key": "是否问责", "equals": "是" },
+              "multiple": true,
+              "dependsOnInstitution": "问责机构",
+              "dependsOn": "问责部门",
+              "searchPlaceholder": "按姓名或工号搜索"
+            },
+            {
+              "name": "责任描述",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "判断依据",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "问责措施",
+              "type": "select",
+              "required": true,
+              "options": [
+                "1 纪律处分（警告）",
+                "2 纪律处分（记过）",
+                "3 纪律处分（记大过）",
+                "4 纪律处分（降级/降职）",
+                "5 纪律处分（撤职）",
+                "6 纪律处分（留行察看）",
+                "7 纪律处分（开除）",
+                "8 经济处理（收回违规所得）",
+                "9 经济处理（经济处罚）",
+                "10 经济处理（经济赔偿）",
+                "11 经济处理（追索扣回绩效薪酬）",
+                "12 批评教育（违规积分）",
+                "13 批评教育（书面批评）",
+                "14 批评教育（通报批评）",
+                "15 其他处理（调整岗位）",
+                "16 其他处理（免职）",
+                "17 其他处理（解聘职务）",
+                "18 其他处理（责令辞职）",
+                "19 其他处理（解除劳务合同）",
+                "20 其他处理（辞退）",
+                "21 其他处理（退回劳务派遣公司）",
+                "22 轻微工作差错积分",
+                "23 其他"
+              ]
+            },
+            {
+              "name": "问责措施说明",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "证明材料（问责信息）",
+              "type": "upload",
+              "span": true
+            }
+          ]
+        }
+      ],
+      "剔除申请": [
+        {
+          "title": "剔除申请",
+          "fields": [
+            {
+              "name": "剔除申请类型",
+              "type": "select",
+              "required": true,
+              "options": [
+                "被投诉机构错误的。",
+                "无法确认投诉人身份的。",
+                "投诉人主张持有被投诉机构的存款、理财、保险等产品，但实际未持有的。",
+                "被投诉机构因执行法律、法规及国家政策的强制性规定无法向投诉人提供相关服务而被投诉的。",
+                "投诉人主张的相关事项经人民法院判决确定存在金融诈骗等犯罪情形的。",
+                "投诉事项经人民法院判决或仲裁机构裁决后，银行机构对应承担的责任已执行完毕，且投诉人没有新的事实与理由就同一事项重新提出投诉的。",
+                "双方当事人就投诉事项已达成调解协议并经人民法院司法确认后，银行机构对应承担的责任已执行完毕，且投诉人没有新的事实与理由就同一事项重新提出投诉的。",
+                "银行机构执行全国\"断卡行动\"、反洗钱等党中央、国务院及相关部门有关领域治理和整治的重要决策部署要求引发投诉的。",
+                "银行业金融机构执行中国人民银行相关规定引发的单纯征信类投诉。",
+                "投诉人诉求及投诉内容仅要求变更还款数额、利率、期限和还款方式等单纯协商还款类投诉。"
+              ]
+            },
+            {
+              "name": "剔除原因",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "证明材料",
+              "type": "upload",
+              "required": true,
+              "span": true
+            }
+          ]
+        }
+      ],
+      "异常投诉": [
+        {
+          "title": "异常投诉",
+          "fields": [
+            {
+              "name": "异常投诉类型",
+              "type": "select",
+              "required": true,
+              "options": [
+                "1 存在涉嫌违法犯罪情形的",
+                "2 存在扰乱公共秩序、信访秩序情形的",
+                "3 存在其他异常情形的"
+              ]
+            },
+            {
+              "name": "异常投诉具体表现",
+              "type": "select",
+              "required": true,
+              "options": [
+                "1 公检法等机关已出具“立案书”“训诫书”“治安管理处罚决定书”或违法犯罪判决等材料，显示相关人员在投诉过程中存在敲诈勒索、诈骗、伪造材料等违法犯罪情形的",
+                "2.1 在机构办公场所周围、公共场所非法聚集、围堵、冲击机构，拦截公务车辆，或者堵塞、阻断交通",
+                "2.2 携带危险物品、管制器具",
+                "2.3 侮辱、殴打、威胁机构工作人员，非法限制他人人身自由，或者毁坏财物",
+                "2.4 在机构滞留、滋事，或者将生活不能自理的人弃留在机构",
+                "2.5 煽动、串联、胁迫、以财物诱使、幕后操纵他人投诉，或者以投诉为名借机敛财",
+                "2.6 其他扰乱公共秩序、信访秩序、妨害国家和公共安全的行为",
+                "3.1.1 以信函方式投诉的，投诉人寄信地址异常的，同一地址产生多件不相关联金融消费者信函投诉的",
+                "3.1.2 以信函方式投诉的，投诉人寄信地址异常的，投诉信快递面单中记录的寄发地与实际快递单号查询显示的寄发地不一致的",
+                "3.2 不同投诉人使用同一联系方式投诉，前后自称不同客户且投诉人无法准确回答个人及相关案件基本信息",
+                "3.3 投诉人承认与第三方合作，提供的与第三方的沟通记录或协议等材料"
+              ],
+              "optionsBy": {
+                "key": "异常投诉类型",
+                "values": {
+                  "1 存在涉嫌违法犯罪情形的": [
+                    "1 公检法等机关已出具“立案书”“训诫书”“治安管理处罚决定书”或违法犯罪判决等材料，显示相关人员在投诉过程中存在敲诈勒索、诈骗、伪造材料等违法犯罪情形的"
+                  ],
+                  "2 存在扰乱公共秩序、信访秩序情形的": [
+                    "2.1 在机构办公场所周围、公共场所非法聚集、围堵、冲击机构，拦截公务车辆，或者堵塞、阻断交通",
+                    "2.2 携带危险物品、管制器具",
+                    "2.3 侮辱、殴打、威胁机构工作人员，非法限制他人人身自由，或者毁坏财物",
+                    "2.4 在机构滞留、滋事，或者将生活不能自理的人弃留在机构",
+                    "2.5 煽动、串联、胁迫、以财物诱使、幕后操纵他人投诉，或者以投诉为名借机敛财",
+                    "2.6 其他扰乱公共秩序、信访秩序、妨害国家和公共安全的行为"
+                  ],
+                  "3 存在其他异常情形的": [
+                    "3.1.1 以信函方式投诉的，投诉人寄信地址异常的，同一地址产生多件不相关联金融消费者信函投诉的",
+                    "3.1.2 以信函方式投诉的，投诉人寄信地址异常的，投诉信快递面单中记录的寄发地与实际快递单号查询显示的寄发地不一致的",
+                    "3.2 不同投诉人使用同一联系方式投诉，前后自称不同客户且投诉人无法准确回答个人及相关案件基本信息",
+                    "3.3 投诉人承认与第三方合作，提供的与第三方的沟通记录或协议等材料"
+                  ]
+                }
+              },
+              "autoSelectSingleOption": true
+            },
+            {
+              "name": "必要证据要求",
+              "type": "select",
+              "required": true,
+              "valueMap": {
+                "key": "异常投诉具体表现",
+                "values": {
+                  "1 公检法等机关已出具“立案书”“训诫书”“治安管理处罚决定书”或违法犯罪判决等材料，显示相关人员在投诉过程中存在敲诈勒索、诈骗、伪造材料等违法犯罪情形的": "A：公检法机关相关认定材料",
+                  "2.1 在机构办公场所周围、公共场所非法聚集、围堵、冲击机构，拦截公务车辆，或者堵塞、阻断交通": "B：相关图像、音频、视频等材料或公安机关报案记录",
+                  "2.2 携带危险物品、管制器具": "B：相关图像、音频、视频等材料或公安机关报案记录",
+                  "2.3 侮辱、殴打、威胁机构工作人员，非法限制他人人身自由，或者毁坏财物": "B：相关图像、音频、视频等材料或公安机关报案记录",
+                  "2.4 在机构滞留、滋事，或者将生活不能自理的人弃留在机构": "B：相关图像、音频、视频等材料或公安机关报案记录",
+                  "2.5 煽动、串联、胁迫、以财物诱使、幕后操纵他人投诉，或者以投诉为名借机敛财": "B：相关图像、音频、视频等材料或公安机关报案记录",
+                  "2.6 其他扰乱公共秩序、信访秩序、妨害国家和公共安全的行为": "B：相关图像、音频、视频等材料或公安机关报案记录",
+                  "3.1.1 以信函方式投诉的，投诉人寄信地址异常的，同一地址产生多件不相关联金融消费者信函投诉的": "C：与投诉人沟通音频和转译文字及监管投诉转办系统中记录投诉人寄件地址的截图",
+                  "3.1.2 以信函方式投诉的，投诉人寄信地址异常的，投诉信快递面单中记录的寄发地与实际快递单号查询显示的寄发地不一致的": "D：与投诉人沟通音频及转译文字、异常信函扫描件、快递面单及物流信息",
+                  "3.2 不同投诉人使用同一联系方式投诉，前后自称不同客户且投诉人无法准确回答个人及相关案件基本信息": "E：联系方式异常佐证材料、沟通音频及转译文字",
+                  "3.3 投诉人承认与第三方合作，提供的与第三方的沟通记录或协议等材料": "F：相关沟通记录或协议等材料"
+                }
+              },
+              "options": [
+                "A：公检法机关相关认定材料",
+                "B：相关图像、音频、视频等材料或公安机关报案记录",
+                "C：与投诉人沟通音频和转译文字及监管投诉转办系统中记录投诉人寄件地址的截图",
+                "D：与投诉人沟通音频及转译文字、异常信函扫描件、快递面单及物流信息",
+                "E：联系方式异常佐证材料、沟通音频及转译文字",
+                "F：相关沟通记录或协议等材料"
+              ]
+            },
+            {
+              "name": "异常投诉认定依据",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "异常投诉识别情况报告",
+              "type": "upload",
+              "required": true,
+              "span": true,
+              "template": "异常投诉识别情况报告.docx"
+            },
+            {
+              "name": "报告摘要",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "证明材料",
+              "type": "upload",
+              "span": true
+            }
+          ]
+        }
+      ],
+      "纠纷化解": [
+        {
+          "title": "纠纷化解",
+          "fields": [
+            {
+              "name": "化解方式",
+              "type": "select",
+              "required": true,
+              "options": [
+                "诉讼",
+                "仲裁",
+                "和解",
+                "调解"
+              ]
+            },
+            {
+              "name": "调处机构",
+              "type": "text",
+              "required": true,
+              "maxLength": 100,
+              "placeholder": "请输入，最多100字"
+            },
+            {
+              "name": "调解来源",
+              "type": "select",
+              "required": true,
+              "options": [
+                "诉求人主动申请",
+                "银行发起申请",
+                "信访转调解"
+              ]
+            },
+            {
+              "name": "调处编号",
+              "type": "text",
+              "required": true,
+              "maxLength": 50,
+              "placeholder": "请输入，最多50个字符"
+            },
+            {
+              "name": "调处时间",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "调处方式",
+              "type": "checkboxGroup",
+              "options": [
+                "线上调解",
+                "现场调解"
+              ],
+              "requiredWhen": { "key": "化解方式", "equals": "调解" }
+            },
+            {
+              "name": "第1轮调解情况",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "第2轮调解情况",
+              "type": "textarea",
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "第3轮调解情况",
+              "type": "textarea",
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "调解成功",
+              "type": "radio",
+              "options": [
+                "是",
+                "否"
+              ],
+              "requiredWhen": { "key": "化解方式", "equals": "调解" }
+            },
+            {
+              "name": "调解失败原因",
+              "type": "textarea",
+              "span": true,
+              "max": 2000,
+              "showWhen": {
+                "key": "调解成功",
+                "equals": "否"
+              },
+              "requiredWhen": {
+                "key": "调解成功",
+                "equals": "否"
+              }
+            },
+            {
+              "name": "化解结果方式",
+              "type": "checkboxGroup",
+              "required": true,
+              "options": [
+                "金钱赔偿",
+                "赔礼道歉",
+                "停止催收"
+              ]
+            },
+            {
+              "name": "化解金额",
+              "type": "amount",
+              "required": true,
+              "placeholder": "请输入金额",
+              "min": 0.01,
+              "precision": 2,
+              "max": 99999999.99,
+              "unit": "元"
+            },
+            {
+              "name": "调解协议",
+              "type": "upload",
+              "required": true,
+              "span": true
+            },
+            {
+              "name": "调解执行情况",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            }
+          ]
+        }
+      ],
+      "异议核查": [
+        {
+          "title": "客户基本信息（从原工单带入）",
+          "fields": [
+            {
+              "name": "客户姓名",
+              "type": "readonly",
+              "required": true,
+              "value": "陈晓敏"
+            },
+            {
+              "name": "客户类型",
+              "type": "readonly",
+              "required": true,
+              "value": "自然人"
+            },
+            {
+              "name": "证件类型",
+              "type": "readonly",
+              "required": true,
+              "value": "居民身份证"
+            },
+            {
+              "name": "证件号码",
+              "type": "readonly",
+              "required": true,
+              "value": "350203198807180628"
+            },
+            {
+              "name": "客户性别",
+              "type": "readonly",
+              "required": true,
+              "value": "女"
+            }
+          ]
+        },
+        {
+          "title": "工单处理信息",
+          "fields": [
+            {
+              "name": "客户申请核查时间",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "接收时间",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "处置期限",
+              "type": "readonly",
+              "required": true,
+              "value": "接收时间 + 30个自然日"
+            },
+            {
+              "name": "核查内容",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "接收机构",
+              "type": "hierarchyCascader",
+              "dictionary": "roleInstitutionTree",
+              "levels": ["总行/分行", "机构/下辖支行"],
+              "leafLevel": 2,
+              "required": true,
+              "nonLeafSelectable": false
+            },
+            {
+              "name": "接收部门",
+              "type": "hierarchyCascader",
+              "dictionary": "departmentTree",
+              "levels": ["总行/分行", "部门"],
+              "leafLevel": 2,
+              "required": true,
+              "nonLeafSelectable": false
+            },
+            {
+              "name": "处置员",
+              "type": "personByDepartment",
+              "required": true,
+              "dependsOnInstitution": "接收机构",
+              "dependsOn": "接收部门",
+              "searchPlaceholder": "按姓名或工号搜索",
+              "strictOptions": true
+            }
+          ]
+        },
+        {
+          "title": "核查处理",
+          "fields": [
+            {
+              "name": "核查情况",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "核查结论",
+              "type": "radio",
+              "required": true,
+              "options": [
+                "核查一致",
+                "核查部分不一致",
+                "核查完全不一致"
+              ]
+            },
+            {
+              "name": "是否存在问题",
+              "type": "radio",
+              "required": true,
+              "options": [
+                "是",
+                "否"
+              ]
+            },
+            {
+              "name": "具体原因",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "核查依据",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "证明材料",
+              "type": "upload",
+              "span": true
+            },
+            {
+              "name": "核查处理意见",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            },
+            {
+              "name": "是否达成一致",
+              "type": "radio",
+              "required": true,
+              "options": [
+                "是",
+                "否"
+              ]
+            },
+            {
+              "name": "核查结果是否告知",
+              "type": "select",
+              "required": true,
+              "options": [
+                "是",
+                "否"
+              ]
+            },
+            {
+              "name": "告知时间",
+              "type": "contactRecordSelect",
+              "showWhen": {
+                "key": "核查结果是否告知",
+                "equals": "是"
+              },
+              "requiredWhen": {
+                "key": "核查结果是否告知",
+                "equals": "是"
+              }
+            },
+            {
+              "name": "处置员反馈时间",
+              "type": "readonly",
+              "value": "-"
+            },
+            {
+              "name": "是否超期",
+              "type": "readonly",
+              "value": "-"
+            },
+            {
+              "name": "超期时长",
+              "type": "readonly",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "废止申请": [
+        {
+          "title": "废止申请",
+          "fields": [
+            {
+              "name": "废止原因",
+              "type": "textarea",
+              "required": true,
+              "span": true,
+              "max": 2000
+            }
+          ]
+        }
+      ],
+      "溯源整改": [
+        {
+          "title": "整改问题",
+          "phase": "create",
+          "fields": [
+            {
+              "name": "整改单名称",
+              "type": "text",
+              "dataStage": "entry",
+              "required": true,
+              "max": 20,
+              "placeholder": "请输入整改单名称（20字以内）"
+            },
+            {
+              "name": "投诉产品标签",
+              "type": "hierarchyCascader",
+              "dictionary": "rectificationProduct",
+              "dataStage": "entry",
+              "required": true,
+              "span": true,
+              "multiple": true,
+              "leafLevel": 3,
+              "levels": [
+                "一级标签",
+                "二级标签",
+                "三级标签"
+              ],
+              "tree": [
+                {
+                  "label": "贷款",
+                  "children": [
+                    {
+                      "label": "个人合作类贷款",
+                      "children": [
+                        {
+                          "label": "度小满"
+                        },
+                        {
+                          "label": "京东"
+                        },
+                        {
+                          "label": "乐信"
+                        },
+                        {
+                          "label": "美团"
+                        },
+                        {
+                          "label": "数禾"
+                        },
+                        {
+                          "label": "字节跳动"
+                        },
+                        {
+                          "label": "拍拍贷"
+                        },
+                        {
+                          "label": "维信金科"
+                        },
+                        {
+                          "label": "小米"
+                        },
+                        {
+                          "label": "马上消金"
+                        },
+                        {
+                          "label": "360借条"
+                        },
+                        {
+                          "label": "新网银行"
+                        },
+                        {
+                          "label": "网商贷"
+                        },
+                        {
+                          "label": "E车贷"
+                        },
+                        {
+                          "label": "花呗"
+                        },
+                        {
+                          "label": "其它个人合作类贷款"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "个人非合作类贷款",
+                      "children": [
+                        {
+                          "label": "兴安贷+"
+                        },
+                        {
+                          "label": "好康贷"
+                        },
+                        {
+                          "label": "梦想贷"
+                        },
+                        {
+                          "label": "兴安花"
+                        },
+                        {
+                          "label": "个人经营贷"
+                        },
+                        {
+                          "label": "个人按揭住房贷款"
+                        },
+                        {
+                          "label": "税享贷"
+                        },
+                        {
+                          "label": "欢欣贷"
+                        },
+                        {
+                          "label": "其它个人非合作类贷款"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "对公贷款",
+                      "children": [
+                        {
+                          "label": "公司贷款"
+                        },
+                        {
+                          "label": "公司担保承诺"
+                        },
+                        {
+                          "label": "公司贸易融资"
+                        },
+                        {
+                          "label": "其它公司贷款"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "存款",
+                  "children": [
+                    {
+                      "label": "个人存款",
+                      "children": [
+                        {
+                          "label": "个人保证金存款"
+                        },
+                        {
+                          "label": "个人大额存单"
+                        },
+                        {
+                          "label": "个人定期存款"
+                        },
+                        {
+                          "label": "个人活期存款"
+                        },
+                        {
+                          "label": "个人结构性存款"
+                        },
+                        {
+                          "label": "个人通知存款"
+                        },
+                        {
+                          "label": "其它个人存款"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "对公存款",
+                      "children": [
+                        {
+                          "label": "公司保证金存款"
+                        },
+                        {
+                          "label": "公司大额存单"
+                        },
+                        {
+                          "label": "公司定期存款"
+                        },
+                        {
+                          "label": "公司活期存款"
+                        },
+                        {
+                          "label": "公司结构性存款"
+                        },
+                        {
+                          "label": "公司通知存款"
+                        },
+                        {
+                          "label": "公司协议存款"
+                        },
+                        {
+                          "label": "其它公司存款"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "财富管理",
+                  "children": [
+                    {
+                      "label": "个人代销",
+                      "children": [
+                        {
+                          "label": "个人代销贵金属"
+                        },
+                        {
+                          "label": "个人代销理财"
+                        },
+                        {
+                          "label": "个人代销保险"
+                        },
+                        {
+                          "label": "个人代销基金"
+                        },
+                        {
+                          "label": "个人代销信托"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "对公代销",
+                      "children": [
+                        {
+                          "label": "公司代销理财"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "其它财富管理",
+                      "children": [
+                        {
+                          "label": "其它财富管理"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "支付结算",
+                  "children": [
+                    {
+                      "label": "账户服务",
+                      "children": [
+                        {
+                          "label": "个人账户（银行卡）"
+                        },
+                        {
+                          "label": "公司账户"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "支付工具",
+                      "children": [
+                        {
+                          "label": "现金服务"
+                        },
+                        {
+                          "label": "汇兑"
+                        },
+                        {
+                          "label": "商业承兑汇票"
+                        },
+                        {
+                          "label": "代客外汇"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "其它支付结算",
+                      "children": [
+                        {
+                          "label": "其它支付结算"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "电子银行",
+                  "children": [
+                    {
+                      "label": "个人电子渠道",
+                      "children": [
+                        {
+                          "label": "个人网银"
+                        },
+                        {
+                          "label": "个人电话银行"
+                        },
+                        {
+                          "label": "个人手机银行"
+                        },
+                        {
+                          "label": "个人微信银行（微信公众号）"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "对公电子渠道",
+                      "children": [
+                        {
+                          "label": "企业网银"
+                        },
+                        {
+                          "label": "企业手机银行"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "小程序",
+                      "children": [
+                        {
+                          "label": "花一厦 微信小程序"
+                        },
+                        {
+                          "label": "兴安贷+微信小程序"
+                        },
+                        {
+                          "label": "兴安贷+抖音小程序"
+                        },
+                        {
+                          "label": "厦门国际银行云闪付小程序"
+                        },
+                        {
+                          "label": "厦门国际银行支付宝小程序"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "积分增值服务",
+                      "children": [
+                        {
+                          "label": "积分商城"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "其它电子银行",
+                      "children": [
+                        {
+                          "label": "其它电子银行"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "placeholder": "请选择三级产品标签",
+              "helper": "可多选，无数量限制；一级、二级仅用于导航，只能勾选三级标签"
+            },
+            {
+              "name": "投诉原因标签",
+              "type": "hierarchyCascader",
+              "dictionary": "rectificationCause",
+              "dataStage": "entry",
+              "required": true,
+              "span": true,
+              "multiple": false,
+              "leafLevel": 3,
+              "levels": [
+                "一级原因标签",
+                "二级原因标签",
+                "三级原因标签"
+              ],
+              "placeholder": "请选择三级原因标签",
+              "helper": "单选；一级、二级仅用于导航，只能选择三级标签",
+              "nonLeafSelectable": false
+            },
+            {
+              "name": "问题来源",
+              "type": "select",
+              "dataStage": "entry",
+              "required": true,
+              "options": [
+                "投诉",
+                "监管检查",
+                "审计",
+                "专项检查",
+                "其它"
+              ]
+            },
+            {
+              "name": "具体问题来源",
+              "type": "text",
+              "dataStage": "entry",
+              "showWhen": {
+                "key": "问题来源",
+                "equals": "其它"
+              },
+              "requiredWhen": {
+                "key": "问题来源",
+                "equals": "其它"
+              },
+              "placeholder": "问题来源选择“其它”时必填"
+            },
+            {
+              "name": "关联工单编号",
+              "type": "relatedEventPicker",
+              "dataStage": "entry",
+              "span": true,
+              "helper": "可按工单编号、客户姓名、工单类型查询；不展示草稿工单"
+            },
+            {
+              "name": "问题描述",
+              "type": "textarea",
+              "dataStage": "entry",
+              "required": true,
+              "span": true,
+              "max": 2000,
+              "placeholder": "请描述需要整改的问题（2000字以内）"
+            },
+            {
+              "name": "整改部门或机构",
+              "type": "hierarchyCascader",
+              "dictionary": "businessUnitTree",
+              "levels": [
+                "总行/分行",
+                "机构/部门/支行"
+              ],
+              "leafLevel": 2,
+              "dataStage": "entry",
+              "required": true,
+              "nonLeafSelectable": false
+            },
+            {
+              "name": "整改负责人（处置员）",
+              "type": "select",
+              "dataStage": "entry",
+              "required": true,
+              "options": [
+                "林海-38102",
+                "王琳-27519",
+                "许一帆-49017"
+              ]
+            },
+            {
+              "name": "抄送人",
+              "type": "hierarchyCascader",
+              "dictionary": "rectificationCc",
+              "dataStage": "entry",
+              "span": true,
+              "multiple": true,
+              "leafLevel": 3,
+              "levels": [
+                "机构",
+                "部门/团队",
+                "人员"
+              ],
+              "tree": [
+                {
+                  "label": "总行",
+                  "children": [
+                    {
+                      "label": "消费者权益保护部",
+                      "children": [
+                        {
+                          "label": "陈敏慧-60157"
+                        },
+                        {
+                          "label": "张倩-10234"
+                        },
+                        {
+                          "label": "赵磊-10752"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "风险管理部",
+                      "children": [
+                        {
+                          "label": "周宁-10931"
+                        },
+                        {
+                          "label": "吴桐-10682"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "厦门分行",
+                  "children": [
+                    {
+                      "label": "零售金融部",
+                      "children": [
+                        {
+                          "label": "林海-38102"
+                        },
+                        {
+                          "label": "王琳-27519"
+                        },
+                        {
+                          "label": "许一帆-49017"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "消费者权益保护部",
+                      "children": [
+                        {
+                          "label": "苏晴-39108"
+                        },
+                        {
+                          "label": "杨帆-39026"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "福州分行",
+                  "children": [
+                    {
+                      "label": "消费者权益保护部",
+                      "children": [
+                        {
+                          "label": "郑楠-48116"
+                        },
+                        {
+                          "label": "郭晨-48205"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "运营管理部",
+                      "children": [
+                        {
+                          "label": "方圆-48512"
+                        },
+                        {
+                          "label": "何欣-48603"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "placeholder": "请选择抄送人",
+              "helper": "可多选，无数量限制；人员字典为当前原型模拟数据"
+            },
+            {
+              "name": "附件",
+              "type": "upload",
+              "dataStage": "entry",
+              "span": true,
+              "helper": "支持 jpg、png、doc、docx、pdf；文件名不能包含特殊字符"
+            }
+          ]
+        },
+        {
+          "title": "整改方案",
+          "phase": "plan",
+          "fields": [
+            {
+              "name": "整改计划",
+              "type": "textarea",
+              "dataStage": "plan",
+              "required": true,
+              "span": true,
+              "max": 2000,
+              "placeholder": "填写整改计划（2000字以内）"
+            },
+            {
+              "name": "整改开始时间",
+              "type": "date",
+              "dataStage": "plan",
+              "required": true
+            },
+            {
+              "name": "计划完成时间",
+              "type": "date",
+              "dataStage": "plan",
+              "required": true
+            },
+            {
+              "name": "附件",
+              "type": "upload",
+              "dataStage": "plan",
+              "span": true,
+              "helper": "制定整改计划阶段上传的附件"
+            },
+            {
+              "name": "提交时间",
+              "type": "readonly",
+              "dataStage": "plan",
+              "required": true,
+              "value": "提交整改计划后系统自动生成"
+            },
+            {
+              "name": "执行部门/团队",
+              "type": "readonly",
+              "dataStage": "plan",
+              "required": true,
+              "value": "系统根据整改部门自动回填"
+            }
+          ]
+        },
+        {
+          "title": "整改结果",
+          "phase": "result",
+          "fields": [
+            {
+              "name": "工作成果说明",
+              "type": "textarea",
+              "dataStage": "result",
+              "required": true,
+              "span": true,
+              "max": 2000,
+              "placeholder": "填写整改工作成果（2000字以内）"
+            },
+            {
+              "name": "附件",
+              "type": "upload",
+              "dataStage": "result",
+              "span": true,
+              "helper": "填写整改结果阶段上传的附件"
+            }
+          ]
+        },
+        {
+          "title": "整改结果-投诉统计",
+          "phase": "statistics",
+          "fields": [
+            {
+              "name": "投诉产品标签",
+              "type": "hierarchyCascader",
+              "dataStage": "statistics",
+              "helper": "与整改填写区共用产品标签字典；可多选且仅可选择三级标签，空选表示全部",
+              "dictionary": "rectificationProduct",
+              "multiple": true,
+              "leafLevel": 3,
+              "levels": [
+                "一级标签",
+                "二级标签",
+                "三级标签"
+              ]
+            },
+            {
+              "name": "投诉原因标签",
+              "type": "hierarchyCascader",
+              "dataStage": "statistics",
+              "required": true,
+              "dictionary": "rectificationCause",
+              "multiple": false,
+              "leafLevel": 3,
+              "levels": [
+                "一级原因标签",
+                "二级原因标签",
+                "三级原因标签"
+              ],
+              "helper": "与整改填写区共用原因标签字典；仅可选择三级标签，空选表示全部",
+              "nonLeafSelectable": false,
+              "placeholder": "请选择三级原因标签"
+            },
+            {
+              "name": "统计周期",
+              "type": "readonly",
+              "dataStage": "statistics",
+              "required": true
+            },
+            {
+              "name": "统计机构",
+              "type": "rectificationStatsOrgFilter",
+              "dataStage": "statistics",
+              "required": true
+            },
+            {
+              "name": "日均投诉量变化对比图",
+              "type": "rectificationBarChart",
+              "dataStage": "statistics",
+              "required": true,
+              "span": true
+            },
+            {
+              "name": "投诉标签变化趋势",
+              "type": "rectificationTrendChart",
+              "dataStage": "statistics",
+              "span": true
+            }
+          ]
+        }
+      ]
+    },
+    "process_section_titles": {
+      "剔除申请": [
+        "剔除申请"
+      ],
+      "投诉调查": [
+        "投诉调查结果"
+      ],
+      "投诉问责": [
+        "投诉问责处理"
+      ],
+      "异议核查": [
+        "核查处理"
+      ],
+      "溯源整改": [
+        "整改方案",
+        "整改结果",
+        "整改结果-投诉统计"
+      ]
+    },
+    "approval_rules": {
+      "initial_approval_types": [
+        "投诉调查",
+        "剔除申请",
+        "异常投诉",
+        "异议核查",
+        "废止申请"
+      ],
+      "no_approval_types": [
+        "撤销投诉"
+      ],
+      "no_final_approval_types": [],
+      "supplement_types": [
+        "延长申请",
+        "剔除申请",
+        "异常投诉"
+      ]
+    },
+    "supplement_sections": {
+      "延长申请": [
+        {
+          "title": "延期告知补录",
+          "fields": [
+            {
+              "name": "是否告知延期",
+              "type": "select",
+              "required": true,
+              "options": [
+                "是",
+                "否"
+              ],
+              "all": true
+            },
+            {
+              "name": "告知延期时间",
+              "type": "contactRecordSelect",
+              "requiredWhen": {
+                "key": "是否告知延期",
+                "equals": "是"
+              },
+              "disabledWhen": {
+                "key": "是否告知延期",
+                "notEquals": "是"
+              },
+              "all": true
+            },
+            {
+              "name": "告知延期方式",
+              "type": "readonly",
+              "requiredWhen": {
+                "key": "是否告知延期",
+                "equals": "是"
+              },
+              "disabledWhen": {
+                "key": "是否告知延期",
+                "notEquals": "是"
+              },
+              "all": true
+            }
+          ]
+        }
+      ],
+      "异常投诉": [
+        {
+          "title": "异常认定补录",
+          "fields": [
+            {
+              "name": "异常认定结果",
+              "type": "radio",
+              "required": true,
+              "options": [
+                "认定成功",
+                "认定失败"
+              ],
+              "all": true
+            }
+          ]
+        }
+      ],
+      "剔除申请": [
+        {
+          "title": "剔除认定补录",
+          "fields": [
+            {
+              "name": "剔除认定结果",
+              "type": "select",
+              "required": true,
+              "options": [
+                "剔除成功",
+                "剔除失败"
+              ],
+              "all": true
+            }
+          ]
+        }
+      ]
+    },
+    "source": {
+      "name": "子流程单字段表.xlsx",
+      "sheet": "子流程单表单",
+      "reviewedRange": "A1:N133",
+      "reviewedAt": "2026-08-03"
+    },
+    "base_field_rules": {
+      "common_fields": [
+        {
+          "name": "创建人",
+          "type": "readonly",
+          "required": true,
+          "source": "currentUser"
+        },
+        {
+          "name": "所属机构",
+          "type": "readonly",
+          "required": true,
+          "source": "currentOrganization"
+        },
+        {
+          "name": "所属部门",
+          "type": "readonly",
+          "required": true,
+          "source": "currentDepartment"
+        },
+        {
+          "name": "子流程单编号",
+          "type": "readonly",
+          "required": true,
+          "source": "generatedId"
+        },
+        {
+          "name": "关联工单编号",
+          "type": "relatedTicket",
+          "required": true,
+          "source": "relatedTicket"
+        },
+        {
+          "name": "申请时间",
+          "type": "readonly",
+          "required": true,
+          "source": "systemTime"
+        },
+        {
+          "name": "处置期限",
+          "type": "readonly",
+          "source": "deadlineRule"
+        }
+      ],
+      "deadline_rules": {
+        "投诉问责": {
+          "mode": "daysAfterApplication",
+          "days": 15,
+          "unit": "自然日"
+        },
+        "投诉校正": {
+          "mode": "daysAfterApplication",
+          "days": 15,
+          "unit": "自然日"
+        },
+        "投诉调查": {
+          "mode": "daysAfterApplication",
+          "days": 15,
+          "unit": "自然日"
+        },
+        "异常投诉": {
+          "mode": "daysAfterApplication",
+          "days": 15,
+          "unit": "自然日"
+        },
+        "剔除申请": {
+          "mode": "daysAfterApplication",
+          "days": 15,
+          "unit": "自然日"
+        },
+        "异议核查": {
+          "mode": "daysAfterApplication",
+          "days": 30,
+          "unit": "自然日"
+        },
+        "延长申请": {
+          "mode": "inheritTicketDeadline"
+        },
+        "撤销投诉": {
+          "mode": "inheritTicketDeadline"
+        },
+        "废止申请": {
+          "mode": "inheritTicketDeadline"
+        },
+        "纠纷化解": {
+          "mode": "none"
+        }
+      },
+      "type_fields": {
+        "投诉问责": [
+          {
+            "name": "触发方式",
+            "type": "readonly",
+            "required": true,
+            "source": "triggerMode",
+            "editable": false
+          }
+        ],
+        "剔除申请": [
+          {
+            "name": "关联转送函号",
+            "type": "text",
+            "required": true,
+            "source": "relatedTicket",
+            "editable": false
+          },
+          {
+            "name": "客户姓名",
+            "type": "text",
+            "required": true,
+            "source": "relatedTicket",
+            "editable": false
+          },
+          {
+            "name": "投诉内容",
+            "type": "readonly",
+            "required": true,
+            "source": "relatedTicket",
+            "span": true
+          }
+        ],
+        "异常投诉": [
+          {
+            "name": "关联转送函号",
+            "type": "text",
+            "required": true,
+            "source": "relatedTicket",
+            "editable": false,
+            "disabled": true
+          },
+          {
+            "name": "客户姓名",
+            "type": "text",
+            "required": true,
+            "source": "relatedTicket",
+            "editable": false,
+            "disabled": true
+          },
+          {
+            "name": "投诉机构",
+            "type": "text",
+            "required": true,
+            "source": "relatedTicket",
+            "editable": false
+          },
+          {
+            "name": "客户投诉时间",
+            "type": "datetime",
+            "required": true,
+            "source": "relatedTicket",
+            "editable": false
+          },
+          {
+            "name": "投诉内容",
+            "type": "readonly",
+            "required": true,
+            "source": "relatedTicket",
+            "span": true
+          }
+        ]
+      }
+    }
+  }
+}

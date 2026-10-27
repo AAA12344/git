@@ -1,0 +1,138 @@
+.xib-module-home-tasks{padding:18px 24px 32px;color:var(--text)}
+.xib-module-home-tasks .home-page-head{display:flex;min-height:0;align-items:center;margin-bottom:14px}
+.xib-module-home-tasks .home-page-head .page-title{line-height:28px}
+.xib-module-home-tasks .panel{min-width:0;margin:0;overflow:hidden}
+.xib-module-home-tasks .panel-head{display:flex;height:48px;align-items:center;padding:0 18px}
+.xib-module-home-tasks .panel-title{color:var(--title);font-size:15px;font-weight:600}
+.xib-module-home-tasks .home-dashboard-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;align-items:stretch}
+.xib-module-home-tasks .home-overview{grid-column:span 9;min-height:284px}
+.xib-module-home-tasks .home-profile{grid-column:span 3;min-height:284px}
+.xib-module-home-tasks .home-todo{grid-column:span 9;display:flex;min-height:356px;flex-direction:column}
+.xib-module-home-tasks .home-messages{grid-column:span 3;display:flex;min-height:356px;flex-direction:column}
+
+.xib-module-home-tasks .home-overview-body{display:block;min-height:235px}
+.xib-module-home-tasks .home-monthly{--progress-completed:#d5d9e0;--progress-active:#4997ff;--progress-active-light:#65adff;--progress-active-dark:#438cf2;--progress-overdue:#ff5555;--progress-overdue-light:#ff7373;--progress-overdue-dark:#f34f4f;min-width:0;padding:14px 18px 18px}
+.xib-module-home-tasks .home-overview-subhead{display:flex;height:24px;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.xib-module-home-tasks .home-overview-subhead strong{color:var(--text);font-size:12px;font-weight:600}
+.xib-module-home-tasks .home-overview-subhead span{overflow:hidden;color:var(--muted);font-size:11px;text-overflow:ellipsis;white-space:nowrap}
+.xib-module-home-tasks .home-monthly-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.xib-module-home-tasks .home-progress-card{display:flex;min-width:0;height:162px;align-items:center;gap:13px;padding:16px;border:1px solid #e6eaf0;border-radius:6px;background:#fff}
+.xib-module-home-tasks .home-progress-ring,.xib-module-home-tasks .home-efficiency-ring{position:relative;display:grid;width:82px;height:82px;flex:0 0 82px;place-items:center}
+.xib-module-home-tasks .home-progress-ring{background:transparent}
+.xib-module-home-tasks .home-progress-card.is-empty .home-progress-ring{background:transparent}
+.xib-module-home-tasks .home-efficiency-ring{background:transparent}
+.xib-module-home-tasks .home-progress-ring::after,.xib-module-home-tasks .home-efficiency-ring::after{display:none}
+.xib-module-home-tasks .home-ring-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform:rotate(-90deg);transform-origin:50% 50%;shape-rendering:geometricPrecision}
+.xib-module-home-tasks .home-ring-segment{stroke:none}
+.xib-module-home-tasks .home-ring-track{fill:none;stroke:#eaf0f7;stroke-width:10}
+.xib-module-home-tasks .home-progress-ring>span,.xib-module-home-tasks .home-efficiency-ring>span{position:relative;z-index:1;display:grid;justify-items:center;line-height:1}
+.xib-module-home-tasks .home-progress-ring strong,.xib-module-home-tasks .home-efficiency-ring strong{color:var(--title);font:600 20px/24px Arial,sans-serif}
+.xib-module-home-tasks .home-progress-ring small,.xib-module-home-tasks .home-efficiency-ring small{margin-top:3px;color:var(--muted);font-size:9px}
+.xib-module-home-tasks .home-progress-info{display:grid;min-width:0;align-content:center;gap:10px}
+.xib-module-home-tasks .home-progress-info>strong{overflow:hidden;color:var(--title);font-size:13px;font-weight:600;text-overflow:ellipsis;white-space:nowrap}
+.xib-module-home-tasks .home-progress-info>p{margin:0;color:var(--muted);font-size:10px;line-height:17px}
+.xib-module-home-tasks .home-progress-info>small{color:var(--primary);font-size:11px}
+.xib-module-home-tasks .home-progress-legend{display:grid;gap:5px}
+.xib-module-home-tasks .home-progress-legend span{display:grid;grid-template-columns:7px auto 18px;gap:5px;align-items:center;color:var(--muted);font-size:10px;white-space:nowrap}
+.xib-module-home-tasks .home-progress-legend i{width:7px;height:7px;border-radius:2px;background:#c0c4cc}
+.xib-module-home-tasks .home-progress-legend b{color:var(--text);font-weight:500;text-align:right}
+.xib-module-home-tasks .home-progress-legend .is-completed i{background:var(--progress-completed)}
+.xib-module-home-tasks .home-progress-legend .is-active i{background:var(--progress-active)}
+.xib-module-home-tasks .home-progress-legend .is-overdue i{background:var(--progress-overdue)}
+.xib-module-home-tasks .home-today{min-width:0;padding:14px 16px 18px;background:#fcfdff}
+.xib-module-home-tasks .home-today-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.xib-module-home-tasks .home-today-metric{display:grid;min-width:0;height:76px;grid-template-columns:30px minmax(0,1fr);grid-template-rows:auto auto;align-content:center;column-gap:9px;padding:10px 11px;border:1px solid #e7ebf2;border-radius:5px;background:#fff}
+.xib-module-home-tasks .home-today-metric>i{display:grid;width:30px;height:30px;grid-row:1/3;align-self:center;place-items:center;border-radius:8px;background:var(--metric-bg)}
+.xib-module-home-tasks .home-today-metric img{width:16px;height:16px;filter:var(--metric-filter)}
+.xib-module-home-tasks .home-today-metric span{overflow:hidden;align-self:end;color:var(--muted);font-size:10px;text-overflow:ellipsis;white-space:nowrap}
+.xib-module-home-tasks .home-today-metric strong{align-self:start;color:var(--metric-color);font:600 20px/24px Arial,sans-serif}
+.xib-module-home-tasks .home-today-metric.is-primary{--metric-color:#3478ed;--metric-bg:#edf4ff;--metric-filter:invert(44%) sepia(91%) saturate(2580%) hue-rotate(204deg) brightness(96%) contrast(95%)}
+.xib-module-home-tasks .home-today-metric.is-warning{--metric-color:#d99317;--metric-bg:#fff6e5;--metric-filter:invert(65%) sepia(89%) saturate(1040%) hue-rotate(359deg) brightness(95%) contrast(92%)}
+.xib-module-home-tasks .home-today-metric.is-danger{--metric-color:#e65e5e;--metric-bg:#fff0f0;--metric-filter:invert(49%) sepia(67%) saturate(1732%) hue-rotate(323deg) brightness(95%) contrast(89%)}
+.xib-module-home-tasks .home-today-metric.is-success{--metric-color:#67a83d;--metric-bg:#eef8e8;--metric-filter:invert(60%) sepia(48%) saturate(790%) hue-rotate(49deg) brightness(89%) contrast(89%)}
+
+.xib-module-home-tasks .home-profile-body{display:flex;min-height:235px;flex-direction:column;justify-content:center;padding:18px}
+.xib-module-home-tasks .home-profile-identity{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;column-gap:16px;padding-bottom:18px;border-bottom:1px solid var(--divider)}
+.xib-module-home-tasks .home-profile-avatar{display:grid;width:48px;height:48px;place-items:center;border-radius:50%;background:#e9f1fc}
+.xib-module-home-tasks .home-profile-avatar img{width:24px;height:24px;filter:invert(42%) sepia(78%) saturate(1777%) hue-rotate(199deg) brightness(93%) contrast(87%);opacity:.9}
+.xib-module-home-tasks .home-profile-summary{display:grid;min-width:0;align-content:center;gap:2px}
+.xib-module-home-tasks .home-profile-summary strong{overflow:hidden;color:var(--title);font-size:16px;font-weight:600;line-height:24px;text-overflow:ellipsis;white-space:nowrap}
+.xib-module-home-tasks .home-profile-summary span{overflow:hidden;color:var(--primary);font-size:12px;line-height:20px;text-overflow:ellipsis;white-space:nowrap}
+.xib-module-home-tasks .home-profile dl{margin:0}
+.xib-module-home-tasks .home-profile-details{display:grid;gap:8px;padding-top:16px}
+.xib-module-home-tasks .home-profile-details>div{display:grid;grid-template-columns:56px minmax(0,1fr);align-items:baseline;column-gap:8px;min-width:0}
+.xib-module-home-tasks .home-profile-details dt,.xib-module-home-tasks .home-profile-details dd{font-size:11px;line-height:18px}
+.xib-module-home-tasks .home-profile dt{color:var(--muted)}
+.xib-module-home-tasks .home-profile dd{overflow:hidden;margin:0;color:var(--text);text-overflow:ellipsis;white-space:nowrap}
+
+.xib-module-home-tasks .home-task-content{display:flex;min-height:0;flex:1;flex-direction:column}
+.xib-module-home-tasks .home-task-tabs{display:flex;min-height:45px;flex:0 0 auto;align-items:flex-end;gap:0;padding:0 14px;border-bottom:1px solid var(--divider);overflow-x:auto;background:#fff}
+.xib-module-home-tasks .home-task-tabs .tab{position:relative;min-width:max-content;height:44px;padding:0 13px;border:0;background:transparent;color:var(--text);font-size:12px;white-space:nowrap}
+.xib-module-home-tasks .home-task-tabs .tab::after{position:absolute;right:13px;bottom:0;left:13px;height:2px;background:transparent;content:""}
+.xib-module-home-tasks .home-task-tabs .tab.is-active{color:var(--primary);font-weight:600}
+.xib-module-home-tasks .home-task-tabs .tab.is-active::after{background:var(--primary)}
+.xib-module-home-tasks .home-task-content>.table-wrap{flex:1}
+.xib-module-home-tasks .home-task-table{width:100%;min-width:620px;table-layout:fixed;font-size:12px}
+.xib-module-home-tasks .home-task-table th{height:40px;padding:0 16px;font-size:12px;font-weight:500}
+.xib-module-home-tasks .home-task-table td{height:45px;padding:5px 16px}
+.xib-module-home-tasks .home-task-table th:nth-child(1),.xib-module-home-tasks .home-task-table td:nth-child(1){width:24%}
+.xib-module-home-tasks .home-task-table th:nth-child(2),.xib-module-home-tasks .home-task-table td:nth-child(2){width:26%}
+.xib-module-home-tasks .home-task-table th:nth-child(3),.xib-module-home-tasks .home-task-table td:nth-child(3){width:20%}
+.xib-module-home-tasks .home-task-table th:nth-child(4),.xib-module-home-tasks .home-task-table td:nth-child(4){width:30%}
+.xib-module-home-tasks .home-task-table .column-customizer-cell,.xib-module-home-tasks .home-task-table .column-customizer-spacer{display:none!important}
+.xib-module-home-tasks .home-task-row{cursor:pointer}
+.xib-module-home-tasks .home-task-row:hover,.xib-module-home-tasks .home-task-row:focus{background:#f7faff;outline:none}
+.xib-module-home-tasks .home-work-item{color:var(--title);font-size:12px;font-weight:500}
+.xib-module-home-tasks .home-deadline-cell{position:relative;padding-right:42px!important}
+.xib-module-home-tasks .home-deadline{color:var(--text);font-weight:400;white-space:nowrap}
+.xib-module-home-tasks .home-deadline.is-urgent{color:var(--danger);font-weight:500}
+.xib-module-home-tasks .home-row-arrow{position:absolute;top:50%;right:16px;width:14px;height:14px;transform:translateY(-50%);opacity:.45}
+.xib-module-home-tasks .home-task-footer,.xib-module-home-tasks .home-message-footer{display:flex;height:38px;flex:0 0 38px;align-items:center;justify-content:flex-end;gap:8px;padding:0 14px;border-top:1px solid var(--divider);color:var(--muted);font-size:12px}
+.xib-module-home-tasks .home-task-footer .pagination-total,.xib-module-home-tasks .home-message-footer .pagination-total{margin-right:auto}
+.xib-module-home-tasks .home-task-footer .pagination-nav,.xib-module-home-tasks .home-message-footer .pagination-nav{display:inline-flex;align-items:center;gap:6px}
+.xib-module-home-tasks .home-task-footer .pagination-current{color:var(--muted);font-size:11px;font-weight:500}
+.xib-module-home-tasks .home-task-footer .page-btn,.xib-module-home-tasks .home-message-footer .page-btn{min-width:28px;height:28px;padding:0 6px}
+.xib-module-home-tasks .home-empty{display:grid;min-height:254px;place-content:center;justify-items:center;gap:7px;color:var(--muted);text-align:center}
+.xib-module-home-tasks .home-empty>div{width:116px;height:100px}
+.xib-module-home-tasks .home-empty strong{color:var(--muted);font-weight:500}
+.xib-module-home-tasks .home-empty span{font-size:12px}
+
+.xib-module-home-tasks .home-panel-link{display:grid;width:28px;height:28px;margin-left:auto;place-items:center;border:1px solid #dcdfe6;border-radius:4px;background:#fff}
+.xib-module-home-tasks .home-panel-link:hover{border-color:#a9c8f5;background:#f5f9ff}
+.xib-module-home-tasks .home-panel-link img{width:14px;height:14px;filter:invert(44%) sepia(91%) saturate(2580%) hue-rotate(204deg) brightness(96%) contrast(95%);opacity:.72}
+.xib-module-home-tasks .home-message-list{display:block;min-height:0;flex:1;overflow:hidden}
+.xib-module-home-tasks .home-message{display:grid;width:100%;height:45px;min-height:45px;grid-template-columns:minmax(0,1fr) auto 14px;gap:8px;align-items:center;padding:0 14px;border:0;border-bottom:1px solid #ebeef5;background:transparent;color:var(--text);text-align:left}
+.xib-module-home-tasks .home-message:hover{background:#f7faff}
+.xib-module-home-tasks .home-message-main{display:flex;min-width:0;align-items:center;gap:7px}
+.xib-module-home-tasks .home-message-main em{display:inline-flex;height:20px;flex:0 0 auto;align-items:center;padding:0 5px;border-radius:2px;font-size:10px;font-style:normal;font-weight:400;line-height:20px}
+.xib-module-home-tasks .home-message-main em.is-todo{background:#f0f9eb;color:#3f8f28}
+.xib-module-home-tasks .home-message-main em.is-notice{background:#e9f1fc;color:#2272de}
+.xib-module-home-tasks .home-message-main em.is-approval{background:#fef8e7;color:#b88230}
+.xib-module-home-tasks .home-message-main em.is-normal-reminder{background:#fdf6ec;color:#c56a16}
+.xib-module-home-tasks .home-message-main em.is-urgent-reminder{background:#fef0f0;color:#c45656}
+.xib-module-home-tasks .home-message-main em.is-critical-reminder{background:#f3eefe;color:#8157d8}
+.xib-module-home-tasks .home-message-main b{overflow:hidden;color:var(--title);font-size:12px;font-weight:400;line-height:20px;text-overflow:ellipsis;white-space:nowrap}
+.xib-module-home-tasks .home-message time{color:#a0a6af;font-size:10px;white-space:nowrap}
+.xib-module-home-tasks .home-message>img{width:14px;height:14px;border:0;opacity:.45}
+.xib-module-home-tasks .home-message-empty{display:grid;height:150px;place-items:center;color:var(--muted);font-size:12px}
+
+@media(max-width:1450px){
+  .xib-module-home-tasks .home-overview-body{grid-template-columns:minmax(0,1fr) 230px}
+  .xib-module-home-tasks .home-progress-card{gap:9px;padding:12px}
+  .xib-module-home-tasks .home-progress-ring,.xib-module-home-tasks .home-efficiency-ring{width:72px;height:72px;flex-basis:72px}
+}
+@media(max-width:1180px){
+  .xib-module-home-tasks .home-overview,.xib-module-home-tasks .home-profile,.xib-module-home-tasks .home-todo,.xib-module-home-tasks .home-messages{grid-column:1/-1}
+  .xib-module-home-tasks .home-profile{min-height:230px}
+  .xib-module-home-tasks .home-profile-body{min-height:181px}
+}
+@media(max-width:860px){
+  .xib-module-home-tasks .home-overview-body{grid-template-columns:1fr}
+  .xib-module-home-tasks .home-monthly{border-right:0;border-bottom:1px solid var(--divider)}
+  .xib-module-home-tasks .home-overview{min-height:0}
+}
+@media(max-width:760px){
+  .xib-module-home-tasks{padding:16px}
+  .xib-module-home-tasks .home-monthly-grid{grid-template-columns:1fr}
+  .xib-module-home-tasks .home-progress-card{height:128px}
+}

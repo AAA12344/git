@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>video-play</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-896, -1017)">
+            <g id="video-play" transform="translate(896, 1017)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <circle id="椭圆形" stroke="#909399" stroke-width="2" cx="16" cy="16" r="13"></circle>
+                <path d="M20.7519246,15.1679497 L14.5547002,11.0364668 C14.0951715,10.7301143 13.4743022,10.8542882 13.1679497,11.3138169 C13.058438,11.4780844 13,11.6710921 13,11.8685171 L13,20.1314829 C13,20.6837677 13.4477153,21.1314829 14,21.1314829 C14.197425,21.1314829 14.3904327,21.0730449 14.5547002,20.9635332 L20.7519246,16.8320503 C21.2114532,16.5256978 21.3356271,15.9048285 21.0292747,15.4452998 C20.9560398,15.3354475 20.8617768,15.2411846 20.7519246,15.1679497 Z" id="路径-13" stroke="#909399" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

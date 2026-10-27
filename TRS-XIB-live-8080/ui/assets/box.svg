@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>box</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-384, -2933)">
+            <g id="box" transform="translate(384, 2933)">
+                <rect id="矩形" fill-opacity="0.01" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-10" transform="translate(3, 3)" stroke="#909399" stroke-width="2">
+                    <path d="M6.70119153,0.341495392 L0.247423305,7.71723051 C0.0879182475,7.899522 6.66133815e-16,8.13351197 8.8817842e-16,8.37573512 L0,25 C1.11022302e-16,25.5522847 0.44771525,26 1,26 L25,26 C25.5522847,26 26,25.5522847 26,25 L26,8.37573512 C26,8.13351197 25.9120818,7.899522 25.7525767,7.71723051 L19.2988085,0.341495392 C19.1089204,0.124480432 18.8345944,1.11022302e-15 18.5462318,1.11022302e-15 L7.45376823,0 C7.16540564,-2.22044605e-16 6.89107962,0.124480432 6.70119153,0.341495392 Z" id="路径-11"></path>
+                    <path d="M10,17 L10,8 L10,8 L12,0 L14,0 L16,8 L16,17 C16,17.5522847 15.5522847,18 15,18 L11,18 C10.4477153,18 10,17.5522847 10,17 Z" id="路径-12"></path>
+                    <line x1="0" y1="8" x2="26" y2="8" id="路径-19"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

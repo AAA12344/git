@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>crop</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-512, -2225)">
+            <g id="crop" transform="translate(512, 2225)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <path d="M3,7 L24,7 C24.5522847,7 25,7.44771525 25,8 L25,29 L25,29" id="路径-18" stroke="#909399" stroke-width="2" stroke-linecap="round"></path>
+                <path d="M7,3 L7,24 C7,24.5522847 7.44771525,25 8,25 L29,25 L29,25" id="路径-28" stroke="#909399" stroke-width="2" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>dashboard</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1152, -917)">
+            <g id="dashboard" transform="translate(1152, 917)">
+                <rect id="矩形" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-22" transform="translate(3, 3)" stroke="#909399" stroke-width="2">
+                    <path d="M13,26 C20.1797017,26 26,20.1797017 26,13 C26,5.82029825 20.1797017,0 13,0 C5.82029825,0 0,5.82029825 0,13 C0,20.1797017 5.82029825,26 13,26 Z" id="椭圆形"></path>
+                    <path d="M22,13 C22,8.02943725 17.9705627,4 13,4 C8.02943725,4 4,8.02943725 4,13" id="路径" stroke-linecap="round"></path>
+                    <path d="M13,21 C14.1045695,21 15,20.1045695 15,19 C15,17.8954305 14.1045695,17 13,17 C11.8954305,17 11,17.8954305 11,19 C11,20.1045695 11.8954305,21 13,21 Z" id="椭圆形"></path>
+                    <line x1="13.5" y1="17" x2="16" y2="10" id="路径-20" stroke-linecap="round"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

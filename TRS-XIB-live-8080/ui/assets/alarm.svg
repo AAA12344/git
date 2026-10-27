@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>alarm</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1024, -517)">
+            <g id="alarm" transform="translate(1024, 517)">
+                <rect id="矩形" fill="#2272DE" fill-rule="nonzero" opacity="0" x="0" y="0" width="32" height="32"></rect>
+                <g id="编组-20" transform="translate(3, 3)" stroke="#909399" stroke-width="2">
+                    <polyline id="路径-25" stroke-linecap="round" fill-rule="nonzero" points="12 7 12 14 18 14"></polyline>
+                    <circle id="椭圆形" cx="13" cy="13" r="11"></circle>
+                    <line x1="21" y1="26" x2="18" y2="23" id="路径-27" stroke-linecap="round"></line>
+                    <line x1="5" y1="26" x2="8" y2="23" id="路径-26" stroke-linecap="round"></line>
+                    <path d="M21,0 L22,0 C24.209139,0 26,1.790861 26,4 L26,5" id="路径" stroke-linecap="round"></path>
+                    <path d="M0,0 L1,0 C3.209139,0 5,1.790861 5,4 L5,5" id="路径备份" stroke-linecap="round" transform="translate(2.5, 2.5) scale(-1, 1) translate(-2.5, -2.5)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

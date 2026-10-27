@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>copy</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-640, -2225)">
+            <g id="copy" transform="translate(640, 2225)">
+                <rect id="矩形" fill="#0075E6" fill-rule="nonzero" opacity="0" x="0" y="0" width="32" height="32" rx="1"></rect>
+                <g id="编组-36" transform="translate(3, 3)" stroke="#909399" stroke-width="2">
+                    <path d="M4,21 L2,21 C0.8954305,21 0,20.1045695 0,19 L0,2 C0,0.8954305 0.8954305,2.22044605e-16 2,0 L19,0 C20.1045695,0 21,0.8954305 21,2 L21,4 L21,4" id="路径"></path>
+                    <rect id="矩形" x="4" y="4" width="22" height="22" rx="2"></rect>
+                    <line x1="15" y1="10" x2="15" y2="20" id="路径-86" stroke-linecap="round"></line>
+                    <line x1="10" y1="15" x2="20" y2="15" id="路径-87" stroke-linecap="round"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

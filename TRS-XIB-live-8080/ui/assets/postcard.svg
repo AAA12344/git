@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>postcard</title>
+    <g id="1-全局样式" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标" transform="translate(-1024, -2629)">
+            <g id="postcard" transform="translate(1024, 2629)">
+                <rect id="矩形" fill-opacity="0.01" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="32" height="32"></rect>
+                <rect id="矩形" stroke="#909399" stroke-width="2" x="3" y="6" width="26" height="20" rx="1"></rect>
+                <line x1="9" y1="15" x2="17" y2="15" id="路径-31" stroke="#909399" stroke-width="2" stroke-linecap="round"></line>
+                <line x1="9" y1="19" x2="17" y2="19" id="路径-32" stroke="#909399" stroke-width="2" stroke-linecap="round"></line>
+                <circle id="椭圆形" fill="#909399" cx="22" cy="12" r="2"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
